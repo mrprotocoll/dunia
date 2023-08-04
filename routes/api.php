@@ -25,6 +25,8 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function (){
     Route::middleware(['role:1'])->group(function () {
         Route::apiResource('authors', Admin\AuthorController::class)
             ->only(['index', 'show', 'store', 'update']);
+        Route::apiResource('tags', Admin\TagController::class)
+            ->only(['index', 'show', 'store', 'update']);
     });
 });
 

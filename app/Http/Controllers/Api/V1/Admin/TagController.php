@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1;
+namespace App\Http\Controllers\Api\V1\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\V1\StoreTagRequest;
-use App\Http\Requests\V1\UpdateTagRequest;
+use App\Http\Requests\V1\TagRequest;
+use App\Http\Resources\V1\TagResource;
 use App\Models\Tag;
+use Illuminate\Http\Request;
 
 class TagController extends Controller
 {
@@ -15,22 +16,16 @@ class TagController extends Controller
     public function index()
     {
         //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return TagResource::collection(Tag::paginate());
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTagRequest $request)
+    public function store(TagRequest $request)
     {
         //
+        return new TagResource(Tag::create($request->validated()));
     }
 
     /**
@@ -39,22 +34,16 @@ class TagController extends Controller
     public function show(Tag $tag)
     {
         //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Tag $tag)
-    {
-        //
+        return new TagResource($tag);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTagRequest $request, Tag $tag)
+    public function update(TagRequest $request, Tag $tag)
     {
-        //
+        $tag->update($request->validated());
+        return new TagResource(Tag::find($tag->id));
     }
 
     /**
@@ -64,4 +53,5 @@ class TagController extends Controller
     {
         //
     }
+
 }
