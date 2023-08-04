@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1\Admin;
 
-use App\Http\Requests\UpdateAuthorRequest;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\AuthorRequest;
+use App\Http\Resources\V1\AuthorResource;
 use App\Models\Author;
 
 class AuthorController extends Controller
@@ -14,14 +15,8 @@ class AuthorController extends Controller
     public function index()
     {
         //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $authors = Author::paginate();
+        return AuthorResource::collection($authors);
     }
 
     /**
@@ -30,6 +25,8 @@ class AuthorController extends Controller
     public function store(AuthorRequest $request)
     {
         //
+        $author = Author::create($request->validated());
+        return new AuthorResource($author);
     }
 
     /**
@@ -38,22 +35,17 @@ class AuthorController extends Controller
     public function show(Author $author)
     {
         //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Author $author)
-    {
-        //
+        return new AuthorResource($author);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAuthorRequest $request, Author $author)
+    public function update(AuthorRequest $request, Author $author)
     {
         //
+        $author->update($request->validated());
+        return new AuthorResource(Author::find($author->id));
     }
 
     /**

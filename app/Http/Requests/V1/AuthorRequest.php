@@ -22,7 +22,7 @@ class AuthorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string'],
+            'name' => ['required', 'string', 'max:50'],
             'email' => ['required', 'email'],
         ];
     }
