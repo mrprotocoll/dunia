@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_tag', function (Blueprint $table) {
-            $table->foreignUuid('product_id')->constrained();
-            $table->foreignUuid('tag_id')->constrained();
+        Schema::create('tags', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('role_user');
+        Schema::dropIfExists('tags');
     }
 };
