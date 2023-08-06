@@ -14,8 +14,10 @@ class ProductImageResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        // Return the formatted product image data in the API response
         return [
-            'url' => asset('storage/' . $this->name),
+            'id' => $this->id,
+            'url' => asset('storage/' . $this->image), // Return the full URL to the image
         ];
     }
 }

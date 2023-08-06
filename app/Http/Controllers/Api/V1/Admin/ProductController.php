@@ -7,11 +7,8 @@ use App\Http\Requests\V1\ProductRequest;
 use App\Http\Resources\V1\ProductResource;
 use App\Models\Category;
 use App\Models\Product;
-use App\Models\ProductImage;
 use App\Models\Tag;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -19,7 +16,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ProductRequest $request)
+    public function store(ProductRequest $request): ProductResource
     {
         // initialise columns
         $product = new Product();
@@ -49,7 +46,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ProductRequest $request, Product $product)
+    public function update(Product $product, ProductRequest $request): ProductResource
     {
         //
         $product->name = $request->name;
@@ -66,6 +63,8 @@ class ProductController extends Controller
             // save tags
             $product->tags()->sync($tags);
         });
+
+        return new ProductResource($product);
     }
 
     /**

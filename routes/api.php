@@ -35,6 +35,10 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function (){
 
         Route::apiResource('products', Admin\ProductController::class)
             ->only(['store', 'update']);
+
+        Route::post('products/{product}/images', [Admin\ProductImageController::class, 'store']);
+//        Route::delete('products/{product}/images/{productImage}', [Admin\ProductImageController::class, 'destroy']);
+        Route::delete('/products/{product}/images/{productImage}', [Admin\ProductImageController::class, 'destroy']);
     });
 });
 

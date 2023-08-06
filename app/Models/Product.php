@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Http\Client\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -33,7 +33,6 @@ class Product extends Model
     }
 
     public function addImages($request): void {
-
         foreach ($request->file('images') as $image) {
             $imageName = time() . '_' . Str::slug($image->getClientOriginalName(), '_');
 
@@ -41,7 +40,7 @@ class Product extends Model
             Storage::disk('public')->put($imageName, file_get_contents($image));
 
             // Save the image file name in the database
-            $this->images()->create(['name' => $imageName]);
+            $this->images()->create(['image' => $imageName]);
         }
     }
 }
