@@ -7,6 +7,7 @@ use App\Http\Requests\V1\ProductRequest;
 use App\Http\Resources\V1\ProductResource;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductImage;
 use App\Models\Tag;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -20,7 +21,7 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        //
+        // initialise columns
         $product = new Product();
         $product->name = $request->name;
         $product->author_id = $request->author;
@@ -38,15 +39,7 @@ class ProductController extends Controller
 
             // Store multiple images for the product
             if ($request->hasFile('images')) {
-                foreach ($request->file('images') as $image) {
-                    $imageName = time() . '_' . Str::slug($image->getClientOriginalName(), '_');
-
-                    // Store the image in the 'public' disk (storage/app/public)
-                    Storage::disk('public')->put($imageName, file_get_contents($image));
-
-                    // Save the image file name in the database
-                    $product->images()->create(['name' => $imageName]);
-                }
+                $product->addImages($request);
             }
         });
 
@@ -59,6 +52,20 @@ class ProductController extends Controller
     public function update(ProductRequest $request, Product $product)
     {
         //
+        $product->name = $request->name;
+        $product->author_id = $request->author;
+        $product->price = $request->price;
+        $categories = Category::whereIn('id', $request->categories)->get();
+        $tags = Tag::whereIn('id', $request->tags)->get();
+
+        DB::transaction(function () use ($product, $categories, $tags, $request){
+            $product->save();
+            // save categories
+            $product->categories()->sync($categories);
+
+            // save tags
+            $product->tags()->sync($tags);
+        });
     }
 
     /**

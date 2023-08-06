@@ -25,6 +25,8 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
+        $product->with('author')->get();
+        return new ProductResource($product);
     }
 
 }
