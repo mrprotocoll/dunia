@@ -32,7 +32,7 @@ class Product extends Model
         return $this->belongsTo(Author::class);
     }
 
-    public function addImages(Request $request): void {
+    public function addImages($request): void {
 
         foreach ($request->file('images') as $image) {
             $imageName = time() . '_' . Str::slug($image->getClientOriginalName(), '_');

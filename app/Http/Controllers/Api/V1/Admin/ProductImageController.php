@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Api\V1\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Client\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
 class ProductImageController extends Controller
 {
