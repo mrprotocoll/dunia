@@ -24,11 +24,13 @@ class ProductRequest extends FormRequest
         return [
             //
             'name' => ['required'],
-            'images.*' => ['required', 'image'],
+            'images' => ['required', 'array'],
+            'images.*' => ['image'],
             'price' => ['required'],
             'categories' => ['required', 'array'],
             'categories.*' => ['exists:categories,id'],
-            'tag.*' => [],
+            'tags' => ['array'],
+            'tags.*' => ['exists:tags,id'],
             'author' => ['required', 'exists:authors,id']
         ];
     }

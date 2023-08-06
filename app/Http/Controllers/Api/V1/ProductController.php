@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\ProductRequest;
-use App\Http\Requests\V1\UpdateProductRequest;
+use App\Http\Resources\V1\ProductResource;
 use App\Models\Product;
 
 class ProductController extends Controller
@@ -15,14 +15,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(ProductRequest $request)
-    {
-        //
+        $products = Product::with('author')->get();
+        return ProductResource::collection($products);
     }
 
     /**
@@ -33,27 +27,4 @@ class ProductController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateProductRequest $request, Product $product)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Product $product)
-    {
-        //
-    }
 }

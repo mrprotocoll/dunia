@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_images', function (Blueprint $table) {
-            $table->string('name');
-            $table->foreignUuid('product_id');
-            $table->timestamps();
+        //
+        Schema::table('product_images', function (Blueprint $table){
+            $table->uuid('id')->primary();
         });
     }
 
@@ -23,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_images');
+        //
     }
 };
