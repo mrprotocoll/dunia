@@ -23,6 +23,11 @@ class ProductRequest extends FormRequest
     {
         return [
             //
+            'name',
+            'image',
+            'category',
+            'tag',
+            'author'
         ];
     }
 }

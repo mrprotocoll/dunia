@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\V1\Admin;
 use App\Http\Controllers\Api\V1\LoginController;
+use App\Http\Controllers\Api\V1\ProductController;
 use App\Http\Controllers\Api\V1\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,8 +32,14 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function (){
 
         Route::apiResource('categories', Admin\CategoryController::class)
             ->only(['index', 'show', 'store', 'update']);
+
+        Route::apiResource('products', Admin\ProductController::class)
+            ->only(['store', 'update']);
     });
 });
+
+Route::apiResource('products', ProductController::class)
+    ->only(['index', 'show']);
 
 Route::post('register', RegisterController::class);
 Route::post('login', LoginController::class);
