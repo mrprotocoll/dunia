@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class ProductImages extends Model
+class ProductImage extends Model
 {
     use HasFactory;
 
@@ -15,6 +15,6 @@ class ProductImages extends Model
     ];
 
     public function product(): HasOne {
-        return $this->HasOne(Product::class);
+        return $this->hasOne(Product::class);
     }
 }

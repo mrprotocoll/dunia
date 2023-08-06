@@ -13,14 +13,14 @@ class Product extends Model
     use HasFactory, HasUuids;
 
     public function tags(): BelongsToMany {
-        return $this->BelongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class);
     }
 
     public function categories(): BelongsToMany {
-        return $this->BelongsToMany(Category::class);
+        return $this->belongsToMany(Category::class);
     }
 
     public function images(): HasMany {
-        return $this->hasMany(ProductImages::class);
+        return $this->hasMany(ProductImage::class);
     }
 }

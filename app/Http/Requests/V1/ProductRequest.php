@@ -11,7 +11,7 @@ class ProductRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,11 +23,13 @@ class ProductRequest extends FormRequest
     {
         return [
             //
-            'name',
-            'image',
-            'category',
-            'tag',
-            'author'
+            'name' => ['required'],
+            'images.*' => ['required', 'image'],
+            'price' => ['required'],
+            'categories' => ['required', 'array'],
+            'categories.*' => ['exists:categories,id'],
+            'tag.*' => [],
+            'author' => ['required', 'exists:authors,id']
         ];
     }
 }
