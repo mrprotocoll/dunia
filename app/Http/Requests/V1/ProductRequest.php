@@ -27,6 +27,7 @@ class ProductRequest extends FormRequest
             'images' => ['array'],
             'images.*' => ['image', 'max:2048'],
             'price' => ['required'],
+            'description' => ['required'],
             'categories' => ['required', 'array'],
             'categories.*' => ['exists:categories,id'],
             'tags' => ['array'],

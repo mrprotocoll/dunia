@@ -23,6 +23,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->author_id = $request->author;
         $product->price = $request->price;
+        $product->description = $request->description;
         $categories = Category::whereIn('id', $request->categories)->get();
         $tags = Tag::whereIn('id', $request->tags)->get();
 
@@ -52,6 +53,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->author_id = $request->author;
         $product->price = $request->price;
+        $product->description = $request->description;
         $categories = Category::whereIn('id', $request->categories)->get();
         $tags = Tag::whereIn('id', $request->tags)->get();
 

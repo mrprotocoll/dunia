@@ -32,6 +32,16 @@ class Product extends Model
         return $this->belongsTo(Author::class);
     }
 
+    public function orders(): BelongsToMany
+    {
+        return $this->belongsToMany(Order::class)->withPivot('quantity', 'total_price')->withTimestamps();
+    }
+
+    /**
+     * Method to Add multiple images to product
+     * @param $request
+     * @return void
+     */
     public function addImages($request): void {
         foreach ($request->file('images') as $image) {
             $imageName = time() . '_' . Str::slug($image->getClientOriginalName(), '_');

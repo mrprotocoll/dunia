@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Api\V1\Admin;
 use App\Http\Controllers\Api\V1\LoginController;
+use App\Http\Controllers\Api\V1\LogoutController;
+use App\Http\Controllers\Api\V1\OrderController;
 use App\Http\Controllers\Api\V1\ProductController;
 use App\Http\Controllers\Api\V1\RegisterController;
 use Illuminate\Http\Request;
@@ -37,8 +39,13 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function (){
             ->only(['store', 'update']);
 
         Route::post('products/{product}/images', [Admin\ProductImageController::class, 'store']);
-//        Route::delete('products/{product}/images/{productImage}', [Admin\ProductImageController::class, 'destroy']);
-        Route::delete('/products/{product}/images/{productImage}', [Admin\ProductImageController::class, 'destroy']);
+        Route::delete('products/{product}/images/{productImage}', [Admin\ProductImageController::class, 'destroy']);
+    });
+});
+
+Route::prefix('user')->middleware(['auth:sanctum'])->group(function (){
+    Route::middleware(['role:0'])->group(function () {
+        Route::post('user', [OrderController::class, 'store']);
     });
 });
 
@@ -47,3 +54,4 @@ Route::apiResource('products', ProductController::class)
 
 Route::post('register', RegisterController::class);
 Route::post('login', LoginController::class);
+Route::get('logout', LogoutController::class);

@@ -19,6 +19,7 @@ class ProductResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'price' => number_format($this->price, 2),
+            'description' => $this->description,
             'author' => new AuthorResource($this->author),
             'categories' => CategoryResource::collection($this->categories),
             'tags' => TagResource::collection($this->tags),
