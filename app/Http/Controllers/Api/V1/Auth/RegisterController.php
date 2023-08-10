@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1;
+namespace App\Http\Controllers\Api\V1\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\RegisterRequest;
@@ -9,10 +9,15 @@ use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * @group Authentication
+ *
+ * Endpoint to manage user authentication
+ */
 class RegisterController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Register.
      */
     public function __invoke(RegisterRequest $request)
     {

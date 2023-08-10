@@ -3,24 +3,28 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\V1\ProductRequest;
 use App\Http\Resources\V1\ProductResource;
 use App\Models\Product;
 
+/**
+ * @group Product Management
+ *
+ * Endpoints to manage products
+ */
 class ProductController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of products with ID.
      */
     public function index()
     {
         //
-        $products = Product::with('author')->get();
+        $products = Product::with('author')->paginate();
         return ProductResource::collection($products);
     }
 
     /**
-     * Display the specified resource.
+     * Display a specific product by ID.
      */
     public function show(Product $product)
     {
@@ -28,5 +32,4 @@ class ProductController extends Controller
         $product->with('author')->get();
         return new ProductResource($product);
     }
-
 }

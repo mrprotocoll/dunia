@@ -7,12 +7,20 @@ use App\Http\Requests\V1\AuthorRequest;
 use App\Http\Resources\V1\AuthorResource;
 use App\Models\Author;
 
+/**
+ * @group Author Management
+ *
+ * Endpoint to manage authors
+ */
 class AuthorController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the authors.
+     *
+     * @apiResourceCollection App\Http\Resources\V1\AuthorResource
+     * @apiResourceModel App\Models\Author
      */
-    public function index()
+    public function index(): AuthorResource
     {
         //
         $authors = Author::paginate();
@@ -20,9 +28,9 @@ class AuthorController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Create a new author.
      */
-    public function store(AuthorRequest $request)
+    public function store(AuthorRequest $request) : AuthorResource
     {
         //
         $author = Author::create($request->validated());
@@ -30,18 +38,20 @@ class AuthorController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display an author by ID.
+     *
+     * return
      */
-    public function show(Author $author)
+    public function show(Author $author) : AuthorResource
     {
         //
         return new AuthorResource($author);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified Author by ID.
      */
-    public function update(AuthorRequest $request, Author $author)
+    public function update(AuthorRequest $request, Author $author): AuthorResource
     {
         //
         $author->update($request->validated());

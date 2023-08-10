@@ -9,9 +9,21 @@ use App\Http\Resources\V1\ProductResource;
 use App\Models\Product;
 use App\Models\ProductImage;
 
+/**
+ * @group Product Management
+ *
+ * Endpoints to manage products
+ */
 class ProductImageController extends Controller
 {
 
+    /**
+     * Add images to a product
+     *
+     * @param ProductImageRequest $request
+     * @param Product $product
+     * @return ProductResource
+     */
     public function store(ProductImageRequest $request, Product $product): ProductResource {
         if ($request->hasFile('images')) {
             $product->addImages($request);
@@ -20,6 +32,13 @@ class ProductImageController extends Controller
         return new ProductResource($product);
     }
 
+    /**
+     * Delete image from product
+     *
+     * @param Product $product
+     * @param ProductImage $productImage
+     * @return ProductImageResource
+     */
     public function destroy( Product $product, ProductImage $productImage) {
         $productImage->delete();
         return new ProductImageResource($productImage);

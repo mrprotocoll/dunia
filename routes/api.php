@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\Api\V1\Admin;
-use App\Http\Controllers\Api\V1\LoginController;
-use App\Http\Controllers\Api\V1\LogoutController;
+use App\Http\Controllers\Api\V1\Auth\LoginController;
+use App\Http\Controllers\Api\V1\Auth\LogoutController;
+use App\Http\Controllers\Api\V1\Auth\RegisterController;
 use App\Http\Controllers\Api\V1\OrderController;
 use App\Http\Controllers\Api\V1\ProductController;
-use App\Http\Controllers\Api\V1\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

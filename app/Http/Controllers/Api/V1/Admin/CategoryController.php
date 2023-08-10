@@ -7,10 +7,15 @@ use App\Http\Requests\V1\CategoryRequest;
 use App\Http\Resources\V1\CategoryResource;
 use App\Models\Category;
 
+/**
+ * @group Categories Management
+ *
+ * Endpoint to manage categories
+ */
 class CategoryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of categories.
      */
     public function index()
     {
@@ -19,7 +24,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Create a new catgeory.
      */
     public function store(CategoryRequest $request)
     {
@@ -28,7 +33,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specific catgeory by ID.
      */
     public function show(Category $category)
     {
@@ -36,7 +41,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specific category.
      */
     public function update(CategoryRequest $request, Category $category)
     {
@@ -45,10 +50,12 @@ class CategoryController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete a category.
      */
     public function destroy(Category $category)
     {
-        //
+        $deletedCategory = Category::find($category->id);
+        $category->delete();
+        return new CategoryResource($deletedCategory);
     }
 }

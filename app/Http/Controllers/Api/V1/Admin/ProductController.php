@@ -10,6 +10,11 @@ use App\Models\Product;
 use App\Models\Tag;
 use Illuminate\Support\Facades\DB;
 
+/**
+ * @group Product Management
+ *
+ * Endpoints to manage products
+ */
 class ProductController extends Controller
 {
 

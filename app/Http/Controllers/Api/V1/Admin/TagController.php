@@ -8,10 +8,15 @@ use App\Http\Resources\V1\TagResource;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
+/**
+ * @group Tags Management
+ *
+ * Endpoint to manage tags
+ */
 class TagController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the tags.
      */
     public function index()
     {
@@ -20,7 +25,7 @@ class TagController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Create a new Tag.
      */
     public function store(TagRequest $request)
     {
@@ -29,7 +34,7 @@ class TagController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specific tag by ID.
      */
     public function show(Tag $tag)
     {
@@ -38,7 +43,7 @@ class TagController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update a specific tag by ID.
      */
     public function update(TagRequest $request, Tag $tag)
     {
