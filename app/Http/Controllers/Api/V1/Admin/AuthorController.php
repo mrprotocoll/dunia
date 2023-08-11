@@ -17,6 +17,8 @@ class AuthorController extends Controller
     /**
      * Display a listing of the authors.
      *
+     * @authenticated
+     *
      * @apiResourceCollection App\Http\Resources\V1\AuthorResource
      * @apiResourceModel App\Models\Author
      *
@@ -30,6 +32,8 @@ class AuthorController extends Controller
 
     /**
      * Create a new author.
+     *
+     * @authenticated
      *
      * @bodyParam name string required Name of author. Example: Isaac Johnson
      * @bodyParam email string required Email of author.
@@ -48,7 +52,7 @@ class AuthorController extends Controller
 
     /**
      * Display an author by ID.
-     *
+     * @authenticated
      * @apiResource App\Http\Resources\V1\AuthorResource
      * @apiResourceModel \App\Models\Author
      * @urlParam id string required Author ID
@@ -67,6 +71,8 @@ class AuthorController extends Controller
      *
      * @bodyParam name string required Name of author. Example: Isaac Johnson
      * @bodyParam email string required Email of author.
+     *
+     * @authenticated
      *
      * @apiResource App\Http\Resources\V1\AuthorResource
      * @apiResourceModel App\Models\Author

@@ -18,9 +18,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Store a newly created resource in storage.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
@@ -32,7 +33,7 @@ endpoints:
         name: name
         description: 'The name of the product.'
         required: true
-        example: velit
+        example: rerum
         type: string
         custom: []
       images:
@@ -47,14 +48,14 @@ endpoints:
         name: price
         description: 'The price of the product.'
         required: true
-        example: 207770.817712
+        example: 16063.0324
         type: number
         custom: []
       description:
         name: description
         description: 'The description of the product.'
         required: true
-        example: 'Voluptatem pariatur aut dolorum ipsam eaque aut.'
+        example: 'Earum aperiam velit ut recusandae a est ex.'
         type: string
         custom: []
       categories:
@@ -70,14 +71,14 @@ endpoints:
         description: 'An array of tag IDs associated with the product.'
         required: true
         example:
-          - facere
+          - blanditiis
         type: 'string[]'
         custom: []
       author:
         name: author
         description: 'The ID of the author of the product.'
         required: true
-        example: 4
+        example: 8
         type: integer
         custom: []
       'images[]':
@@ -88,14 +89,14 @@ endpoints:
         type: file
         custom: []
     cleanBodyParameters:
-      name: velit
-      price: 207770.817712
-      description: 'Voluptatem pariatur aut dolorum ipsam eaque aut.'
+      name: rerum
+      price: 16063.0324
+      description: 'Earum aperiam velit ut recusandae a est ex.'
       categories:
         - voluptatem
       tags:
-        - facere
-      author: 4
+        - blanditiis
+      author: 8
     fileParameters:
       images:
         - null
@@ -103,7 +104,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[]}}'
+        content: '{"data":{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[]}}'
         headers: []
         description: ''
         custom: []
@@ -143,7 +144,10 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e134E6kfb5av6hPVDZgadc8'
     controller: null
     method: null
     route: null
@@ -162,9 +166,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Update the specified resource in storage.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters:
@@ -184,7 +189,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: fugit
+        example: molestiae
         type: string
         custom: []
       images:
@@ -199,14 +204,14 @@ endpoints:
         name: price
         description: ''
         required: true
-        example: et
+        example: minima
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: sunt
+        example: sed
         type: string
         custom: []
       categories:
@@ -227,26 +232,29 @@ endpoints:
         name: author
         description: ''
         required: true
-        example: dolores
+        example: aut
         type: string
         custom: []
     cleanBodyParameters:
-      name: fugit
-      price: et
-      description: sunt
-      author: dolores
+      name: molestiae
+      price: minima
+      description: sed
+      author: aut
     fileParameters:
       images:
         - null
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[]}}'
+        content: '{"data":{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[]}}'
         headers: []
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer g356hk8v6ac4VZdP1bfeDEa'
     controller: null
     method: null
     route: null
@@ -264,9 +272,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Add images to a product'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters:
@@ -296,7 +305,10 @@ endpoints:
         - null
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer adDbe3g6v1cfaEVkZP486h5'
     controller: null
     method: null
     route: null
@@ -314,9 +326,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Delete image from product'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -344,7 +357,10 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer h5a1v6VkZdP6bDgac4E3f8e'
     controller: null
     method: null
     route: null
@@ -360,24 +376,159 @@ endpoints:
         Endpoints to manage products
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display a listing of products'
+      title: 'Retrieve a paginated list of products with optional filters.'
       description: ''
       authenticated: false
       custom: []
     headers:
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
+    queryParameters:
+      name:
+        name: name
+        description: 'Search for products by name (partial match).'
+        required: false
+        example: voluptates
+        type: string
+        custom: []
+      author:
+        name: author
+        description: "Search for products by author's name."
+        required: false
+        example: molestiae
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Search for products by category name.'
+        required: false
+        example: iusto
+        type: string
+        custom: []
+    cleanQueryParameters:
+      name: voluptates
+      author: molestiae
+      category: iusto
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: qui
+        type: string
+        custom: []
+      images:
+        name: images
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: false
+        example:
+          - null
+        type: 'file[]'
+        custom: []
+      price:
+        name: price
+        description: ''
+        required: true
+        example: et
+        type: string
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: true
+        example: porro
+        type: string
+        custom: []
+      categories:
+        name: categories
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      tags:
+        name: tags
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      author:
+        name: author
+        description: ''
+        required: true
+        example: et
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: qui
+      price: et
+      description: porro
+      author: et
+    fileParameters:
+      images:
+        - null
     responses:
       -
         status: 200
-        content: '{"data":[{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[]},{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[]}]}'
+        content: '{"data":[{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[]},{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[]}]}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: |-
+          {
+              "data": [
+                  {
+                      "id": 1,
+                      "name": "Product A",
+                      "author_id": 1,
+                      "price": 19.99,
+                      "description": "Description of Product A",
+                      "category": {
+                          "id": 2,
+                          "name": "Category X"
+                      },
+                      "author": {
+                          "id": 1,
+                          "name": "Author Y"
+                      }
+                  },
+                  {
+                      "id": 2,
+                      "name": "Product B",
+                      "author_id": 2,
+                      "price": 29.99,
+                      "description": "Description of Product B",
+                      "category": {
+                          "id": 3,
+                          "name": "Category Z"
+                      },
+                      "author": {
+                          "id": 2,
+                          "name": "Author Z"
+                      }
+                  }
+              ],
+              "links": {
+                  "first": "https://api.example.com/products?page=1",
+                  "last": "https://api.example.com/products?page=3",
+                  "prev": null,
+                  "next": "https://api.example.com/products?page=2"
+              },
+              "meta": {
+                  "current_page": 1,
+                  "from": 1,
+                  "last_page": 3,
+                  "path": "https://api.example.com/products",
+                  "per_page": 10,
+                  "to": 10,
+                  "total": 25
+              }
+          }
         headers: []
         description: ''
         custom: []
@@ -410,11 +561,11 @@ endpoints:
         name: id
         description: 'Product ID'
         required: true
-        example: eius
+        example: perferendis
         type: string
         custom: []
     cleanUrlParameters:
-      id: eius
+      id: perferendis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -423,7 +574,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[]}}'
+        content: '{"data":{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[]}}'
         headers: []
         description: ''
         custom: []

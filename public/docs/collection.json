@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Dunia Internal API Documentation",
-        "_postman_id": "ce45fa4d-1231-45ca-b7ac-8cdcde20affe",
+        "_postman_id": "e78a236d-7389-4bcc-959d-c64d3f4abdea",
         "description": "This is dunia API documentation, for internal use only",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"eos\",\"email\":\"annabell02@example.org\",\"password\":\"<TY3!O'n\\\\J2-xLa`i\"}"
+                            "raw": "{\"name\":\"reiciendis\",\"email\":\"nova.koss@example.com\",\"password\":\"l*`<:~3.6@rzYY\"}"
                         },
                         "description": "",
                         "auth": {
@@ -52,7 +52,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99dd90a2-71f6-49c9-9ff7-b63895baf767\",\"name\":\"Mr. Jerel Walter PhD\",\"email\":\"gabrielle.miller@example.com\"}}",
+                            "body": "{\"data\":{\"id\":\"99dde27f-4e1e-4dbe-a8fe-e1ab690f308b\",\"name\":\"Samanta Barton\",\"email\":\"kris80@example.org\"}}",
                             "name": ""
                         },
                         {
@@ -85,7 +85,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"paul.baumbach@example.com\",\"password\":\"><V}I\\\"DNm^`)1<+P\"}"
+                            "raw": "{\"email\":\"moore.yadira@example.net\",\"password\":\"'n}6u!,tgx2Gu-X4W(>\"}"
                         },
                         "description": "",
                         "auth": {
@@ -175,16 +175,13 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":\"99dd90a2-2c19-4d23-aff3-a9a3d4180c26\",\"name\":\"Patricia Pfeffer\",\"email\":\"lacy.medhurst@example.org\"},{\"id\":\"99dd90a2-3b36-4e9e-8663-db6efca23bb4\",\"name\":\"Myrtice Wehner\",\"email\":\"rosina32@example.net\"}]}",
+                            "body": "{\"data\":[{\"id\":\"99dde27f-14c6-4701-a1a3-a8e0ed11da4a\",\"name\":\"Xzavier Lindgren Jr.\",\"email\":\"ythiel@example.org\"},{\"id\":\"99dde27f-1934-43b8-86c1-cce863c842ff\",\"name\":\"Mckenzie Stroman\",\"email\":\"kayli.cummerata@example.org\"}]}",
                             "name": ""
                         }
                     ]
@@ -211,18 +208,15 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"omraz@example.com\"}"
+                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"karley55@example.net\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99dd90a2-486f-4793-a344-3fab14a3ee75\",\"name\":\"Mollie Monahan V\",\"email\":\"hilpert.margarita@example.net\"}}",
+                            "body": "{\"data\":{\"id\":\"99dde27f-2ce0-44a6-9b79-072e580c522a\",\"name\":\"Maddison Quigley\",\"email\":\"sam21@example.com\"}}",
                             "name": ""
                         }
                     ]
@@ -239,7 +233,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "illo",
+                                    "value": "qui",
                                     "description": "Author ID"
                                 }
                             ]
@@ -256,16 +250,13 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99dd90a2-4cb6-42d0-8b77-e9cfa2ec5e82\",\"name\":\"Dr. Antwan Streich\",\"email\":\"tremblay.blanche@example.net\"}}",
+                            "body": "{\"data\":{\"id\":\"99dde27f-2f94-448d-8e3e-c0b0ddfbf6c8\",\"name\":\"Mathew Leuschke\",\"email\":\"tony.crona@example.org\"}}",
                             "name": ""
                         }
                     ]
@@ -300,18 +291,15 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"darrion.kuvalis@example.org\"}"
+                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"magnus.morissette@example.net\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99dd90a2-4f3f-426d-b41a-dc4e959240d1\",\"name\":\"Bruce Bauch\",\"email\":\"thilpert@example.com\"}}",
+                            "body": "{\"data\":{\"id\":\"99dde27f-319f-4fc5-9245-07638ff03ff5\",\"name\":\"Mose Kling IV\",\"email\":\"bethel.hammes@example.net\"}}",
                             "name": ""
                         }
                     ]
@@ -320,7 +308,7 @@
         },
         {
             "name": "Categories Management",
-            "description": "\nEndpoint to manage categories",
+            "description": "",
             "item": [
                 {
                     "name": "Display a listing of categories.",
@@ -343,10 +331,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
@@ -379,12 +364,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"libero\"}"
+                            "raw": "{\"name\":\"similique\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
@@ -407,7 +389,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "fugiat",
+                                    "value": "libero",
                                     "description": "Category ID"
                                 }
                             ]
@@ -424,10 +406,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
@@ -468,12 +447,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"impedit\"}"
+                            "raw": "{\"name\":\"facere\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
@@ -549,9 +525,9 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/user\/user",
+                            "path": "api\/v1\/order",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/user\/user"
+                            "raw": "{{baseUrl}}\/api\/v1\/order"
                         },
                         "method": "POST",
                         "header": [
@@ -603,19 +579,19 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "velit",
+                                    "value": "rerum",
                                     "type": "text",
                                     "description": "The name of the product."
                                 },
                                 {
                                     "key": "price",
-                                    "value": 207770.817712,
+                                    "value": 16063.0324,
                                     "type": "text",
                                     "description": "The price of the product."
                                 },
                                 {
                                     "key": "description",
-                                    "value": "Voluptatem pariatur aut dolorum ipsam eaque aut.",
+                                    "value": "Earum aperiam velit ut recusandae a est ex.",
                                     "type": "text",
                                     "description": "The description of the product."
                                 },
@@ -627,13 +603,13 @@
                                 },
                                 {
                                     "key": "tags[0]",
-                                    "value": "facere",
+                                    "value": "blanditiis",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "author",
-                                    "value": 4,
+                                    "value": 8,
                                     "type": "text",
                                     "description": "The ID of the author of the product."
                                 },
@@ -649,16 +625,13 @@
                                 }
                             ]
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[]}}",
+                            "body": "{\"data\":{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[]}}",
                             "name": ""
                         },
                         {
@@ -702,25 +675,25 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "fugit",
+                                    "value": "molestiae",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "price",
-                                    "value": "et",
+                                    "value": "minima",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "description",
-                                    "value": "sunt",
+                                    "value": "sed",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "author",
-                                    "value": "dolores",
+                                    "value": "aut",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -736,16 +709,13 @@
                                 }
                             ]
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[]}}",
+                            "body": "{\"data\":{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[]}}",
                             "name": ""
                         }
                     ]
@@ -788,10 +758,7 @@
                                 }
                             ]
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -830,34 +797,83 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
                 {
-                    "name": "Display a listing of products",
+                    "name": "Retrieve a paginated list of products with optional filters.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
                             "path": "api\/v1\/products",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/products"
+                            "query": [
+                                {
+                                    "key": "name",
+                                    "value": "voluptates",
+                                    "description": "Search for products by name (partial match).",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "author",
+                                    "value": "molestiae",
+                                    "description": "Search for products by author's name.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "category",
+                                    "value": "iusto",
+                                    "description": "Search for products by category name.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/products?name=voluptates&author=molestiae&category=iusto"
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "name",
+                                    "value": "qui",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "price",
+                                    "value": "et",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "description",
+                                    "value": "porro",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "author",
+                                    "value": "et",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "images[]",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"
@@ -867,7 +883,13 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[]},{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[]}]}",
+                            "body": "{\"data\":[{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[]},{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[]}]}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Product A\",\n            \"author_id\": 1,\n            \"price\": 19.99,\n            \"description\": \"Description of Product A\",\n            \"category\": {\n                \"id\": 2,\n                \"name\": \"Category X\"\n            },\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Author Y\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Product B\",\n            \"author_id\": 2,\n            \"price\": 29.99,\n            \"description\": \"Description of Product B\",\n            \"category\": {\n                \"id\": 3,\n                \"name\": \"Category Z\"\n            },\n            \"author\": {\n                \"id\": 2,\n                \"name\": \"Author Z\"\n            }\n        }\n    ],\n    \"links\": {\n        \"first\": \"https:\/\/api.example.com\/products?page=1\",\n        \"last\": \"https:\/\/api.example.com\/products?page=3\",\n        \"prev\": null,\n        \"next\": \"https:\/\/api.example.com\/products?page=2\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 3,\n        \"path\": \"https:\/\/api.example.com\/products\",\n        \"per_page\": 10,\n        \"to\": 10,\n        \"total\": 25\n    }\n}",
                             "name": ""
                         }
                     ]
@@ -884,7 +906,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "eius",
+                                    "value": "perferendis",
                                     "description": "Product ID"
                                 }
                             ]
@@ -910,7 +932,56 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[]}}",
+                            "body": "{\"data\":{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[]}}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Product Review",
+            "description": "\ncustomer review on a product",
+            "item": [
+                {
+                    "name": "Create a new review for a product.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/products\/:product_id\/reviews",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/products\/:product_id\/reviews",
+                            "variable": [
+                                {
+                                    "id": "product_id",
+                                    "key": "product_id",
+                                    "value": "99d35264-8076-49a5-a8d5-8cd88f85a773",
+                                    "description": "The ID of the product."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"comment\":\"sint\",\"rating\":20}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n         \"id\": \"99ddc991-b5ea-4985-9733-ed9a4b459c0e\",\n         \"user\": {\n             \"id\": \"99cf69a0-2af8-4baf-bb7a-69fc531e9660\",\n             \"name\": \"admin\",\n             \"email\": \"admin@gmail.com\"\n         },\n         \"comment\": \"lorem ipsum\",\n         \"rating\": \"4\",\n         \"createdAt\": \"2023-08-11T18:28:05.000000Z\"\n     }\n}",
                             "name": ""
                         }
                     ]
@@ -978,7 +1049,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"vwdawtvhxhlxmqm\"}"
+                            "raw": "{\"name\":\"ogkqahcak\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1067,7 +1138,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"fvsfszuvegfslhcotgzf\"}"
+                            "raw": "{\"name\":\"oq\"}"
                         },
                         "description": "",
                         "auth": {

@@ -16,7 +16,7 @@ class LogoutController extends Controller
 {
     /**
      * Logout.
-     *
+     * @authenticated
      * @response 204 {
      *      "message": "Logged out successfully."
      *  }
@@ -33,9 +33,8 @@ class LogoutController extends Controller
         if(!Auth::check()) {
             return response()->json(['message' => 'Unauthorized user'], 402);
         }
-        $request->$user->currentAccessToken()->delete();
+        $user->currentAccessToken()->delete();
 
         return response()->json(['message' => 'logged out successfuly'], 204);
-
     }
 }

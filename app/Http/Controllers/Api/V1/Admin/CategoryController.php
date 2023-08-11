@@ -12,7 +12,7 @@ use App\Models\Category;
 
 /**
  * @group Categories Management
- *
+ * @authenticated
  * Endpoint to manage categories
  */
 class CategoryController extends Controller

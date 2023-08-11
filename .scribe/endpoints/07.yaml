@@ -1,0 +1,197 @@
+name: Authentication
+description: |-
+
+  Endpoint to manage user authentication
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/register
+    metadata:
+      groupName: Authentication
+      groupDescription: |-
+
+        Endpoint to manage user authentication
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Register a new user.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: reiciendis
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: nova.koss@example.com
+        type: string
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: 'l*`<:~3.6@rzYY'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: reiciendis
+      email: nova.koss@example.com
+      password: 'l*`<:~3.6@rzYY'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"99dde27f-4e1e-4dbe-a8fe-e1ab690f308b","name":"Samanta Barton","email":"kris80@example.org"}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+                "error": "Account already exist, kindly login"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/login
+    metadata:
+      groupName: Authentication
+      groupDescription: |-
+
+        Endpoint to manage user authentication
+      subgroup: ''
+      subgroupDescription: ''
+      title: Login.
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: moore.yadira@example.net
+        type: string
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: "'n}6u!,tgx2Gu-X4W(>"
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: moore.yadira@example.net
+      password: "'n}6u!,tgx2Gu-X4W(>"
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "token": "generated_token"
+               "data": {
+                   "id": 1,
+                   "name": "User",
+                   "email": "user@email.com"
+               }
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+               "error": "The provided credentials are incorrect."
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/logout
+    metadata:
+      groupName: Authentication
+      groupDescription: |-
+
+        Endpoint to manage user authentication
+      subgroup: ''
+      subgroupDescription: ''
+      title: Logout.
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: |-
+          {
+               "message": "Logged out successfully."
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 402
+        content: |-
+          {
+               "message": "Unauthorized user"
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

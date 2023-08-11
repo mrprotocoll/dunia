@@ -68,11 +68,11 @@ endpoints:
         name: name
         description: 'Must not be greater than 100 characters.'
         required: true
-        example: vwdawtvhxhlxmqm
+        example: ogkqahcak
         type: string
         custom: []
     cleanBodyParameters:
-      name: vwdawtvhxhlxmqm
+      name: ogkqahcak
     fileParameters: []
     responses:
       -
@@ -169,11 +169,11 @@ endpoints:
         name: name
         description: 'Must not be greater than 100 characters.'
         required: true
-        example: fvsfszuvegfslhcotgzf
+        example: oq
         type: string
         custom: []
     cleanBodyParameters:
-      name: fvsfszuvegfslhcotgzf
+      name: oq
     fileParameters: []
     responses:
       -

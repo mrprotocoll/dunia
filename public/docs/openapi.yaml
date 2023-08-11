@@ -22,22 +22,22 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 99dd90a2-71f6-49c9-9ff7-b63895baf767
-                    name: 'Mr. Jerel Walter PhD'
-                    email: gabrielle.miller@example.com
+                    id: 99dde27f-4e1e-4dbe-a8fe-e1ab690f308b
+                    name: 'Samanta Barton'
+                    email: kris80@example.org
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: string
-                        example: 99dd90a2-71f6-49c9-9ff7-b63895baf767
+                        example: 99dde27f-4e1e-4dbe-a8fe-e1ab690f308b
                       name:
                         type: string
-                        example: 'Mr. Jerel Walter PhD'
+                        example: 'Samanta Barton'
                       email:
                         type: string
-                        example: gabrielle.miller@example.com
+                        example: kris80@example.org
         422:
           description: ''
           content:
@@ -62,15 +62,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: eos
+                  example: reiciendis
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: annabell02@example.org
+                  example: nova.koss@example.com
                 password:
                   type: string
                   description: ''
-                  example: '<TY3!O''n\J2-xLa`i'
+                  example: 'l*`<:~3.6@rzYY'
               required:
                 - name
                 - email
@@ -114,11 +114,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: paul.baumbach@example.com
+                  example: moore.yadira@example.net
                 password:
                   type: string
                   description: ''
-                  example: '><V}I"DNm^`)1<+P'
+                  example: "'n}6u!,tgx2Gu-X4W(>"
               required:
                 - email
                 - password
@@ -152,7 +152,14 @@ paths:
       summary: 'Display a listing of the authors.'
       operationId: displayAListingOfTheAuthors
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses:
         200:
           description: ''
@@ -163,45 +170,51 @@ paths:
                 example:
                   data:
                     -
-                      id: 99dd90a2-2c19-4d23-aff3-a9a3d4180c26
-                      name: 'Patricia Pfeffer'
-                      email: lacy.medhurst@example.org
+                      id: 99dde27f-14c6-4701-a1a3-a8e0ed11da4a
+                      name: 'Xzavier Lindgren Jr.'
+                      email: ythiel@example.org
                     -
-                      id: 99dd90a2-3b36-4e9e-8663-db6efca23bb4
-                      name: 'Myrtice Wehner'
-                      email: rosina32@example.net
+                      id: 99dde27f-1934-43b8-86c1-cce863c842ff
+                      name: 'Mckenzie Stroman'
+                      email: kayli.cummerata@example.org
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 99dd90a2-2c19-4d23-aff3-a9a3d4180c26
-                        name: 'Patricia Pfeffer'
-                        email: lacy.medhurst@example.org
+                        id: 99dde27f-14c6-4701-a1a3-a8e0ed11da4a
+                        name: 'Xzavier Lindgren Jr.'
+                        email: ythiel@example.org
                       -
-                        id: 99dd90a2-3b36-4e9e-8663-db6efca23bb4
-                        name: 'Myrtice Wehner'
-                        email: rosina32@example.net
+                        id: 99dde27f-1934-43b8-86c1-cce863c842ff
+                        name: 'Mckenzie Stroman'
+                        email: kayli.cummerata@example.org
                     items:
                       type: object
                       properties:
                         id:
                           type: string
-                          example: 99dd90a2-2c19-4d23-aff3-a9a3d4180c26
+                          example: 99dde27f-14c6-4701-a1a3-a8e0ed11da4a
                         name:
                           type: string
-                          example: 'Patricia Pfeffer'
+                          example: 'Xzavier Lindgren Jr.'
                         email:
                           type: string
-                          example: lacy.medhurst@example.org
+                          example: ythiel@example.org
       tags:
         - 'Author Management'
-      security: []
     post:
       summary: 'Create a new author.'
       operationId: createANewAuthor
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses:
         200:
           description: ''
@@ -211,22 +224,22 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 99dd90a2-486f-4793-a344-3fab14a3ee75
-                    name: 'Mollie Monahan V'
-                    email: hilpert.margarita@example.net
+                    id: 99dde27f-2ce0-44a6-9b79-072e580c522a
+                    name: 'Maddison Quigley'
+                    email: sam21@example.com
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: string
-                        example: 99dd90a2-486f-4793-a344-3fab14a3ee75
+                        example: 99dde27f-2ce0-44a6-9b79-072e580c522a
                       name:
                         type: string
-                        example: 'Mollie Monahan V'
+                        example: 'Maddison Quigley'
                       email:
                         type: string
-                        example: hilpert.margarita@example.net
+                        example: sam21@example.com
       tags:
         - 'Author Management'
       requestBody:
@@ -243,17 +256,23 @@ paths:
                 email:
                   type: string
                   description: 'Email of author.'
-                  example: omraz@example.com
+                  example: karley55@example.net
               required:
                 - name
                 - email
-      security: []
   '/api/v1/admin/authors/{id}':
     get:
       summary: 'Display an author by ID.'
       operationId: displayAnAuthorByID
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses:
         200:
           description: ''
@@ -263,30 +282,36 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 99dd90a2-4cb6-42d0-8b77-e9cfa2ec5e82
-                    name: 'Dr. Antwan Streich'
-                    email: tremblay.blanche@example.net
+                    id: 99dde27f-2f94-448d-8e3e-c0b0ddfbf6c8
+                    name: 'Mathew Leuschke'
+                    email: tony.crona@example.org
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: string
-                        example: 99dd90a2-4cb6-42d0-8b77-e9cfa2ec5e82
+                        example: 99dde27f-2f94-448d-8e3e-c0b0ddfbf6c8
                       name:
                         type: string
-                        example: 'Dr. Antwan Streich'
+                        example: 'Mathew Leuschke'
                       email:
                         type: string
-                        example: tremblay.blanche@example.net
+                        example: tony.crona@example.org
       tags:
         - 'Author Management'
-      security: []
     put:
       summary: 'Update the specified Author by ID.'
       operationId: updateTheSpecifiedAuthorByID
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses:
         200:
           description: ''
@@ -296,22 +321,22 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 99dd90a2-4f3f-426d-b41a-dc4e959240d1
-                    name: 'Bruce Bauch'
-                    email: thilpert@example.com
+                    id: 99dde27f-319f-4fc5-9245-07638ff03ff5
+                    name: 'Mose Kling IV'
+                    email: bethel.hammes@example.net
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: string
-                        example: 99dd90a2-4f3f-426d-b41a-dc4e959240d1
+                        example: 99dde27f-319f-4fc5-9245-07638ff03ff5
                       name:
                         type: string
-                        example: 'Bruce Bauch'
+                        example: 'Mose Kling IV'
                       email:
                         type: string
-                        example: thilpert@example.com
+                        example: bethel.hammes@example.net
       tags:
         - 'Author Management'
       requestBody:
@@ -328,17 +353,16 @@ paths:
                 email:
                   type: string
                   description: 'Email of author.'
-                  example: darrion.kuvalis@example.org
+                  example: magnus.morissette@example.net
               required:
                 - name
                 - email
-      security: []
     parameters:
       -
         in: path
         name: id
         description: 'Author ID'
-        example: illo
+        example: qui
         required: true
         schema:
           type: string
@@ -347,7 +371,14 @@ paths:
       summary: 'Display a listing of categories.'
       operationId: displayAListingOfCategories
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses:
         200:
           description: ''
@@ -384,12 +415,18 @@ paths:
                           example: 'category one'
       tags:
         - 'Categories Management'
-      security: []
     post:
       summary: 'Create a new category.'
       operationId: createANewCategory
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses:
         200:
           description: ''
@@ -423,16 +460,22 @@ paths:
                 name:
                   type: string
                   description: 'Name of category'
-                  example: libero
+                  example: similique
               required:
                 - name
-      security: []
   '/api/v1/admin/categories/{id}':
     get:
       summary: 'Display the specific category by ID.'
       operationId: displayTheSpecificCategoryByID
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses:
         200:
           description: ''
@@ -456,12 +499,18 @@ paths:
                         example: 'category one'
       tags:
         - 'Categories Management'
-      security: []
     put:
       summary: 'Update the specific category.'
       operationId: updateTheSpecificCategory
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses:
         200:
           description: ''
@@ -495,16 +544,15 @@ paths:
                 name:
                   type: string
                   description: 'Name of category'
-                  example: impedit
+                  example: facere
               required:
                 - name
-      security: []
     parameters:
       -
         in: path
         name: id
         description: 'Category ID'
-        example: fugiat
+        example: libero
         required: true
         schema:
           type: string
@@ -530,7 +578,7 @@ paths:
       tags:
         - Endpoints
       security: []
-  /api/v1/user/user:
+  /api/v1/order:
     post:
       summary: 'Store a newly created resource in storage.'
       operationId: storeANewlyCreatedResourceInStorage
@@ -545,7 +593,14 @@ paths:
       summary: 'Store a newly created resource in storage.'
       operationId: storeANewlyCreatedResourceInStorage
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses:
         200:
           description: ''
@@ -641,7 +696,7 @@ paths:
                 name:
                   type: string
                   description: 'The name of the product.'
-                  example: velit
+                  example: rerum
                 images:
                   type: array
                   description: 'Must be an image. Must not be greater than 2048 kilobytes.'
@@ -651,11 +706,11 @@ paths:
                 price:
                   type: number
                   description: 'The price of the product.'
-                  example: 207770.817712
+                  example: 16063.0324
                 description:
                   type: string
                   description: 'The description of the product.'
-                  example: 'Voluptatem pariatur aut dolorum ipsam eaque aut.'
+                  example: 'Earum aperiam velit ut recusandae a est ex.'
                 categories:
                   type: array
                   description: 'An array of category IDs associated with the product.'
@@ -667,13 +722,13 @@ paths:
                   type: array
                   description: 'An array of tag IDs associated with the product.'
                   example:
-                    - facere
+                    - blanditiis
                   items:
                     type: string
                 author:
                   type: integer
                   description: 'The ID of the author of the product.'
-                  example: 4
+                  example: 8
                 'images[]':
                   type: string
                   format: binary
@@ -685,13 +740,19 @@ paths:
                 - categories
                 - tags
                 - author
-      security: []
   '/api/v1/admin/products/{id}':
     put:
       summary: 'Update the specified resource in storage.'
       operationId: updateTheSpecifiedResourceInStorage
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses:
         200:
           description: ''
@@ -709,6 +770,7 @@ paths:
                     categories: []
                     tags: []
                     images: []
+                    reviews: []
                 properties:
                   data:
                     type: object
@@ -737,6 +799,9 @@ paths:
                       images:
                         type: array
                         example: []
+                      reviews:
+                        type: array
+                        example: []
       tags:
         - 'Product Management'
       requestBody:
@@ -749,7 +814,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: fugit
+                  example: molestiae
                 images:
                   type: array
                   description: 'Must be an image. Must not be greater than 2048 kilobytes.'
@@ -759,11 +824,11 @@ paths:
                 price:
                   type: string
                   description: ''
-                  example: et
+                  example: minima
                 description:
                   type: string
                   description: ''
-                  example: sunt
+                  example: sed
                 categories:
                   type: array
                   description: ''
@@ -779,13 +844,12 @@ paths:
                 author:
                   type: string
                   description: ''
-                  example: dolores
+                  example: aut
               required:
                 - name
                 - price
                 - description
                 - author
-      security: []
     parameters:
       -
         in: path
@@ -800,7 +864,14 @@ paths:
       summary: 'Add images to a product'
       operationId: addImagesToAProduct
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses: {  }
       tags:
         - 'Product Management'
@@ -817,7 +888,6 @@ paths:
                   items:
                     type: string
                     format: binary
-      security: []
     parameters:
       -
         in: path
@@ -832,11 +902,17 @@ paths:
       summary: 'Delete image from product'
       operationId: deleteImageFromProduct
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses: {  }
       tags:
         - 'Product Management'
-      security: []
     parameters:
       -
         in: path
@@ -856,10 +932,40 @@ paths:
           type: string
   /api/v1/products:
     get:
-      summary: 'Display a listing of products'
-      operationId: displayAListingOfProducts
+      summary: 'Retrieve a paginated list of products with optional filters.'
+      operationId: retrieveAPaginatedListOfProductsWithOptionalFilters
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: query
+          name: name
+          description: 'Search for products by name (partial match).'
+          example: voluptates
+          required: false
+          schema:
+            type: string
+            description: 'Search for products by name (partial match).'
+            example: voluptates
+        -
+          in: query
+          name: author
+          description: "Search for products by author's name."
+          example: molestiae
+          required: false
+          schema:
+            type: string
+            description: "Search for products by author's name."
+            example: molestiae
+        -
+          in: query
+          name: category
+          description: 'Search for products by category name.'
+          example: iusto
+          required: false
+          schema:
+            type: string
+            description: 'Search for products by category name.'
+            example: iusto
       responses:
         200:
           description: ''
@@ -870,74 +976,193 @@ paths:
                 example:
                   data:
                     -
-                      id: null
-                      name: null
-                      price: '0.00'
-                      description: null
-                      author: null
-                      categories: []
-                      tags: []
-                      images: []
+                      id: 1
+                      name: 'Product A'
+                      author_id: 1
+                      price: 19.99
+                      description: 'Description of Product A'
+                      category:
+                        id: 2
+                        name: 'Category X'
+                      author:
+                        id: 1
+                        name: 'Author Y'
                     -
-                      id: null
-                      name: null
-                      price: '0.00'
-                      description: null
-                      author: null
-                      categories: []
-                      tags: []
-                      images: []
+                      id: 2
+                      name: 'Product B'
+                      author_id: 2
+                      price: 29.99
+                      description: 'Description of Product B'
+                      category:
+                        id: 3
+                        name: 'Category Z'
+                      author:
+                        id: 2
+                        name: 'Author Z'
+                  links:
+                    first: 'https://api.example.com/products?page=1'
+                    last: 'https://api.example.com/products?page=3'
+                    prev: null
+                    next: 'https://api.example.com/products?page=2'
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 3
+                    path: 'https://api.example.com/products'
+                    per_page: 10
+                    to: 10
+                    total: 25
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: null
-                        name: null
-                        price: '0.00'
-                        description: null
-                        author: null
-                        categories: []
-                        tags: []
-                        images: []
+                        id: 1
+                        name: 'Product A'
+                        author_id: 1
+                        price: 19.99
+                        description: 'Description of Product A'
+                        category:
+                          id: 2
+                          name: 'Category X'
+                        author:
+                          id: 1
+                          name: 'Author Y'
                       -
-                        id: null
-                        name: null
-                        price: '0.00'
-                        description: null
-                        author: null
-                        categories: []
-                        tags: []
-                        images: []
+                        id: 2
+                        name: 'Product B'
+                        author_id: 2
+                        price: 29.99
+                        description: 'Description of Product B'
+                        category:
+                          id: 3
+                          name: 'Category Z'
+                        author:
+                          id: 2
+                          name: 'Author Z'
                     items:
                       type: object
                       properties:
                         id:
-                          type: string
-                          example: null
+                          type: integer
+                          example: 1
                         name:
                           type: string
-                          example: null
+                          example: 'Product A'
+                        author_id:
+                          type: integer
+                          example: 1
                         price:
-                          type: string
-                          example: '0.00'
+                          type: number
+                          example: 19.99
                         description:
                           type: string
-                          example: null
+                          example: 'Description of Product A'
+                        category:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 2
+                            name:
+                              type: string
+                              example: 'Category X'
                         author:
-                          type: string
-                          example: null
-                        categories:
-                          type: array
-                          example: []
-                        tags:
-                          type: array
-                          example: []
-                        images:
-                          type: array
-                          example: []
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: 'Author Y'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'https://api.example.com/products?page=1'
+                      last:
+                        type: string
+                        example: 'https://api.example.com/products?page=3'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: 'https://api.example.com/products?page=2'
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 3
+                      path:
+                        type: string
+                        example: 'https://api.example.com/products'
+                      per_page:
+                        type: integer
+                        example: 10
+                      to:
+                        type: integer
+                        example: 10
+                      total:
+                        type: integer
+                        example: 25
       tags:
         - 'Product Management'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: qui
+                images:
+                  type: array
+                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                  items:
+                    type: string
+                    format: binary
+                price:
+                  type: string
+                  description: ''
+                  example: et
+                description:
+                  type: string
+                  description: ''
+                  example: porro
+                categories:
+                  type: array
+                  description: ''
+                  example: null
+                  items:
+                    type: string
+                tags:
+                  type: array
+                  description: ''
+                  example: null
+                  items:
+                    type: string
+                author:
+                  type: string
+                  description: ''
+                  example: et
+              required:
+                - name
+                - price
+                - description
+                - author
       security: []
   '/api/v1/products/{id}':
     get:
@@ -962,6 +1187,7 @@ paths:
                     categories: []
                     tags: []
                     images: []
+                    reviews: []
                 properties:
                   data:
                     type: object
@@ -990,6 +1216,9 @@ paths:
                       images:
                         type: array
                         example: []
+                      reviews:
+                        type: array
+                        example: []
       tags:
         - 'Product Management'
       security: []
@@ -998,7 +1227,94 @@ paths:
         in: path
         name: id
         description: 'Product ID'
-        example: eius
+        example: perferendis
+        required: true
+        schema:
+          type: string
+  '/api/v1/products/{product_id}/reviews':
+    post:
+      summary: 'Create a new review for a product.'
+      operationId: createANewReviewForAProduct
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 99ddc991-b5ea-4985-9733-ed9a4b459c0e
+                    user:
+                      id: 99cf69a0-2af8-4baf-bb7a-69fc531e9660
+                      name: admin
+                      email: admin@gmail.com
+                    comment: 'lorem ipsum'
+                    rating: '4'
+                    createdAt: '2023-08-11T18:28:05.000000Z'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: 99ddc991-b5ea-4985-9733-ed9a4b459c0e
+                      user:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            example: 99cf69a0-2af8-4baf-bb7a-69fc531e9660
+                          name:
+                            type: string
+                            example: admin
+                          email:
+                            type: string
+                            example: admin@gmail.com
+                      comment:
+                        type: string
+                        example: 'lorem ipsum'
+                      rating:
+                        type: string
+                        example: '4'
+                      createdAt:
+                        type: string
+                        example: '2023-08-11T18:28:05.000000Z'
+      tags:
+        - 'Product Review'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: string
+                  description: 'The comment for the review.'
+                  example: sint
+                rating:
+                  type: integer
+                  description: 'The rating for the review (0-5).'
+                  example: 20
+              required:
+                - comment
+                - rating
+    parameters:
+      -
+        in: path
+        name: product_id
+        description: 'The ID of the product.'
+        example: 99d35264-8076-49a5-a8d5-8cd88f85a773
         required: true
         schema:
           type: string
@@ -1083,7 +1399,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 100 characters.'
-                  example: vwdawtvhxhlxmqm
+                  example: ogkqahcak
               required:
                 - name
       security: []
@@ -1155,7 +1471,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 100 characters.'
-                  example: fvsfszuvegfslhcotgzf
+                  example: oq
               required:
                 - name
       security: []
@@ -1177,7 +1493,7 @@ tags:
     description: "\nEndpoint to manage authors"
   -
     name: 'Categories Management'
-    description: "\nEndpoint to manage categories"
+    description: ''
   -
     name: Endpoints
     description: ''
@@ -1187,6 +1503,9 @@ tags:
   -
     name: 'Product Management'
     description: "\nEndpoints to manage products"
+  -
+    name: 'Product Review'
+    description: "\ncustomer review on a product"
   -
     name: 'Tags Management'
     description: "\nEndpoint to manage tags"

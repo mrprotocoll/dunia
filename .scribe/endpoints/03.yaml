@@ -1,7 +1,5 @@
 name: 'Categories Management'
-description: |-
-
-  Endpoint to manage categories
+description: ''
 endpoints:
   -
     httpMethods:
@@ -9,16 +7,15 @@ endpoints:
     uri: api/v1/admin/categories
     metadata:
       groupName: 'Categories Management'
-      groupDescription: |-
-
-        Endpoint to manage categories
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: 'Display a listing of categories.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -36,7 +33,10 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer c4Dbe6vh6g853k1PZdVafaE'
     controller: null
     method: null
     route: null
@@ -47,16 +47,15 @@ endpoints:
     uri: api/v1/admin/categories
     metadata:
       groupName: 'Categories Management'
-      groupDescription: |-
-
-        Endpoint to manage categories
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: 'Create a new category.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -68,11 +67,11 @@ endpoints:
         name: name
         description: 'Name of category'
         required: true
-        example: libero
+        example: similique
         type: string
         custom: []
     cleanBodyParameters:
-      name: libero
+      name: similique
     fileParameters: []
     responses:
       -
@@ -82,7 +81,10 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Z6agD8kV1eEachP63b4fd5v'
     controller: null
     method: null
     route: null
@@ -93,16 +95,15 @@ endpoints:
     uri: 'api/v1/admin/categories/{id}'
     metadata:
       groupName: 'Categories Management'
-      groupDescription: |-
-
-        Endpoint to manage categories
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: 'Display the specific category by ID.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -110,11 +111,11 @@ endpoints:
         name: id
         description: 'Category ID'
         required: true
-        example: fugiat
+        example: libero
         type: string
         custom: []
     cleanUrlParameters:
-      id: fugiat
+      id: libero
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -128,7 +129,10 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer VDPfZv3adb518eEgk6ac4h6'
     controller: null
     method: null
     route: null
@@ -140,16 +144,15 @@ endpoints:
     uri: 'api/v1/admin/categories/{id}'
     metadata:
       groupName: 'Categories Management'
-      groupDescription: |-
-
-        Endpoint to manage categories
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: 'Update the specific category.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -169,11 +172,11 @@ endpoints:
         name: name
         description: 'Name of category'
         required: true
-        example: impedit
+        example: facere
         type: string
         custom: []
     cleanBodyParameters:
-      name: impedit
+      name: facere
     fileParameters: []
     responses:
       -
@@ -183,7 +186,10 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Paf6Vh4EvDkg5631bZ8acde'
     controller: null
     method: null
     route: null

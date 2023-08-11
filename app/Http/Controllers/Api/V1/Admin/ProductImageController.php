@@ -20,6 +20,8 @@ class ProductImageController extends Controller
     /**
      * Add images to a product
      *
+     * @authenticated
+     *
      * @param ProductImageRequest $request
      * @param Product $product
      * @return ProductResource
@@ -34,6 +36,8 @@ class ProductImageController extends Controller
 
     /**
      * Delete image from product
+     *
+     * @authenticated
      *
      * @param Product $product
      * @param ProductImage $productImage

@@ -8,7 +8,7 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/user/user
+    uri: api/v1/order
     metadata:
       groupName: 'Order Management'
       groupDescription: |-

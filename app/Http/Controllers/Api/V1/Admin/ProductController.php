@@ -20,7 +20,7 @@ class ProductController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * @authenticated
      * @bodyParam name string required The name of the product.
      * @bodyParam author integer required The ID of the author of the product.
      * @bodyParam price float required The price of the product.
@@ -93,6 +93,8 @@ class ProductController extends Controller
 
     /**
      * Update the specified resource in storage.
+     *
+     * @authenticated
      *
      * @apiResource App\Http\Resources\V1\ProductResource
      * @apiResourceModel App\Models\Product

@@ -18,9 +18,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Display a listing of the authors.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -33,12 +34,15 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":"99dd90a2-2c19-4d23-aff3-a9a3d4180c26","name":"Patricia Pfeffer","email":"lacy.medhurst@example.org"},{"id":"99dd90a2-3b36-4e9e-8663-db6efca23bb4","name":"Myrtice Wehner","email":"rosina32@example.net"}]}'
+        content: '{"data":[{"id":"99dde27f-14c6-4701-a1a3-a8e0ed11da4a","name":"Xzavier Lindgren Jr.","email":"ythiel@example.org"},{"id":"99dde27f-1934-43b8-86c1-cce863c842ff","name":"Mckenzie Stroman","email":"kayli.cummerata@example.org"}]}'
         headers: []
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer gbad6cEk6Zf4vhD5Ve1a3P8'
     controller: null
     method: null
     route: null
@@ -56,9 +60,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Create a new author.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -77,22 +82,25 @@ endpoints:
         name: email
         description: 'Email of author.'
         required: true
-        example: omraz@example.com
+        example: karley55@example.net
         type: string
         custom: []
     cleanBodyParameters:
       name: 'Isaac Johnson'
-      email: omraz@example.com
+      email: karley55@example.net
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99dd90a2-486f-4793-a344-3fab14a3ee75","name":"Mollie Monahan V","email":"hilpert.margarita@example.net"}}'
+        content: '{"data":{"id":"99dde27f-2ce0-44a6-9b79-072e580c522a","name":"Maddison Quigley","email":"sam21@example.com"}}'
         headers: []
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6hg3dPZ6kvfDeb5a481acEV'
     controller: null
     method: null
     route: null
@@ -110,9 +118,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Display an author by ID.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -120,11 +129,11 @@ endpoints:
         name: id
         description: 'Author ID'
         required: true
-        example: illo
+        example: qui
         type: string
         custom: []
     cleanUrlParameters:
-      id: illo
+      id: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -133,12 +142,15 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99dd90a2-4cb6-42d0-8b77-e9cfa2ec5e82","name":"Dr. Antwan Streich","email":"tremblay.blanche@example.net"}}'
+        content: '{"data":{"id":"99dde27f-2f94-448d-8e3e-c0b0ddfbf6c8","name":"Mathew Leuschke","email":"tony.crona@example.org"}}'
         headers: []
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ge6PZdaDcVhEvfba3516k48'
     controller: null
     method: null
     route: null
@@ -157,9 +169,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Update the specified Author by ID.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -186,22 +199,25 @@ endpoints:
         name: email
         description: 'Email of author.'
         required: true
-        example: darrion.kuvalis@example.org
+        example: magnus.morissette@example.net
         type: string
         custom: []
     cleanBodyParameters:
       name: 'Isaac Johnson'
-      email: darrion.kuvalis@example.org
+      email: magnus.morissette@example.net
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99dd90a2-4f3f-426d-b41a-dc4e959240d1","name":"Bruce Bauch","email":"thilpert@example.com"}}'
+        content: '{"data":{"id":"99dde27f-319f-4fc5-9245-07638ff03ff5","name":"Mose Kling IV","email":"bethel.hammes@example.net"}}'
         headers: []
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer hEbP1fcDgda3avek56VZ864'
     controller: null
     method: null
     route: null
