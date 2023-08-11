@@ -20,6 +20,48 @@ class ProductController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     *
+     * @bodyParam name string required The name of the product.
+     * @bodyParam author integer required The ID of the author of the product.
+     * @bodyParam price float required The price of the product.
+     * @bodyParam description string required The description of the product.
+     * @bodyParam categories array required An array of category IDs associated with the product.
+     * @bodyParam tags array required An array of tag IDs associated with the product.
+     * @bodyParam images[] file An array of image files for the product.
+     *
+     * @response {
+     *      "data": {
+     *          "id": 1,
+     *          "name": "Sample Product",
+     *          "author_id": 1,
+     *          "price": 19.99,
+     *          "description": "A description of the sample product.",
+     *          "categories": [
+     *              {
+     *                  "id": 1,
+     *                  "name": "Category A"
+     *              },
+     *              {
+     *                  "id": 2,
+     *                  "name": "Category B"
+     *              }
+     *          ],
+     *          "tags": [
+     *              {
+     *                  "id": 1,
+     *                  "name": "Tag X"
+     *              },
+     *              {
+     *                  "id": 2,
+     *                  "name": "Tag Y"
+     *              }
+     *          ]
+     *      }
+     *  }
+     * @apiResource App\Http\Resources\V1\ProductResource
+     * @apiResourceModel App\Models\Product
+     * @param ProductRequest $request
+     * @return ProductResource
      */
     public function store(ProductRequest $request): ProductResource
     {
@@ -51,6 +93,11 @@ class ProductController extends Controller
 
     /**
      * Update the specified resource in storage.
+     *
+     * @apiResource App\Http\Resources\V1\ProductResource
+     * @apiResourceModel App\Models\Product
+     * @param ProductRequest $request
+     * @return ProductResource
      */
     public function update(Product $product, ProductRequest $request): ProductResource
     {

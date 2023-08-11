@@ -30,9 +30,9 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: ''
+        description: 'The name of the product.'
         required: true
-        example: odit
+        example: velit
         type: string
         custom: []
       images:
@@ -45,48 +45,103 @@ endpoints:
         custom: []
       price:
         name: price
-        description: ''
+        description: 'The price of the product.'
         required: true
-        example: veritatis
-        type: string
+        example: 207770.817712
+        type: number
         custom: []
       description:
         name: description
-        description: ''
+        description: 'The description of the product.'
         required: true
-        example: est
+        example: 'Voluptatem pariatur aut dolorum ipsam eaque aut.'
         type: string
         custom: []
       categories:
         name: categories
-        description: ''
-        required: false
-        example: null
+        description: 'An array of category IDs associated with the product.'
+        required: true
+        example:
+          - voluptatem
         type: 'string[]'
         custom: []
       tags:
         name: tags
-        description: ''
-        required: false
-        example: null
+        description: 'An array of tag IDs associated with the product.'
+        required: true
+        example:
+          - facere
         type: 'string[]'
         custom: []
       author:
         name: author
-        description: ''
+        description: 'The ID of the author of the product.'
         required: true
-        example: voluptates
-        type: string
+        example: 4
+        type: integer
+        custom: []
+      'images[]':
+        name: 'images[]'
+        description: 'An array of image files for the product.'
+        required: false
+        example: null
+        type: file
         custom: []
     cleanBodyParameters:
-      name: odit
-      price: veritatis
-      description: est
-      author: voluptates
+      name: velit
+      price: 207770.817712
+      description: 'Voluptatem pariatur aut dolorum ipsam eaque aut.'
+      categories:
+        - voluptatem
+      tags:
+        - facere
+      author: 4
     fileParameters:
       images:
         - null
-    responses: []
+      'images[]': null
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: |-
+          {
+               "data": {
+                   "id": 1,
+                   "name": "Sample Product",
+                   "author_id": 1,
+                   "price": 19.99,
+                   "description": "A description of the sample product.",
+                   "categories": [
+                       {
+                           "id": 1,
+                           "name": "Category A"
+                       },
+                       {
+                           "id": 2,
+                           "name": "Category B"
+                       }
+                   ],
+                   "tags": [
+                       {
+                           "id": 1,
+                           "name": "Tag X"
+                       },
+                       {
+                           "id": 2,
+                           "name": "Tag Y"
+                       }
+                   ]
+               }
+           }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -129,7 +184,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: ducimus
+        example: fugit
         type: string
         custom: []
       images:
@@ -144,14 +199,14 @@ endpoints:
         name: price
         description: ''
         required: true
-        example: ut
+        example: et
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: similique
+        example: sunt
         type: string
         custom: []
       categories:
@@ -172,18 +227,24 @@ endpoints:
         name: author
         description: ''
         required: true
-        example: quod
+        example: dolores
         type: string
         custom: []
     cleanBodyParameters:
-      name: ducimus
-      price: ut
-      description: similique
-      author: quod
+      name: fugit
+      price: et
+      description: sunt
+      author: dolores
     fileParameters:
       images:
         - null
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[]}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -299,7 +360,7 @@ endpoints:
         Endpoints to manage products
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display a listing of products with ID.'
+      title: 'Display a listing of products'
       description: ''
       authenticated: false
       custom: []
@@ -316,14 +377,9 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":"99d35264-8076-49a5-a8d5-8cd88f85a773","name":"product 1","price":"300.00","description":"","author":{"id":"99cf7e87-ed51-4cdb-ba3b-4557421ceda3","name":"first author","email":"author@gmail.com"},"categories":[{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"}],"tags":[],"images":[]},{"id":"99d35591-a3eb-4856-a1e9-193147cb7f75","name":"product 2","price":"3,000.00","description":"","author":{"id":"99cf7e87-ed51-4cdb-ba3b-4557421ceda3","name":"first author","email":"author@gmail.com"},"categories":[{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"},{"id":"99d2f03a-b789-4067-a743-1ebb1c40c8e0","name":"category two"}],"tags":[],"images":[]},{"id":"99d35a23-2e23-445d-999c-507ccc84c105","name":"product 3","price":"3,000.00","description":"","author":{"id":"99cf7e87-ed51-4cdb-ba3b-4557421ceda3","name":"first author","email":"author@gmail.com"},"categories":[{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"},{"id":"99d2f03a-b789-4067-a743-1ebb1c40c8e0","name":"category two"}],"tags":[],"images":[{"id":"99d35a23-2f11-406d-afde-f05b8efb9968","url":"http:\/\/localhost\/storage\/1691330294_Sparkling Diamond.png"}]},{"id":"99d35fa3-67d9-47c8-8580-0963e097ef23","name":"product 4","price":"3,000.00","description":"","author":{"id":"99cf7e87-ed51-4cdb-ba3b-4557421ceda3","name":"first author","email":"author@gmail.com"},"categories":[{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"},{"id":"99d2f03a-b789-4067-a743-1ebb1c40c8e0","name":"category two"}],"tags":[{"id":"99cfd9ed-a48a-40d9-b896-4549d534fb7a","name":"tag one"}],"images":[{"id":"99d35fa3-6eff-4711-996a-be6942f2b47f","url":"http:\/\/localhost\/storage\/1691331216_cellular-jail-250x250-3297.jpg"},{"id":"99d35fa3-6f68-44a9-8ff3-dd5f72f4984b","url":"http:\/\/localhost\/storage\/1691331216_2349_6364fd140f2e2.jpg"}]},{"id":"99d36105-dac5-4bc3-b80f-a18b9e794441","name":"product 5","price":"3,000.00","description":"","author":{"id":"99cf7e87-ed51-4cdb-ba3b-4557421ceda3","name":"first author","email":"author@gmail.com"},"categories":[{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"},{"id":"99d2f03a-b789-4067-a743-1ebb1c40c8e0","name":"category two"}],"tags":[{"id":"99cfd9ed-a48a-40d9-b896-4549d534fb7a","name":"tag one"}],"images":[{"id":"99d36105-de36-49d3-9a86-a507b0569db0","url":"http:\/\/localhost\/storage\/1691331449_sparkling_diamondpng"},{"id":"99d36105-dec8-453b-b454-cab1e8075c95","url":"http:\/\/localhost\/storage\/1691331449_untitledpng"}]},{"id":"99d39352-1f1b-4be9-a00c-ae4f3fe70698","name":"product Six","price":"4,000.00","description":"","author":{"id":"99cf7e87-ed51-4cdb-ba3b-4557421ceda3","name":"first author","email":"author@gmail.com"},"categories":[{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"}],"tags":[{"id":"99cfd9ed-a48a-40d9-b896-4549d534fb7a","name":"tag one"}],"images":[{"id":"99d39352-2995-4868-9359-466e75802e46","url":"http:\/\/localhost\/storage\/1691339887_pennup_school_flowdrawiopng"},{"id":"99d3a508-8177-42f8-9542-089063dbbffa","url":"http:\/\/localhost\/storage\/1691342859_yos5png"},{"id":"99d3a620-c530-41c3-b1b9-ad16bde3faf2","url":"http:\/\/localhost\/storage\/1691343043_yos6png"},{"id":"99d3a620-c900-43be-a127-26fcc9cad4bd","url":"http:\/\/localhost\/storage\/1691343043_yos5png"},{"id":"99d3ae26-5402-43da-b513-881b50120847","url":"http:\/\/localhost\/storage\/1691344388_yos6png"},{"id":"99d3ae26-575c-4311-87f0-5fd49345ecd4","url":"http:\/\/localhost\/storage\/1691344388_yos5png"},{"id":"99d3ae9b-7035-4ccc-9991-6380f64f35aa","url":"http:\/\/localhost\/storage\/1691344465_yos6png"},{"id":"99d3ae9b-7329-4de4-be7a-24ff329fceaa","url":"http:\/\/localhost\/storage\/1691344465_yos5png"},{"id":"99d3b0d4-6f58-4379-89e4-5f272c001fd4","url":"http:\/\/localhost\/storage\/1691344838_yos6png"},{"id":"99d3b0d4-72fd-4ba3-b157-355e813c90de","url":"http:\/\/localhost\/storage\/1691344838_yos5png"},{"id":"99d3b4ba-943a-42c3-85ea-f8ed35b2b156","url":"http:\/\/localhost\/storage\/1691345492_yos6png"},{"id":"99d3b4ba-97a6-422f-bd40-d2a99b41b498","url":"http:\/\/localhost\/storage\/1691345492_yos5png"},{"id":"99d3b4f6-4da8-4901-ba8c-d92768a7ba8a","url":"http:\/\/localhost\/storage\/1691345531_yos6png"},{"id":"99d3b4f6-50af-4011-871a-28914c24d6ea","url":"http:\/\/localhost\/storage\/1691345531_yos5png"},{"id":"99d3b7c4-0fe5-4606-a747-d365c26b2f2b","url":"http:\/\/localhost\/storage\/1691346002_yos6png"},{"id":"99d3b7c4-12c2-4e7a-b6df-b963fca64b81","url":"http:\/\/localhost\/storage\/1691346002_yos5png"},{"id":"99d3ba16-4e67-44ed-88c9-19812ed01869","url":"http:\/\/localhost\/storage\/1691346391_yos6png"},{"id":"99d3ba16-52bf-455a-b033-504050992d1a","url":"http:\/\/localhost\/storage\/1691346391_yos5png"},{"id":"99d3ba60-a580-40ec-ad32-294a97b0d839","url":"http:\/\/localhost\/storage\/1691346440_yos6png"},{"id":"99d3ba60-a857-4e3e-a706-72c4dbdb2052","url":"http:\/\/localhost\/storage\/1691346440_yos5png"},{"id":"99d3ba96-be3e-40bc-91e6-c227b50eefd9","url":"http:\/\/localhost\/storage\/1691346475_yos6png"},{"id":"99d3ba96-c1e7-4435-8672-d05f414fc805","url":"http:\/\/localhost\/storage\/1691346475_yos5png"},{"id":"99d3baad-4d5d-45a2-88ed-e272ec6834c4","url":"http:\/\/localhost\/storage\/1691346490_yos6png"},{"id":"99d3baad-5047-47c0-b95e-e717d9f47549","url":"http:\/\/localhost\/storage\/1691346490_yos5png"},{"id":"99d3bf8d-a45c-440b-90af-e1aa01ef85e5","url":"http:\/\/localhost\/storage\/1691347308_yos6png"},{"id":"99d3bf8d-a850-454e-ae4c-9d95bec18d11","url":"http:\/\/localhost\/storage\/1691347308_yos5png"}]}],"links":{"first":"http:\/\/localhost\/api\/v1\/products?page=1","last":"http:\/\/localhost\/api\/v1\/products?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/v1\/products?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/v1\/products","per_page":15,"to":6,"total":6}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
-          access-control-allow-origin: '*'
-        description: null
+        content: '{"data":[{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[]},{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[]}]}'
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []
@@ -352,13 +408,13 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the product.'
+        description: 'Product ID'
         required: true
-        example: 99d35264-8076-49a5-a8d5-8cd88f85a773
+        example: eius
         type: string
         custom: []
     cleanUrlParameters:
-      id: 99d35264-8076-49a5-a8d5-8cd88f85a773
+      id: eius
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -367,14 +423,9 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99d35264-8076-49a5-a8d5-8cd88f85a773","name":"product 1","price":"300.00","description":"","author":{"id":"99cf7e87-ed51-4cdb-ba3b-4557421ceda3","name":"first author","email":"author@gmail.com"},"categories":[{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"}],"tags":[],"images":[]}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '58'
-          access-control-allow-origin: '*'
-        description: null
+        content: '{"data":{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[]}}'
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []
