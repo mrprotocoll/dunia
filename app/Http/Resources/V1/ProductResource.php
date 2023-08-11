@@ -23,7 +23,8 @@ class ProductResource extends JsonResource
             'author' => new AuthorResource($this->author),
             'categories' => CategoryResource::collection($this->categories),
             'tags' => TagResource::collection($this->tags),
-            'images' => ProductImageResource::collection($this->images)
+            'images' => ProductImageResource::collection($this->images),
+            'reviews' => ReviewResource::collection($this->reviews)
         ];
     }
 }

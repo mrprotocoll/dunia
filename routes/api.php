@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\V1\Auth\LogoutController;
 use App\Http\Controllers\Api\V1\Auth\RegisterController;
 use App\Http\Controllers\Api\V1\OrderController;
 use App\Http\Controllers\Api\V1\ProductController;
+use App\Http\Controllers\Api\V1\ReviewController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -43,10 +44,12 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function (){
     });
 });
 
-Route::prefix('user')->middleware(['auth:sanctum'])->group(function (){
+Route::middleware(['auth:sanctum'])->group(function (){
     Route::middleware(['role:0'])->group(function () {
-        Route::post('user', [OrderController::class, 'store']);
+        Route::post('order', [OrderController::class, 'store']);
     });
+
+    Route::post('products/{product}/reviews', [ReviewController::class, 'store']);
 });
 
 Route::apiResource('products', ProductController::class)
