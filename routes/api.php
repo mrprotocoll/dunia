@@ -54,4 +54,4 @@ Route::apiResource('products', ProductController::class)
 
 Route::post('register', RegisterController::class);
 Route::post('login', LoginController::class);
-Route::get('logout', LogoutController::class);
+Route::middleware('auth:sanctum')->get('logout', LogoutController::class);

@@ -32,13 +32,10 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+        status: 200
+        content: '{"data":[{"id":null,"name":null},{"id":null,"name":null}]}'
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []
@@ -73,13 +70,19 @@ endpoints:
         name: name
         description: 'Must not be greater than 100 characters.'
         required: true
-        example: nbbzr
+        example: vwdawtvhxhlxmqm
         type: string
         custom: []
     cleanBodyParameters:
-      name: nbbzr
+      name: vwdawtvhxhlxmqm
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":null,"name":null}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -121,13 +124,10 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+        status: 200
+        content: '{"data":{"id":null,"name":null}}'
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []
@@ -171,13 +171,19 @@ endpoints:
         name: name
         description: 'Must not be greater than 100 characters.'
         required: true
-        example: swcpmcohqovdeabiwrtvwsln
+        example: fvsfszuvegfslhcotgzf
         type: string
         custom: []
     cleanBodyParameters:
-      name: swcpmcohqovdeabiwrtvwsln
+      name: fvsfszuvegfslhcotgzf
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":null,"name":null}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null

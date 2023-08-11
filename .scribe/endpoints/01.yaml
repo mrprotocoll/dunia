@@ -31,7 +31,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":"99db5475-c19d-40a9-9494-9da43cb68225","name":"Helga Bergstrom PhD","email":"stella37@example.com"},{"id":"99db5475-c325-4243-97e9-0344a355ee08","name":"Mr. Sigrid Miller","email":"wisozk.mckenzie@example.com"}]}'
+        content: '{"data":[{"id":"99dd90a2-2c19-4d23-aff3-a9a3d4180c26","name":"Patricia Pfeffer","email":"lacy.medhurst@example.org"},{"id":"99dd90a2-3b36-4e9e-8663-db6efca23bb4","name":"Myrtice Wehner","email":"rosina32@example.net"}]}'
         headers: []
         description: ''
         custom: []
@@ -66,23 +66,29 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: 'Must not be greater than 50 characters.'
+        description: 'Name of author.'
         required: true
-        example: pgg
+        example: 'Isaac Johnson'
         type: string
         custom: []
       email:
         name: email
-        description: 'Must be a valid email address.'
+        description: 'Email of author.'
         required: true
-        example: pschneider@example.org
+        example: omraz@example.com
         type: string
         custom: []
     cleanBodyParameters:
-      name: pgg
-      email: pschneider@example.org
+      name: 'Isaac Johnson'
+      email: omraz@example.com
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"99dd90a2-486f-4793-a344-3fab14a3ee75","name":"Mollie Monahan V","email":"hilpert.margarita@example.net"}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -101,7 +107,7 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Display an author by ID.'
-      description: return
+      description: ''
       authenticated: false
       custom: []
     headers:
@@ -110,13 +116,13 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the author.'
+        description: 'Author ID'
         required: true
-        example: 99cf7e87-ed51-4cdb-ba3b-4557421ceda3
+        example: illo
         type: string
         custom: []
     cleanUrlParameters:
-      id: 99cf7e87-ed51-4cdb-ba3b-4557421ceda3
+      id: illo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -124,13 +130,10 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+        status: 200
+        content: '{"data":{"id":"99dd90a2-4cb6-42d0-8b77-e9cfa2ec5e82","name":"Dr. Antwan Streich","email":"tremblay.blanche@example.net"}}'
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []
@@ -172,23 +175,29 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: 'Must not be greater than 50 characters.'
+        description: 'Name of author.'
         required: true
-        example: deoihipqeydlgeojnjym
+        example: 'Isaac Johnson'
         type: string
         custom: []
       email:
         name: email
-        description: 'Must be a valid email address.'
+        description: 'Email of author.'
         required: true
-        example: rhand@example.org
+        example: darrion.kuvalis@example.org
         type: string
         custom: []
     cleanBodyParameters:
-      name: deoihipqeydlgeojnjym
-      email: rhand@example.org
+      name: 'Isaac Johnson'
+      email: darrion.kuvalis@example.org
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"99dd90a2-4f3f-426d-b41a-dc4e959240d1","name":"Bruce Bauch","email":"thilpert@example.com"}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null

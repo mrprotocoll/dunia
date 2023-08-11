@@ -7,6 +7,8 @@ use App\Http\Requests\V1\RegisterRequest;
 use App\Http\Resources\V1\UserResource;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Hash;
 
 /**
@@ -17,7 +19,15 @@ use Illuminate\Support\Facades\Hash;
 class RegisterController extends Controller
 {
     /**
-     * Register.
+     * Register a new user.
+     *
+     * @response 422 {
+     *       "error": "Account already exist, kindly login"
+     * }
+     * @apiResource App\Http\Resources\V1\UserResource
+     * @apiResourceModel App\Models\User
+     * @param RegisterRequest $request
+     * @return UserResource | JsonResponse
      */
     public function __invoke(RegisterRequest $request)
     {

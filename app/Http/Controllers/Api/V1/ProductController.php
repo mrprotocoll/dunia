@@ -14,9 +14,14 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     /**
-     * Display a listing of products with ID.
+     * Display a listing of products
+     *
+     * @apiResourceCollection App\Http\Resources\V1\ProductResource
+     * @apiResourceModel App\Models\Product
+     *
+     * @return ProductResource
      */
-    public function index()
+    public function index(): ProductResource
     {
         //
         $products = Product::with('author')->paginate();
@@ -25,6 +30,13 @@ class ProductController extends Controller
 
     /**
      * Display a specific product by ID.
+     *
+     * @apiResource App\Http\Resources\V1\ProductResource
+     * @apiResourceModel App\Models\Product
+     *
+     * @urlParam id string required Product ID
+     * @param Product $product
+     * @return ProductResource
      */
     public function show(Product $product)
     {

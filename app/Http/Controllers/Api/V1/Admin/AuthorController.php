@@ -19,6 +19,7 @@ class AuthorController extends Controller
      *
      * @apiResourceCollection App\Http\Resources\V1\AuthorResource
      * @apiResourceModel App\Models\Author
+     *
      */
     public function index(): AuthorResource
     {
@@ -29,6 +30,14 @@ class AuthorController extends Controller
 
     /**
      * Create a new author.
+     *
+     * @bodyParam name string required Name of author. Example: Isaac Johnson
+     * @bodyParam email string required Email of author.
+     *
+     * @apiResource App\Http\Resources\V1\AuthorResource
+     * @apiResourceModel \App\Models\Author
+     * @param AuthorRequest $request
+     * @return AuthorResource
      */
     public function store(AuthorRequest $request) : AuthorResource
     {
@@ -40,7 +49,12 @@ class AuthorController extends Controller
     /**
      * Display an author by ID.
      *
-     * return
+     * @apiResource App\Http\Resources\V1\AuthorResource
+     * @apiResourceModel \App\Models\Author
+     * @urlParam id string required Author ID
+     *
+     * @param Author $author
+     * @return AuthorResource
      */
     public function show(Author $author) : AuthorResource
     {
@@ -50,6 +64,15 @@ class AuthorController extends Controller
 
     /**
      * Update the specified Author by ID.
+     *
+     * @bodyParam name string required Name of author. Example: Isaac Johnson
+     * @bodyParam email string required Email of author.
+     *
+     * @apiResource App\Http\Resources\V1\AuthorResource
+     * @apiResourceModel App\Models\Author
+     * @param AuthorRequest $request
+     * @param Author $author
+     * @return AuthorResource
      */
     public function update(AuthorRequest $request, Author $author): AuthorResource
     {

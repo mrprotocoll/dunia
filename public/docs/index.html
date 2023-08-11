@@ -72,7 +72,7 @@
                 </li>
                                     <ul id="tocify-subheader-authentication" class="tocify-subheader">
                                                     <li class="tocify-item level-2" data-unique="authentication-POSTapi-v1-register">
-                                <a href="#authentication-POSTapi-v1-register">Register.</a>
+                                <a href="#authentication-POSTapi-v1-register">Register a new user.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="authentication-POSTapi-v1-login">
                                 <a href="#authentication-POSTapi-v1-login">Login.</a>
@@ -110,10 +110,10 @@
                                 <a href="#categories-management-GETapi-v1-admin-categories">Display a listing of categories.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="categories-management-POSTapi-v1-admin-categories">
-                                <a href="#categories-management-POSTapi-v1-admin-categories">Create a new catgeory.</a>
+                                <a href="#categories-management-POSTapi-v1-admin-categories">Create a new category.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="categories-management-GETapi-v1-admin-categories--id-">
-                                <a href="#categories-management-GETapi-v1-admin-categories--id-">Display the specific catgeory by ID.</a>
+                                <a href="#categories-management-GETapi-v1-admin-categories--id-">Display the specific category by ID.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="categories-management-PUTapi-v1-admin-categories--id-">
                                 <a href="#categories-management-PUTapi-v1-admin-categories--id-">Update the specific category.</a>
@@ -158,7 +158,7 @@
                                 <a href="#product-management-DELETEapi-v1-admin-products--product_id--images--productImage_id-">Delete image from product</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="product-management-GETapi-v1-products">
-                                <a href="#product-management-GETapi-v1-products">Display a listing of products with ID.</a>
+                                <a href="#product-management-GETapi-v1-products">Display a listing of products</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="product-management-GETapi-v1-products--id-">
                                 <a href="#product-management-GETapi-v1-products--id-">Display a specific product by ID.</a>
@@ -193,7 +193,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: August 10, 2023</li>
+        <li>Last updated: August 11, 2023</li>
     </ul>
 </div>
 
@@ -218,7 +218,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
     <p>Endpoint to manage user authentication</p>
 
-                                <h2 id="authentication-POSTapi-v1-register">Register.</h2>
+                                <h2 id="authentication-POSTapi-v1-register">Register a new user.</h2>
 
 <p>
 </p>
@@ -235,9 +235,9 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"reiciendis\",
-    \"email\": \"graham.stephania@example.org\",
-    \"password\": \"uI))W4^geNT&amp;ATNEah7\"
+    \"name\": \"eos\",
+    \"email\": \"annabell02@example.org\",
+    \"password\": \"&lt;TY3!O\'n\\\\J2-xLa`i\"
 }"
 </code></pre></div>
 
@@ -253,9 +253,9 @@ const headers = {
 };
 
 let body = {
-    "name": "reiciendis",
-    "email": "graham.stephania@example.org",
-    "password": "uI))W4^geNT&amp;ATNEah7"
+    "name": "eos",
+    "email": "annabell02@example.org",
+    "password": "&lt;TY3!O'n\\J2-xLa`i"
 };
 
 fetch(url, {
@@ -267,7 +267,29 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-v1-register">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;99dd90a2-71f6-49c9-9ff7-b63895baf767&quot;,
+        &quot;name&quot;: &quot;Mr. Jerel Walter PhD&quot;,
+        &quot;email&quot;: &quot;gabrielle.miller@example.com&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;error&quot;: &quot;Account already exist, kindly login&quot;
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-v1-register" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-v1-register"></span>:
@@ -344,10 +366,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-register"
-               value="reiciendis"
+               value="eos"
                data-component="body">
     <br>
-<p>Example: <code>reiciendis</code></p>
+<p>Example: <code>eos</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -355,10 +377,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-register"
-               value="graham.stephania@example.org"
+               value="annabell02@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>graham.stephania@example.org</code></p>
+<p>Must be a valid email address. Example: <code>annabell02@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -366,10 +388,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-register"
-               value="uI))W4^geNT&ATNEah7"
+               value="<TY3!O'n\J2-xLa`i"
                data-component="body">
     <br>
-<p>Example: <code>uI))W4^geNT&amp;ATNEah7</code></p>
+<p>Example: <code>&lt;TY3!O'n\J2-xLa</code>i`</p>
         </div>
         </form>
 
@@ -390,8 +412,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"brennan85@example.com\",
-    \"password\": \"+$E3W|?D5}8\"
+    \"email\": \"paul.baumbach@example.com\",
+    \"password\": \"&gt;&lt;V}I\\\"DNm^`)1&lt;+P\"
 }"
 </code></pre></div>
 
@@ -407,8 +429,8 @@ const headers = {
 };
 
 let body = {
-    "email": "brennan85@example.com",
-    "password": "+$E3W|?D5}8"
+    "email": "paul.baumbach@example.com",
+    "password": "&gt;&lt;V}I\"DNm^`)1&lt;+P"
 };
 
 fetch(url, {
@@ -420,7 +442,30 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-v1-login">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+     &quot;token&quot;: &quot;generated_token&quot;
+     &quot;data&quot;: {
+         &quot;id&quot;: 1,
+         &quot;name&quot;: &quot;User&quot;,
+         &quot;email&quot;: &quot;user@email.com&quot;
+     }
+ }</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;error&quot;: &quot;The provided credentials are incorrect.&quot;
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-v1-login" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-v1-login"></span>:
@@ -497,10 +542,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-login"
-               value="brennan85@example.com"
+               value="paul.baumbach@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>brennan85@example.com</code></p>
+<p>Must be a valid email address. Example: <code>paul.baumbach@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -508,10 +553,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-login"
-               value="+$E3W|?D5}8"
+               value="><V}I"DNm^`)1<+P"
                data-component="body">
     <br>
-<p>Example: <code>+$E3W|?D5}8</code></p>
+<p>Example: <code>&gt;&lt;V}I"DNm^</code>)1&lt;+P`</p>
         </div>
         </form>
 
@@ -552,502 +597,18 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-logout">
             <blockquote>
-            <p>Example response (500):</p>
+            <p>Example response (204):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
+<code>Empty response</code>
+ </pre>
+            <blockquote>
+            <p>Example response (402):</p>
+        </blockquote>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Call to a member function currentAccessToken() on null&quot;,
-    &quot;exception&quot;: &quot;Error&quot;,
-    &quot;file&quot;: &quot;/var/www/html/dunia/app/Http/Controllers/Api/V1/Auth/LogoutController.php&quot;,
-    &quot;line&quot;: 23,
-    &quot;trace&quot;: [
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Routing/Controller.php&quot;,
-            &quot;line&quot;: 54,
-            &quot;function&quot;: &quot;__invoke&quot;,
-            &quot;class&quot;: &quot;App\\Http\\Controllers\\Api\\V1\\Auth\\LogoutController&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php&quot;,
-            &quot;line&quot;: 43,
-            &quot;function&quot;: &quot;callAction&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Controller&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Routing/Route.php&quot;,
-            &quot;line&quot;: 260,
-            &quot;function&quot;: &quot;dispatch&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\ControllerDispatcher&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Routing/Route.php&quot;,
-            &quot;line&quot;: 205,
-            &quot;function&quot;: &quot;runController&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 799,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 141,
-            &quot;function&quot;: &quot;Illuminate\\Routing\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php&quot;,
-            &quot;line&quot;: 50,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\SubstituteBindings&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 159,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 135,
-            &quot;function&quot;: &quot;handleRequest&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 87,
-            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
-            &quot;line&quot;: 25,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 141,
-            &quot;function&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\{closure}&quot;,
-            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 116,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
-            &quot;line&quot;: 26,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 116,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 800,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 777,
-            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 741,
-            &quot;function&quot;: &quot;runRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 730,
-            &quot;function&quot;: &quot;dispatchToRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
-            &quot;line&quot;: 200,
-            &quot;function&quot;: &quot;dispatch&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 141,
-            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php&quot;,
-            &quot;line&quot;: 59,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Barryvdh\\Debugbar\\Middleware\\InjectDebugbar&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php&quot;,
-            &quot;line&quot;: 31,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php&quot;,
-            &quot;line&quot;: 40,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php&quot;,
-            &quot;line&quot;: 27,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php&quot;,
-            &quot;line&quot;: 86,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php&quot;,
-            &quot;line&quot;: 62,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php&quot;,
-            &quot;line&quot;: 39,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 116,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
-            &quot;line&quot;: 175,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
-            &quot;line&quot;: 144,
-            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 299,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 287,
-            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 92,
-            &quot;function&quot;: &quot;makeApiCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 45,
-            &quot;function&quot;: &quot;makeResponseCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 35,
-            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
-            &quot;line&quot;: 209,
-            &quot;function&quot;: &quot;__invoke&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
-            &quot;line&quot;: 166,
-            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
-            &quot;line&quot;: 95,
-            &quot;function&quot;: &quot;fetchResponses&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 124,
-            &quot;function&quot;: &quot;processRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 71,
-            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 49,
-            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php&quot;,
-            &quot;line&quot;: 51,
-            &quot;function&quot;: &quot;get&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
-            &quot;line&quot;: 36,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Container/Util.php&quot;,
-            &quot;line&quot;: 41,
-            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
-            &quot;line&quot;: 93,
-            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
-            &quot;line&quot;: 37,
-            &quot;function&quot;: &quot;callBoundMethod&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Container/Container.php&quot;,
-            &quot;line&quot;: 662,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
-            &quot;line&quot;: 208,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/symfony/console/Command/Command.php&quot;,
-            &quot;line&quot;: 326,
-            &quot;function&quot;: &quot;execute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
-            &quot;line&quot;: 178,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/symfony/console/Application.php&quot;,
-            &quot;line&quot;: 1081,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/symfony/console/Application.php&quot;,
-            &quot;line&quot;: 320,
-            &quot;function&quot;: &quot;doRunCommand&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/symfony/console/Application.php&quot;,
-            &quot;line&quot;: 174,
-            &quot;function&quot;: &quot;doRun&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php&quot;,
-            &quot;line&quot;: 201,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/var/www/html/dunia/artisan&quot;,
-            &quot;line&quot;: 37,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        }
-    ]
+    &quot;message&quot;: &quot;Unauthorized user&quot;
 }</code>
  </pre>
     </span>
@@ -1170,14 +731,14 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: &quot;99db5475-c19d-40a9-9494-9da43cb68225&quot;,
-            &quot;name&quot;: &quot;Helga Bergstrom PhD&quot;,
-            &quot;email&quot;: &quot;stella37@example.com&quot;
+            &quot;id&quot;: &quot;99dd90a2-2c19-4d23-aff3-a9a3d4180c26&quot;,
+            &quot;name&quot;: &quot;Patricia Pfeffer&quot;,
+            &quot;email&quot;: &quot;lacy.medhurst@example.org&quot;
         },
         {
-            &quot;id&quot;: &quot;99db5475-c325-4243-97e9-0344a355ee08&quot;,
-            &quot;name&quot;: &quot;Mr. Sigrid Miller&quot;,
-            &quot;email&quot;: &quot;wisozk.mckenzie@example.com&quot;
+            &quot;id&quot;: &quot;99dd90a2-3b36-4e9e-8663-db6efca23bb4&quot;,
+            &quot;name&quot;: &quot;Myrtice Wehner&quot;,
+            &quot;email&quot;: &quot;rosina32@example.net&quot;
         }
     ]
 }</code>
@@ -1271,8 +832,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"pgg\",
-    \"email\": \"pschneider@example.org\"
+    \"name\": \"Isaac Johnson\",
+    \"email\": \"omraz@example.com\"
 }"
 </code></pre></div>
 
@@ -1288,8 +849,8 @@ const headers = {
 };
 
 let body = {
-    "name": "pgg",
-    "email": "pschneider@example.org"
+    "name": "Isaac Johnson",
+    "email": "omraz@example.com"
 };
 
 fetch(url, {
@@ -1301,7 +862,20 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-v1-admin-authors">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;99dd90a2-486f-4793-a344-3fab14a3ee75&quot;,
+        &quot;name&quot;: &quot;Mollie Monahan V&quot;,
+        &quot;email&quot;: &quot;hilpert.margarita@example.net&quot;
+    }
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-v1-admin-authors" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-v1-admin-authors"></span>:
@@ -1378,10 +952,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-admin-authors"
-               value="pgg"
+               value="Isaac Johnson"
                data-component="body">
     <br>
-<p>Must not be greater than 50 characters. Example: <code>pgg</code></p>
+<p>Name of author. Example: <code>Isaac Johnson</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1389,10 +963,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-admin-authors"
-               value="pschneider@example.org"
+               value="omraz@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>pschneider@example.org</code></p>
+<p>Email of author. Example: <code>omraz@example.com</code></p>
         </div>
         </form>
 
@@ -1401,7 +975,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>
 </p>
 
-<p>return</p>
+
 
 <span id="example-requests-GETapi-v1-admin-authors--id-">
 <blockquote>Example request:</blockquote>
@@ -1409,14 +983,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/admin/authors/99cf7e87-ed51-4cdb-ba3b-4557421ceda3" \
+    --get "http://localhost/api/v1/admin/authors/illo" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/admin/authors/99cf7e87-ed51-4cdb-ba3b-4557421ceda3"
+    "http://localhost/api/v1/admin/authors/illo"
 );
 
 const headers = {
@@ -1433,19 +1007,16 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-admin-authors--id-">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;99dd90a2-4cb6-42d0-8b77-e9cfa2ec5e82&quot;,
+        &quot;name&quot;: &quot;Dr. Antwan Streich&quot;,
+        &quot;email&quot;: &quot;tremblay.blanche@example.net&quot;
+    }
 }</code>
  </pre>
     </span>
@@ -1525,10 +1096,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-v1-admin-authors--id-"
-               value="99cf7e87-ed51-4cdb-ba3b-4557421ceda3"
+               value="illo"
                data-component="url">
     <br>
-<p>The ID of the author. Example: <code>99cf7e87-ed51-4cdb-ba3b-4557421ceda3</code></p>
+<p>Author ID Example: <code>illo</code></p>
             </div>
                     </form>
 
@@ -1549,8 +1120,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"deoihipqeydlgeojnjym\",
-    \"email\": \"rhand@example.org\"
+    \"name\": \"Isaac Johnson\",
+    \"email\": \"darrion.kuvalis@example.org\"
 }"
 </code></pre></div>
 
@@ -1566,8 +1137,8 @@ const headers = {
 };
 
 let body = {
-    "name": "deoihipqeydlgeojnjym",
-    "email": "rhand@example.org"
+    "name": "Isaac Johnson",
+    "email": "darrion.kuvalis@example.org"
 };
 
 fetch(url, {
@@ -1579,7 +1150,20 @@ fetch(url, {
 </span>
 
 <span id="example-responses-PUTapi-v1-admin-authors--id-">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;99dd90a2-4f3f-426d-b41a-dc4e959240d1&quot;,
+        &quot;name&quot;: &quot;Bruce Bauch&quot;,
+        &quot;email&quot;: &quot;thilpert@example.com&quot;
+    }
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-PUTapi-v1-admin-authors--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-PUTapi-v1-admin-authors--id-"></span>:
@@ -1672,10 +1256,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-admin-authors--id-"
-               value="deoihipqeydlgeojnjym"
+               value="Isaac Johnson"
                data-component="body">
     <br>
-<p>Must not be greater than 50 characters. Example: <code>deoihipqeydlgeojnjym</code></p>
+<p>Name of author. Example: <code>Isaac Johnson</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1683,10 +1267,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="PUTapi-v1-admin-authors--id-"
-               value="rhand@example.org"
+               value="darrion.kuvalis@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>rhand@example.org</code></p>
+<p>Email of author. Example: <code>darrion.kuvalis@example.org</code></p>
         </div>
         </form>
 
@@ -1731,19 +1315,21 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-admin-categories">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: &quot;99cfdfea-c72f-451b-aed3-ec3eb26bd2c5&quot;,
+            &quot;name&quot;: &quot;category one&quot;
+        },
+        {
+            &quot;id&quot;: &quot;99cfdfea-c72f-451b-aed3-ec3eb26bd2c5&quot;,
+            &quot;name&quot;: &quot;category one&quot;
+        }
+    ]
 }</code>
  </pre>
     </span>
@@ -1818,7 +1404,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="categories-management-POSTapi-v1-admin-categories">Create a new catgeory.</h2>
+                    <h2 id="categories-management-POSTapi-v1-admin-categories">Create a new category.</h2>
 
 <p>
 </p>
@@ -1835,7 +1421,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ajbjroehicxvzkdsck\"
+    \"name\": \"libero\"
 }"
 </code></pre></div>
 
@@ -1851,7 +1437,7 @@ const headers = {
 };
 
 let body = {
-    "name": "ajbjroehicxvzkdsck"
+    "name": "libero"
 };
 
 fetch(url, {
@@ -1863,7 +1449,19 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-v1-admin-categories">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;99cfdfea-c72f-451b-aed3-ec3eb26bd2c5&quot;,
+        &quot;name&quot;: &quot;category one&quot;
+    }
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-v1-admin-categories" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-v1-admin-categories"></span>:
@@ -1940,14 +1538,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-admin-categories"
-               value="ajbjroehicxvzkdsck"
+               value="libero"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>ajbjroehicxvzkdsck</code></p>
+<p>Name of category Example: <code>libero</code></p>
         </div>
         </form>
 
-                    <h2 id="categories-management-GETapi-v1-admin-categories--id-">Display the specific catgeory by ID.</h2>
+                    <h2 id="categories-management-GETapi-v1-admin-categories--id-">Display the specific category by ID.</h2>
 
 <p>
 </p>
@@ -1960,14 +1558,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/admin/categories/99cfdfea-c72f-451b-aed3-ec3eb26bd2c5" \
+    --get "http://localhost/api/v1/admin/categories/fugiat" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/admin/categories/99cfdfea-c72f-451b-aed3-ec3eb26bd2c5"
+    "http://localhost/api/v1/admin/categories/fugiat"
 );
 
 const headers = {
@@ -1984,19 +1582,15 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-admin-categories--id-">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;99cfdfea-c72f-451b-aed3-ec3eb26bd2c5&quot;,
+        &quot;name&quot;: &quot;category one&quot;
+    }
 }</code>
  </pre>
     </span>
@@ -2076,10 +1670,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-v1-admin-categories--id-"
-               value="99cfdfea-c72f-451b-aed3-ec3eb26bd2c5"
+               value="fugiat"
                data-component="url">
     <br>
-<p>The ID of the category. Example: <code>99cfdfea-c72f-451b-aed3-ec3eb26bd2c5</code></p>
+<p>Category ID Example: <code>fugiat</code></p>
             </div>
                     </form>
 
@@ -2100,7 +1694,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"szjw\"
+    \"name\": \"impedit\"
 }"
 </code></pre></div>
 
@@ -2116,7 +1710,7 @@ const headers = {
 };
 
 let body = {
-    "name": "szjw"
+    "name": "impedit"
 };
 
 fetch(url, {
@@ -2128,7 +1722,19 @@ fetch(url, {
 </span>
 
 <span id="example-responses-PUTapi-v1-admin-categories--id-">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;99cfdfea-c72f-451b-aed3-ec3eb26bd2c5&quot;,
+        &quot;name&quot;: &quot;category one&quot;
+    }
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-PUTapi-v1-admin-categories--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-PUTapi-v1-admin-categories--id-"></span>:
@@ -2221,10 +1827,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-admin-categories--id-"
-               value="szjw"
+               value="impedit"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>szjw</code></p>
+<p>Name of category Example: <code>impedit</code></p>
         </div>
         </form>
 
@@ -2488,11 +2094,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost/api/v1/admin/products" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "name=odit"\
-    --form "price=veritatis"\
-    --form "description=est"\
-    --form "author=voluptates"\
-    --form "images[]=@/tmp/phpcbxpyC" </code></pre></div>
+    --form "name=velit"\
+    --form "price=207770.817712"\
+    --form "description=Voluptatem pariatur aut dolorum ipsam eaque aut."\
+    --form "categories[]=voluptatem"\
+    --form "tags[]=facere"\
+    --form "author=4"\
+    --form "images[]=@/tmp/phpIgh0Fj" \
+    --form "images[]=@/tmp/phpgejs7t" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2506,10 +2115,13 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('name', 'odit');
-body.append('price', 'veritatis');
-body.append('description', 'est');
-body.append('author', 'voluptates');
+body.append('name', 'velit');
+body.append('price', '207770.817712');
+body.append('description', 'Voluptatem pariatur aut dolorum ipsam eaque aut.');
+body.append('categories[]', 'voluptatem');
+body.append('tags[]', 'facere');
+body.append('author', '4');
+body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
 body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
 
 fetch(url, {
@@ -2521,7 +2133,60 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-v1-admin-products">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: null,
+        &quot;name&quot;: null,
+        &quot;price&quot;: &quot;0.00&quot;,
+        &quot;description&quot;: null,
+        &quot;author&quot;: null,
+        &quot;categories&quot;: [],
+        &quot;tags&quot;: [],
+        &quot;images&quot;: []
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Sample Product&quot;,
+        &quot;author_id&quot;: 1,
+        &quot;price&quot;: 19.99,
+        &quot;description&quot;: &quot;A description of the sample product.&quot;,
+        &quot;categories&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;Category A&quot;
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;name&quot;: &quot;Category B&quot;
+            }
+        ],
+        &quot;tags&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;Tag X&quot;
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;name&quot;: &quot;Tag Y&quot;
+            }
+        ]
+    }
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-v1-admin-products" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-v1-admin-products"></span>:
@@ -2598,10 +2263,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-admin-products"
-               value="odit"
+               value="velit"
                data-component="body">
     <br>
-<p>Example: <code>odit</code></p>
+<p>The name of the product. Example: <code>velit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
@@ -2618,14 +2283,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>number</small>&nbsp;
  &nbsp;
-                <input type="text" style="display: none"
-                              name="price"                data-endpoint="POSTapi-v1-admin-products"
-               value="veritatis"
+                <input type="number" style="display: none"
+               step="any"               name="price"                data-endpoint="POSTapi-v1-admin-products"
+               value="207770.817712"
                data-component="body">
     <br>
-<p>Example: <code>veritatis</code></p>
+<p>The price of the product. Example: <code>207770.817712</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2633,15 +2298,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-v1-admin-products"
-               value="est"
+               value="Voluptatem pariatur aut dolorum ipsam eaque aut."
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>The description of the product. Example: <code>Voluptatem pariatur aut dolorum ipsam eaque aut.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>categories</code></b>&nbsp;&nbsp;
 <small>string[]</small>&nbsp;
-<i>optional</i> &nbsp;
+ &nbsp;
                 <input type="text" style="display: none"
                               name="categories[0]"                data-endpoint="POSTapi-v1-admin-products"
                data-component="body">
@@ -2649,12 +2314,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
                name="categories[1]"                data-endpoint="POSTapi-v1-admin-products"
                data-component="body">
     <br>
-
+<p>An array of category IDs associated with the product.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tags</code></b>&nbsp;&nbsp;
 <small>string[]</small>&nbsp;
-<i>optional</i> &nbsp;
+ &nbsp;
                 <input type="text" style="display: none"
                               name="tags[0]"                data-endpoint="POSTapi-v1-admin-products"
                data-component="body">
@@ -2662,18 +2327,29 @@ You can check the Dev Tools console for debugging information.</code></pre>
                name="tags[1]"                data-endpoint="POSTapi-v1-admin-products"
                data-component="body">
     <br>
-
+<p>An array of tag IDs associated with the product.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>author</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>integer</small>&nbsp;
  &nbsp;
-                <input type="text" style="display: none"
-                              name="author"                data-endpoint="POSTapi-v1-admin-products"
-               value="voluptates"
+                <input type="number" style="display: none"
+               step="any"               name="author"                data-endpoint="POSTapi-v1-admin-products"
+               value="4"
                data-component="body">
     <br>
-<p>Example: <code>voluptates</code></p>
+<p>The ID of the author of the product. Example: <code>4</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>images[]</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="images.0"                data-endpoint="POSTapi-v1-admin-products"
+               value=""
+               data-component="body">
+    <br>
+<p>An array of image files for the product. Example: <code>/tmp/phpgejs7t</code></p>
         </div>
         </form>
 
@@ -2693,11 +2369,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost/api/v1/admin/products/99d35264-8076-49a5-a8d5-8cd88f85a773" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "name=ducimus"\
-    --form "price=ut"\
-    --form "description=similique"\
-    --form "author=quod"\
-    --form "images[]=@/tmp/phpoBMTZn" </code></pre></div>
+    --form "name=fugit"\
+    --form "price=et"\
+    --form "description=sunt"\
+    --form "author=dolores"\
+    --form "images[]=@/tmp/phpy2Py8o" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2711,10 +2387,10 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('name', 'ducimus');
-body.append('price', 'ut');
-body.append('description', 'similique');
-body.append('author', 'quod');
+body.append('name', 'fugit');
+body.append('price', 'et');
+body.append('description', 'sunt');
+body.append('author', 'dolores');
 body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
 
 fetch(url, {
@@ -2726,7 +2402,25 @@ fetch(url, {
 </span>
 
 <span id="example-responses-PUTapi-v1-admin-products--id-">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: null,
+        &quot;name&quot;: null,
+        &quot;price&quot;: &quot;0.00&quot;,
+        &quot;description&quot;: null,
+        &quot;author&quot;: null,
+        &quot;categories&quot;: [],
+        &quot;tags&quot;: [],
+        &quot;images&quot;: []
+    }
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-PUTapi-v1-admin-products--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-PUTapi-v1-admin-products--id-"></span>:
@@ -2819,10 +2513,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-admin-products--id-"
-               value="ducimus"
+               value="fugit"
                data-component="body">
     <br>
-<p>Example: <code>ducimus</code></p>
+<p>Example: <code>fugit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
@@ -2843,10 +2537,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="price"                data-endpoint="PUTapi-v1-admin-products--id-"
-               value="ut"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>ut</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2854,10 +2548,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-admin-products--id-"
-               value="similique"
+               value="sunt"
                data-component="body">
     <br>
-<p>Example: <code>similique</code></p>
+<p>Example: <code>sunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>categories</code></b>&nbsp;&nbsp;
@@ -2891,10 +2585,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="author"                data-endpoint="PUTapi-v1-admin-products--id-"
-               value="quod"
+               value="dolores"
                data-component="body">
     <br>
-<p>Example: <code>quod</code></p>
+<p>Example: <code>dolores</code></p>
         </div>
         </form>
 
@@ -2914,7 +2608,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost/api/v1/admin/products/99d35264-8076-49a5-a8d5-8cd88f85a773/images" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "images[]=@/tmp/phpT3M3p7" </code></pre></div>
+    --form "images[]=@/tmp/phpvqiiOt" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -3168,7 +2862,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="product-management-GETapi-v1-products">Display a listing of products with ID.</h2>
+                    <h2 id="product-management-GETapi-v1-products">Display a listing of products</h2>
 
 <p>
 </p>
@@ -3207,325 +2901,31 @@ fetch(url, {
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: &quot;99d35264-8076-49a5-a8d5-8cd88f85a773&quot;,
-            &quot;name&quot;: &quot;product 1&quot;,
-            &quot;price&quot;: &quot;300.00&quot;,
-            &quot;description&quot;: &quot;&quot;,
-            &quot;author&quot;: {
-                &quot;id&quot;: &quot;99cf7e87-ed51-4cdb-ba3b-4557421ceda3&quot;,
-                &quot;name&quot;: &quot;first author&quot;,
-                &quot;email&quot;: &quot;author@gmail.com&quot;
-            },
-            &quot;categories&quot;: [
-                {
-                    &quot;id&quot;: &quot;99cfdfea-c72f-451b-aed3-ec3eb26bd2c5&quot;,
-                    &quot;name&quot;: &quot;category one&quot;
-                }
-            ],
+            &quot;id&quot;: null,
+            &quot;name&quot;: null,
+            &quot;price&quot;: &quot;0.00&quot;,
+            &quot;description&quot;: null,
+            &quot;author&quot;: null,
+            &quot;categories&quot;: [],
             &quot;tags&quot;: [],
             &quot;images&quot;: []
         },
         {
-            &quot;id&quot;: &quot;99d35591-a3eb-4856-a1e9-193147cb7f75&quot;,
-            &quot;name&quot;: &quot;product 2&quot;,
-            &quot;price&quot;: &quot;3,000.00&quot;,
-            &quot;description&quot;: &quot;&quot;,
-            &quot;author&quot;: {
-                &quot;id&quot;: &quot;99cf7e87-ed51-4cdb-ba3b-4557421ceda3&quot;,
-                &quot;name&quot;: &quot;first author&quot;,
-                &quot;email&quot;: &quot;author@gmail.com&quot;
-            },
-            &quot;categories&quot;: [
-                {
-                    &quot;id&quot;: &quot;99cfdfea-c72f-451b-aed3-ec3eb26bd2c5&quot;,
-                    &quot;name&quot;: &quot;category one&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d2f03a-b789-4067-a743-1ebb1c40c8e0&quot;,
-                    &quot;name&quot;: &quot;category two&quot;
-                }
-            ],
+            &quot;id&quot;: null,
+            &quot;name&quot;: null,
+            &quot;price&quot;: &quot;0.00&quot;,
+            &quot;description&quot;: null,
+            &quot;author&quot;: null,
+            &quot;categories&quot;: [],
             &quot;tags&quot;: [],
             &quot;images&quot;: []
-        },
-        {
-            &quot;id&quot;: &quot;99d35a23-2e23-445d-999c-507ccc84c105&quot;,
-            &quot;name&quot;: &quot;product 3&quot;,
-            &quot;price&quot;: &quot;3,000.00&quot;,
-            &quot;description&quot;: &quot;&quot;,
-            &quot;author&quot;: {
-                &quot;id&quot;: &quot;99cf7e87-ed51-4cdb-ba3b-4557421ceda3&quot;,
-                &quot;name&quot;: &quot;first author&quot;,
-                &quot;email&quot;: &quot;author@gmail.com&quot;
-            },
-            &quot;categories&quot;: [
-                {
-                    &quot;id&quot;: &quot;99cfdfea-c72f-451b-aed3-ec3eb26bd2c5&quot;,
-                    &quot;name&quot;: &quot;category one&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d2f03a-b789-4067-a743-1ebb1c40c8e0&quot;,
-                    &quot;name&quot;: &quot;category two&quot;
-                }
-            ],
-            &quot;tags&quot;: [],
-            &quot;images&quot;: [
-                {
-                    &quot;id&quot;: &quot;99d35a23-2f11-406d-afde-f05b8efb9968&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691330294_Sparkling Diamond.png&quot;
-                }
-            ]
-        },
-        {
-            &quot;id&quot;: &quot;99d35fa3-67d9-47c8-8580-0963e097ef23&quot;,
-            &quot;name&quot;: &quot;product 4&quot;,
-            &quot;price&quot;: &quot;3,000.00&quot;,
-            &quot;description&quot;: &quot;&quot;,
-            &quot;author&quot;: {
-                &quot;id&quot;: &quot;99cf7e87-ed51-4cdb-ba3b-4557421ceda3&quot;,
-                &quot;name&quot;: &quot;first author&quot;,
-                &quot;email&quot;: &quot;author@gmail.com&quot;
-            },
-            &quot;categories&quot;: [
-                {
-                    &quot;id&quot;: &quot;99cfdfea-c72f-451b-aed3-ec3eb26bd2c5&quot;,
-                    &quot;name&quot;: &quot;category one&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d2f03a-b789-4067-a743-1ebb1c40c8e0&quot;,
-                    &quot;name&quot;: &quot;category two&quot;
-                }
-            ],
-            &quot;tags&quot;: [
-                {
-                    &quot;id&quot;: &quot;99cfd9ed-a48a-40d9-b896-4549d534fb7a&quot;,
-                    &quot;name&quot;: &quot;tag one&quot;
-                }
-            ],
-            &quot;images&quot;: [
-                {
-                    &quot;id&quot;: &quot;99d35fa3-6eff-4711-996a-be6942f2b47f&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691331216_cellular-jail-250x250-3297.jpg&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d35fa3-6f68-44a9-8ff3-dd5f72f4984b&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691331216_2349_6364fd140f2e2.jpg&quot;
-                }
-            ]
-        },
-        {
-            &quot;id&quot;: &quot;99d36105-dac5-4bc3-b80f-a18b9e794441&quot;,
-            &quot;name&quot;: &quot;product 5&quot;,
-            &quot;price&quot;: &quot;3,000.00&quot;,
-            &quot;description&quot;: &quot;&quot;,
-            &quot;author&quot;: {
-                &quot;id&quot;: &quot;99cf7e87-ed51-4cdb-ba3b-4557421ceda3&quot;,
-                &quot;name&quot;: &quot;first author&quot;,
-                &quot;email&quot;: &quot;author@gmail.com&quot;
-            },
-            &quot;categories&quot;: [
-                {
-                    &quot;id&quot;: &quot;99cfdfea-c72f-451b-aed3-ec3eb26bd2c5&quot;,
-                    &quot;name&quot;: &quot;category one&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d2f03a-b789-4067-a743-1ebb1c40c8e0&quot;,
-                    &quot;name&quot;: &quot;category two&quot;
-                }
-            ],
-            &quot;tags&quot;: [
-                {
-                    &quot;id&quot;: &quot;99cfd9ed-a48a-40d9-b896-4549d534fb7a&quot;,
-                    &quot;name&quot;: &quot;tag one&quot;
-                }
-            ],
-            &quot;images&quot;: [
-                {
-                    &quot;id&quot;: &quot;99d36105-de36-49d3-9a86-a507b0569db0&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691331449_sparkling_diamondpng&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d36105-dec8-453b-b454-cab1e8075c95&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691331449_untitledpng&quot;
-                }
-            ]
-        },
-        {
-            &quot;id&quot;: &quot;99d39352-1f1b-4be9-a00c-ae4f3fe70698&quot;,
-            &quot;name&quot;: &quot;product Six&quot;,
-            &quot;price&quot;: &quot;4,000.00&quot;,
-            &quot;description&quot;: &quot;&quot;,
-            &quot;author&quot;: {
-                &quot;id&quot;: &quot;99cf7e87-ed51-4cdb-ba3b-4557421ceda3&quot;,
-                &quot;name&quot;: &quot;first author&quot;,
-                &quot;email&quot;: &quot;author@gmail.com&quot;
-            },
-            &quot;categories&quot;: [
-                {
-                    &quot;id&quot;: &quot;99cfdfea-c72f-451b-aed3-ec3eb26bd2c5&quot;,
-                    &quot;name&quot;: &quot;category one&quot;
-                }
-            ],
-            &quot;tags&quot;: [
-                {
-                    &quot;id&quot;: &quot;99cfd9ed-a48a-40d9-b896-4549d534fb7a&quot;,
-                    &quot;name&quot;: &quot;tag one&quot;
-                }
-            ],
-            &quot;images&quot;: [
-                {
-                    &quot;id&quot;: &quot;99d39352-2995-4868-9359-466e75802e46&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691339887_pennup_school_flowdrawiopng&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3a508-8177-42f8-9542-089063dbbffa&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691342859_yos5png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3a620-c530-41c3-b1b9-ad16bde3faf2&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691343043_yos6png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3a620-c900-43be-a127-26fcc9cad4bd&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691343043_yos5png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3ae26-5402-43da-b513-881b50120847&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691344388_yos6png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3ae26-575c-4311-87f0-5fd49345ecd4&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691344388_yos5png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3ae9b-7035-4ccc-9991-6380f64f35aa&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691344465_yos6png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3ae9b-7329-4de4-be7a-24ff329fceaa&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691344465_yos5png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3b0d4-6f58-4379-89e4-5f272c001fd4&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691344838_yos6png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3b0d4-72fd-4ba3-b157-355e813c90de&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691344838_yos5png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3b4ba-943a-42c3-85ea-f8ed35b2b156&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691345492_yos6png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3b4ba-97a6-422f-bd40-d2a99b41b498&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691345492_yos5png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3b4f6-4da8-4901-ba8c-d92768a7ba8a&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691345531_yos6png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3b4f6-50af-4011-871a-28914c24d6ea&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691345531_yos5png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3b7c4-0fe5-4606-a747-d365c26b2f2b&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691346002_yos6png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3b7c4-12c2-4e7a-b6df-b963fca64b81&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691346002_yos5png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3ba16-4e67-44ed-88c9-19812ed01869&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691346391_yos6png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3ba16-52bf-455a-b033-504050992d1a&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691346391_yos5png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3ba60-a580-40ec-ad32-294a97b0d839&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691346440_yos6png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3ba60-a857-4e3e-a706-72c4dbdb2052&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691346440_yos5png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3ba96-be3e-40bc-91e6-c227b50eefd9&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691346475_yos6png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3ba96-c1e7-4435-8672-d05f414fc805&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691346475_yos5png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3baad-4d5d-45a2-88ed-e272ec6834c4&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691346490_yos6png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3baad-5047-47c0-b95e-e717d9f47549&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691346490_yos5png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3bf8d-a45c-440b-90af-e1aa01ef85e5&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691347308_yos6png&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;99d3bf8d-a850-454e-ae4c-9d95bec18d11&quot;,
-                    &quot;url&quot;: &quot;http://localhost/storage/1691347308_yos5png&quot;
-                }
-            ]
         }
-    ],
-    &quot;links&quot;: {
-        &quot;first&quot;: &quot;http://localhost/api/v1/products?page=1&quot;,
-        &quot;last&quot;: &quot;http://localhost/api/v1/products?page=1&quot;,
-        &quot;prev&quot;: null,
-        &quot;next&quot;: null
-    },
-    &quot;meta&quot;: {
-        &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
-        &quot;last_page&quot;: 1,
-        &quot;links&quot;: [
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://localhost/api/v1/products?page=1&quot;,
-                &quot;label&quot;: &quot;1&quot;,
-                &quot;active&quot;: true
-            },
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
-                &quot;active&quot;: false
-            }
-        ],
-        &quot;path&quot;: &quot;http://localhost/api/v1/products&quot;,
-        &quot;per_page&quot;: 15,
-        &quot;to&quot;: 6,
-        &quot;total&quot;: 6
-    }
+    ]
 }</code>
  </pre>
     </span>
@@ -3613,14 +3013,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/products/99d35264-8076-49a5-a8d5-8cd88f85a773" \
+    --get "http://localhost/api/v1/products/eius" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/products/99d35264-8076-49a5-a8d5-8cd88f85a773"
+    "http://localhost/api/v1/products/eius"
 );
 
 const headers = {
@@ -3639,34 +3039,16 @@ fetch(url, {
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: &quot;99d35264-8076-49a5-a8d5-8cd88f85a773&quot;,
-        &quot;name&quot;: &quot;product 1&quot;,
-        &quot;price&quot;: &quot;300.00&quot;,
-        &quot;description&quot;: &quot;&quot;,
-        &quot;author&quot;: {
-            &quot;id&quot;: &quot;99cf7e87-ed51-4cdb-ba3b-4557421ceda3&quot;,
-            &quot;name&quot;: &quot;first author&quot;,
-            &quot;email&quot;: &quot;author@gmail.com&quot;
-        },
-        &quot;categories&quot;: [
-            {
-                &quot;id&quot;: &quot;99cfdfea-c72f-451b-aed3-ec3eb26bd2c5&quot;,
-                &quot;name&quot;: &quot;category one&quot;
-            }
-        ],
+        &quot;id&quot;: null,
+        &quot;name&quot;: null,
+        &quot;price&quot;: &quot;0.00&quot;,
+        &quot;description&quot;: null,
+        &quot;author&quot;: null,
+        &quot;categories&quot;: [],
         &quot;tags&quot;: [],
         &quot;images&quot;: []
     }
@@ -3749,10 +3131,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-v1-products--id-"
-               value="99d35264-8076-49a5-a8d5-8cd88f85a773"
+               value="eius"
                data-component="url">
     <br>
-<p>The ID of the product. Example: <code>99d35264-8076-49a5-a8d5-8cd88f85a773</code></p>
+<p>Product ID Example: <code>eius</code></p>
             </div>
                     </form>
 
@@ -3797,19 +3179,21 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-admin-tags">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: null,
+            &quot;name&quot;: null
+        },
+        {
+            &quot;id&quot;: null,
+            &quot;name&quot;: null
+        }
+    ]
 }</code>
  </pre>
     </span>
@@ -3901,7 +3285,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"nbbzr\"
+    \"name\": \"vwdawtvhxhlxmqm\"
 }"
 </code></pre></div>
 
@@ -3917,7 +3301,7 @@ const headers = {
 };
 
 let body = {
-    "name": "nbbzr"
+    "name": "vwdawtvhxhlxmqm"
 };
 
 fetch(url, {
@@ -3929,7 +3313,19 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-v1-admin-tags">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: null,
+        &quot;name&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-v1-admin-tags" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-v1-admin-tags"></span>:
@@ -4006,10 +3402,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-admin-tags"
-               value="nbbzr"
+               value="vwdawtvhxhlxmqm"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>nbbzr</code></p>
+<p>Must not be greater than 100 characters. Example: <code>vwdawtvhxhlxmqm</code></p>
         </div>
         </form>
 
@@ -4050,19 +3446,15 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-admin-tags--id-">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;data&quot;: {
+        &quot;id&quot;: null,
+        &quot;name&quot;: null
+    }
 }</code>
  </pre>
     </span>
@@ -4166,7 +3558,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"swcpmcohqovdeabiwrtvwsln\"
+    \"name\": \"fvsfszuvegfslhcotgzf\"
 }"
 </code></pre></div>
 
@@ -4182,7 +3574,7 @@ const headers = {
 };
 
 let body = {
-    "name": "swcpmcohqovdeabiwrtvwsln"
+    "name": "fvsfszuvegfslhcotgzf"
 };
 
 fetch(url, {
@@ -4194,7 +3586,19 @@ fetch(url, {
 </span>
 
 <span id="example-responses-PUTapi-v1-admin-tags--id-">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: null,
+        &quot;name&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-PUTapi-v1-admin-tags--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-PUTapi-v1-admin-tags--id-"></span>:
@@ -4287,10 +3691,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-admin-tags--id-"
-               value="swcpmcohqovdeabiwrtvwsln"
+               value="fvsfszuvegfslhcotgzf"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>swcpmcohqovdeabiwrtvwsln</code></p>
+<p>Must not be greater than 100 characters. Example: <code>fvsfszuvegfslhcotgzf</code></p>
         </div>
         </form>
 
