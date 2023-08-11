@@ -53,4 +53,8 @@ class Product extends Model
             $this->images()->create(['image' => $imageName]);
         }
     }
+
+    public function reviews(): HasMany {
+        return $this->hasMany(Review::class);
+    }
 }
