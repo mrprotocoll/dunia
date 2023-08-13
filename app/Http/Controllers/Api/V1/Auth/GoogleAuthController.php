@@ -31,6 +31,7 @@ class GoogleAuthController extends Controller
             'name' => $googleUser->name,
             'email' => $googleUser->email,
             'password' => $device,
+            'oauth' => true,
             'google_token' => $googleUser->token,
             'google_refresh_token' => $googleUser->refreshToken,
         ]);
