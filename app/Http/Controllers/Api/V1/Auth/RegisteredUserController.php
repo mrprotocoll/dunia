@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Api\V1\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\UserResource;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
@@ -18,17 +19,23 @@ use Illuminate\Validation\Rules;
  */
 class RegisteredUserController extends Controller
 {
+
     /**
-     * Handle an incoming registration request.
+     * Register a new user.
      *
      * @throws \Illuminate\Validation\ValidationException
+     *
+     * @apiResource App\Http\Resources\V1\UserResource
+     * @apiResourceModel App\Models\User
+     * @param Request $request
+     * @return UserResource | JsonResponse
      */
-    public function store(Request $request): Response
+    public function store(Request $request): UserResource
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
@@ -41,6 +48,10 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return response()->noContent();
+        $device = substr($request->userAgent() ?? '', 0, 255);
+        $token = $user->createToken($device)->plainTextToken;
+
+        return response()->json(['token' => $token, 'data' => new UserResource($user)], 200);
+
     }
 }
