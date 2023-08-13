@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Auth;
+namespace App\Http\Controllers\Api\V1\Admin\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\V1\RegisterRequest;
+use App\Http\Requests\V1\Auth\RegisterRequest;
 use App\Http\Resources\V1\UserResource;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Hash;
 
 /**
@@ -19,7 +18,7 @@ use Illuminate\Support\Facades\Hash;
 class RegisterController extends Controller
 {
     /**
-     * Register a new user.
+     * Register a new admin.
      *
      * @response 422 {
      *       "error": "Account already exist, kindly login"

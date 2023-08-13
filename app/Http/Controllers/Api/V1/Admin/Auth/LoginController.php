@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Auth;
+namespace App\Http\Controllers\Api\V1\Admin\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\V1\LoginRequest;
+use App\Http\Requests\V1\Auth\LoginRequest;
 use App\Http\Resources\V1\UserResource;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Hash;
 class LoginController extends Controller
 {
     /**
-     * Login.
+     * Admin Login.
      *
      * @param LoginRequest $request
      * @response {
@@ -30,14 +30,14 @@ class LoginController extends Controller
      *  }
      * @response 422 {
      *      "error": "The provided credentials are incorrect."
-     *  }
+     * }
      *
      * @return JsonResponse
      */
     public function __invoke(LoginRequest $request): JsonResponse
     {
         //
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('email', $request->email)->where('status', 1)->first();
 
         if (! $user || ! Hash::check($request->password, $user->password)) {
             return response()->json(['error' => 'The provided credentials are incorrect.'], 422);

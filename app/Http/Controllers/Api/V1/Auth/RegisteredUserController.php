@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
+/**
+ * @group Authentication
+ *
+ * Endpoint to manage user authentication
+ */
 class RegisteredUserController extends Controller
 {
     /**

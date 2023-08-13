@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Auth;
+namespace App\Http\Controllers\Api\V1\Admin\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 class LogoutController extends Controller
 {
     /**
-     * Logout.
+     * Admin Logout.
      * @authenticated
      * @response 204 {
      *      "message": "Logged out successfully."
