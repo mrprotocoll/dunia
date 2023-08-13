@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\TagRequest;
 use App\Http\Resources\V1\TagResource;
 use App\Models\Tag;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 /**
  * @group Tags Management
@@ -20,9 +21,9 @@ class TagController extends Controller
      * @apiResourceCollection App\Http\Resources\V1\TagResource
      * @apiResourceModel App\Models\Tag
      *
-     * @return TagResource
+     * @return ResourceCollection
      */
-    public function index(): TagResource
+    public function index(): ResourceCollection
     {
         //
         return TagResource::collection(Tag::paginate());

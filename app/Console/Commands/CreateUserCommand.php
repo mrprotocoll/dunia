@@ -33,7 +33,7 @@ class CreateUserCommand extends Command
         $user['name'] = $this->ask('Name of the user');
         $user['email'] = $this->ask('Email of the user');
         $user['password'] = $this->secret('Password of the user');
-        $user['role'] = 1;
+        $user['role'] = 'admin';
 
         $validator = Validator::make($user, [
             'name' => ['required', 'string', 'max:255'],

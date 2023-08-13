@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\AuthorRequest;
 use App\Http\Resources\V1\AuthorResource;
 use App\Models\Author;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 /**
  * @group Author Management
@@ -22,8 +23,9 @@ class AuthorController extends Controller
      * @apiResourceCollection App\Http\Resources\V1\AuthorResource
      * @apiResourceModel App\Models\Author
      *
+     * @return ResourceCollection
      */
-    public function index(): AuthorResource
+    public function index(): ResourceCollection
     {
         //
         $authors = Author::paginate();
