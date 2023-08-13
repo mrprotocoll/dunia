@@ -28,9 +28,9 @@ class RegisteredUserController extends Controller
      * @apiResource App\Http\Resources\V1\UserResource
      * @apiResourceModel App\Models\User
      * @param Request $request
-     * @return UserResource | JsonResponse
+     * @return JsonResponse
      */
-    public function store(Request $request): UserResource
+    public function store(Request $request): JsonResponse
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
@@ -51,7 +51,7 @@ class RegisteredUserController extends Controller
         $device = substr($request->userAgent() ?? '', 0, 255);
         $token = $user->createToken($device)->plainTextToken;
 
-        return response()->json(['token' => $token, 'data' => new UserResource($user)], 200);
+        return response()->json(['token' => $token, 'data' => new UserResource($user)], 201);
 
     }
 }

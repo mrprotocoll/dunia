@@ -32,7 +32,7 @@ class RegisterController extends Controller
     {
         // check if user already exist
 
-        if(User::where("email", $request->email)->where("role", 0)->exists()){
+        if(User::where("email", $request->email)->where("role", 'admin')->exists()){
             return response()->json(["message" => "Account already exist, kindly login"]);
         }
 
