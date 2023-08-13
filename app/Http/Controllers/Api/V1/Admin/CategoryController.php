@@ -9,6 +9,7 @@ use App\Http\Resources\V1\AuthorResource;
 use App\Http\Resources\V1\CategoryResource;
 use App\Models\Author;
 use App\Models\Category;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 /**
  * @group Categories Management
@@ -23,9 +24,9 @@ class CategoryController extends Controller
      * @apiResourceCollection App\Http\Resources\V1\CategoryResource
      * @apiResourceModel App\Models\Category
      *
-     * @return CategoryResource
+     * @return ResourceCollection
      */
-    public function index(): CategoryResource
+    public function index(): ResourceCollection
     {
         //
         return CategoryResource::collection(Category::paginate());
