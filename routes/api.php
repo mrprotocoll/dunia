@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\V1\Admin;
+use App\Http\Controllers\Api\V1\Admin\ProductImageController;
 use App\Http\Controllers\Api\V1\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Api\V1\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Api\V1\Auth\LoginController;

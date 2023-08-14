@@ -3,7 +3,7 @@
 This is dunia API documentation, for internal use only
 
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
+    <strong>Base URL</strong>: <code>http://dunia.healthyishng.com</code>
 </aside>
 
 This documentation aims to provide all the information you need to work with the API.

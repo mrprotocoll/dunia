@@ -6,12 +6,24 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\RedirectResponse;
 
 class VerifyEmailController extends Controller
 {
+
     /**
+     * Handle the email verification process for the authenticated user.
      * Mark the authenticated user's email address as verified.
+     *
+     * @param FormRequest $request The email verification request.
+     *
+     * @response {
+     *     "message": "Email verified successfully.",
+     *     "redirect_url": "https://frontend.example.com/home?verified=1"
+     * }
+     *
+     * @return RedirectResponse
      */
     public function __invoke(EmailVerificationRequest $request): RedirectResponse
     {

@@ -9,6 +9,7 @@ use App\Http\Resources\V1\ProductResource;
 use App\Models\Author;
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 /**
  * @group Product Management
@@ -21,7 +22,7 @@ class ProductController extends Controller
     /**
      * Retrieve a paginated list of products with optional filters.
      *
-     * @param ProductListRequest $request The product index request.
+     * @param ProductRequest $request The product index request.
      *
      * @queryParam name string Search for products by name (partial match).
      * @queryParam author string Search for products by author's name.
@@ -76,11 +77,10 @@ class ProductController extends Controller
      *         "total": 25
      *     }
      * }
-     * @apiResourceCollection App\Http\Resources\V1\ProductResource
-     * @apiResourceModel App\Models\Product
-     * @return ProductResource
+     *
+     * @return ResourceCollection
      */
-    public function index(ProductRequest $request): ProductResource
+    public function index(ProductRequest $request): ResourceCollection
     {
         //
         $products = Product::with(['category', 'author'])

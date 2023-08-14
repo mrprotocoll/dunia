@@ -10,10 +10,36 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
+/**
+ * @group Authentication
+ *
+ * Endpoint to manage user authentication
+ */
 class GoogleAuthController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Authenticate and log in a user using Google OAuth.
+     *
+     * @param Request $request The authentication request.
+     *
+     * @bodyParam token string required The Google OAuth access token.
+     *
+     * @response {
+     *     "token": "generated_token",
+     *     "data": {
+     *         "id": 1,
+     *         "name": "John Doe",
+     *         "email": "johndoe@example.com",
+     *     }
+     * }
+     * @response 422 {
+     *     "error": "Validation failed."
+     * }
+     * @response 401 {
+     *     "error": "Unauthorized."
+     * }
+     *
+     * @return JsonResponse
      */
     public function __invoke(Request $request): JsonResponse
     {

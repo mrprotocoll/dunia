@@ -10,10 +10,25 @@ use Illuminate\Validation\ValidationException;
 
 class PasswordResetLinkController extends Controller
 {
+
     /**
+     * Send a password reset link to the user's email address.
      * Handle an incoming password reset link request.
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws ValidationException
+     *
+     * @param Request $request The password reset link request.
+     *
+     * @bodyParam email string required The user's email address for password reset.
+     *
+     * @response {
+     *     "status": "Password reset link sent successfully."
+     * }
+     * @response 422 {
+     *     "error": "Validation failed."
+     * }
+     *
+     * @return JsonResponse
      */
     public function store(Request $request): JsonResponse
     {

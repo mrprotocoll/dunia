@@ -14,10 +14,27 @@ use Illuminate\Validation\ValidationException;
 
 class NewPasswordController extends Controller
 {
+
     /**
-     * Handle an incoming new password request.
+     * Handle a new password request for password reset.
      *
      * @throws \Illuminate\Validation\ValidationException
+     *
+     * @param \Illuminate\Http\Request $request The new password request.
+     *
+     * @bodyParam token string required The token received for password reset.
+     * @bodyParam email string required The user's email address.
+     * @bodyParam password string required The new password.
+     * @bodyParam password_confirmation string required The confirmation of the new password.
+     *
+     * @response {
+     *     "status": "Password reset successfully."
+     * }
+     * @response 422 {
+     *     "error": "Validation failed."
+     * }
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request): JsonResponse
     {

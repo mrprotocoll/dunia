@@ -36,7 +36,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c4Dbe6vh6g853k1PZdVafaE'
+      - 'Bearer 1Egvaaf8663cdDbkVZPe4h5'
     controller: null
     method: null
     route: null
@@ -67,11 +67,11 @@ endpoints:
         name: name
         description: 'Name of category'
         required: true
-        example: similique
+        example: alias
         type: string
         custom: []
     cleanBodyParameters:
-      name: similique
+      name: alias
     fileParameters: []
     responses:
       -
@@ -84,7 +84,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z6agD8kV1eEachP63b4fd5v'
+      - 'Bearer fP6ka1vaZDh3b5cd6e4EV8g'
     controller: null
     method: null
     route: null
@@ -111,11 +111,11 @@ endpoints:
         name: id
         description: 'Category ID'
         required: true
-        example: libero
+        example: vel
         type: string
         custom: []
     cleanUrlParameters:
-      id: libero
+      id: vel
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -132,7 +132,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VDPfZv3adb518eEgk6ac4h6'
+      - 'Bearer P5vdgbZfkcheVa6aE86341D'
     controller: null
     method: null
     route: null
@@ -172,11 +172,11 @@ endpoints:
         name: name
         description: 'Name of category'
         required: true
-        example: facere
+        example: id
         type: string
         custom: []
     cleanBodyParameters:
-      name: facere
+      name: id
     fileParameters: []
     responses:
       -
@@ -189,7 +189,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Paf6Vh4EvDkg5631bZ8acde'
+      - 'Bearer ceab6V45PaEfZg368khvd1D'
     controller: null
     method: null
     route: null

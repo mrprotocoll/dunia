@@ -7,7 +7,6 @@ use App\Http\Requests\V1\Auth\LoginRequest;
 use App\Http\Resources\V1\UserResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
 /**
@@ -43,7 +42,7 @@ class AuthenticatedSessionController extends Controller
 
         $device = substr($request->userAgent() ?? '', 0, 255);
 
-        return response()->json(['token' => $user->createToken($device)->plainTextToken, 'data' => $user], 200);
+        return response()->json(['token' => $user->createToken($device)->plainTextToken, 'data' => new UserResource($user)], 200);
     }
 
     /**

@@ -33,7 +33,7 @@ endpoints:
         name: name
         description: 'The name of the product.'
         required: true
-        example: rerum
+        example: modi
         type: string
         custom: []
       images:
@@ -48,14 +48,14 @@ endpoints:
         name: price
         description: 'The price of the product.'
         required: true
-        example: 16063.0324
+        example: 0.22353
         type: number
         custom: []
       description:
         name: description
         description: 'The description of the product.'
         required: true
-        example: 'Earum aperiam velit ut recusandae a est ex.'
+        example: 'Esse at in dolorum qui sunt in.'
         type: string
         custom: []
       categories:
@@ -63,7 +63,7 @@ endpoints:
         description: 'An array of category IDs associated with the product.'
         required: true
         example:
-          - voluptatem
+          - accusamus
         type: 'string[]'
         custom: []
       tags:
@@ -71,14 +71,14 @@ endpoints:
         description: 'An array of tag IDs associated with the product.'
         required: true
         example:
-          - blanditiis
+          - maiores
         type: 'string[]'
         custom: []
       author:
         name: author
         description: 'The ID of the author of the product.'
         required: true
-        example: 8
+        example: 20
         type: integer
         custom: []
       'images[]':
@@ -89,14 +89,14 @@ endpoints:
         type: file
         custom: []
     cleanBodyParameters:
-      name: rerum
-      price: 16063.0324
-      description: 'Earum aperiam velit ut recusandae a est ex.'
+      name: modi
+      price: 0.22353
+      description: 'Esse at in dolorum qui sunt in.'
       categories:
-        - voluptatem
+        - accusamus
       tags:
-        - blanditiis
-      author: 8
+        - maiores
+      author: 20
     fileParameters:
       images:
         - null
@@ -147,7 +147,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e134E6kfb5av6hPVDZgadc8'
+      - 'Bearer 1a6EdD6Zbkf83hP4Vcgav5e'
     controller: null
     method: null
     route: null
@@ -189,7 +189,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: molestiae
+        example: unde
         type: string
         custom: []
       images:
@@ -204,14 +204,14 @@ endpoints:
         name: price
         description: ''
         required: true
-        example: minima
+        example: eaque
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: sed
+        example: qui
         type: string
         custom: []
       categories:
@@ -232,14 +232,14 @@ endpoints:
         name: author
         description: ''
         required: true
-        example: aut
+        example: numquam
         type: string
         custom: []
     cleanBodyParameters:
-      name: molestiae
-      price: minima
-      description: sed
-      author: aut
+      name: unde
+      price: eaque
+      description: qui
+      author: numquam
     fileParameters:
       images:
         - null
@@ -254,7 +254,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g356hk8v6ac4VZdP1bfeDEa'
+      - 'Bearer 6dcaD84P6aZVv153ehfbkgE'
     controller: null
     method: null
     route: null
@@ -308,7 +308,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer adDbe3g6v1cfaEVkZP486h5'
+      - 'Bearer vdZaV3k4fPD8c16E56bhgea'
     controller: null
     method: null
     route: null
@@ -360,7 +360,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h5a1v6VkZdP6bDgac4E3f8e'
+      - 'Bearer cE8P6Vad1D6khegavZb453f'
     controller: null
     method: null
     route: null
@@ -390,33 +390,33 @@ endpoints:
         name: name
         description: 'Search for products by name (partial match).'
         required: false
-        example: voluptates
+        example: inventore
         type: string
         custom: []
       author:
         name: author
         description: "Search for products by author's name."
         required: false
-        example: molestiae
+        example: doloribus
         type: string
         custom: []
       category:
         name: category
         description: 'Search for products by category name.'
         required: false
-        example: iusto
+        example: molestiae
         type: string
         custom: []
     cleanQueryParameters:
-      name: voluptates
-      author: molestiae
-      category: iusto
+      name: inventore
+      author: doloribus
+      category: molestiae
     bodyParameters:
       name:
         name: name
         description: ''
         required: true
-        example: qui
+        example: tenetur
         type: string
         custom: []
       images:
@@ -431,14 +431,14 @@ endpoints:
         name: price
         description: ''
         required: true
-        example: et
+        example: aut
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: porro
+        example: qui
         type: string
         custom: []
       categories:
@@ -459,24 +459,18 @@ endpoints:
         name: author
         description: ''
         required: true
-        example: et
+        example: rem
         type: string
         custom: []
     cleanBodyParameters:
-      name: qui
-      price: et
-      description: porro
-      author: et
+      name: tenetur
+      price: aut
+      description: qui
+      author: rem
     fileParameters:
       images:
         - null
     responses:
-      -
-        status: 200
-        content: '{"data":[{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[]},{"id":null,"name":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[]}]}'
-        headers: []
-        description: ''
-        custom: []
       -
         status: 200
         content: |-
@@ -561,11 +555,11 @@ endpoints:
         name: id
         description: 'Product ID'
         required: true
-        example: perferendis
+        example: suscipit
         type: string
         custom: []
     cleanUrlParameters:
-      id: perferendis
+      id: suscipit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

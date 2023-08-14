@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Requests\V1\Auth;
+namespace App\Http\Requests\V1;
 
-use App\Models\User;
+use App\Models\Country;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules\Password;
 
-class RegisterRequest extends FormRequest
+class BillingAddressRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +23,11 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', Password::defaults()],
+            //
+            'country' => ['required', 'exists:countries,id'],
+            'states' => ['required', 'exists:states,id'],
+            'cities' => ['required', 'exists:cities,id'],
+            'address' => ['required', 'string'],
         ];
     }
 }

@@ -31,8 +31,248 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: '*'
+          vary: Origin
         description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/verify-email/{id}/{hash}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle the email verification process for the authenticated user.'
+      description: "Mark the authenticated user's email address as verified."
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the verify email.'
+        required: true
+        example: consequatur
+        type: string
+        custom: []
+      hash:
+        name: hash
+        description: ''
+        required: true
+        example: earum
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: consequatur
+      hash: earum
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "message": "Email verified successfully.",
+              "redirect_url": "https://frontend.example.com/home?verified=1"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/email/verification-notification
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Send an email verification notification to the user or redirect if email is already verified.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "status": "verification-link-sent"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 302
+        content: |-
+          {
+              "redirect_url": "https://frontend.example.com/home"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/forgot-password
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Send a password reset link to the user's email address."
+      description: 'Handle an incoming password reset link request.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: "The user's email address for password reset."
+        required: true
+        example: marquardt.luisa@example.org
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: marquardt.luisa@example.org
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "status": "Password reset link sent successfully."
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+              "error": "Validation failed."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/reset-password
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle a new password request for password reset.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      token:
+        name: token
+        description: 'The token received for password reset.'
+        required: true
+        example: autem
+        type: string
+        custom: []
+      email:
+        name: email
+        description: "The user's email address."
+        required: true
+        example: otorphy@example.org
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'The new password.'
+        required: true
+        example: 'kf)i*UDT{[Slb@D'
+        type: string
+        custom: []
+      password_confirmation:
+        name: password_confirmation
+        description: 'The confirmation of the new password.'
+        required: true
+        example: dolor
+        type: string
+        custom: []
+    cleanBodyParameters:
+      token: autem
+      email: otorphy@example.org
+      password: 'kf)i*UDT{[Slb@D'
+      password_confirmation: dolor
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "status": "Password reset successfully."
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+              "error": "Validation failed."
+          }
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []

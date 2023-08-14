@@ -32,7 +32,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":"99dde27f-14c6-4701-a1a3-a8e0ed11da4a","name":"Xzavier Lindgren Jr.","email":"ythiel@example.org"},{"id":"99dde27f-1934-43b8-86c1-cce863c842ff","name":"Mckenzie Stroman","email":"kayli.cummerata@example.org"}]}'
+        content: '{"data":[{"id":"99e33e4a-07f9-4314-9ada-b1eb14890903","name":"Jeanie Ferry MD","email":"casandra.daugherty@example.net"},{"id":"99e33e4a-19bc-4e8b-a83b-2c254a986678","name":"Edyth Erdman II","email":"schmidt.colleen@example.org"}]}'
         headers: []
         description: ''
         custom: []
@@ -40,7 +40,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gbad6cEk6Zf4vhD5Ve1a3P8'
+      - 'Bearer gePEhVfkDbad36Z18a5v6c4'
     controller: null
     method: null
     route: null
@@ -80,17 +80,17 @@ endpoints:
         name: email
         description: 'Email of author.'
         required: true
-        example: karley55@example.net
+        example: ondricka.amya@example.org
         type: string
         custom: []
     cleanBodyParameters:
       name: 'Isaac Johnson'
-      email: karley55@example.net
+      email: ondricka.amya@example.org
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99dde27f-2ce0-44a6-9b79-072e580c522a","name":"Maddison Quigley","email":"sam21@example.com"}}'
+        content: '{"data":{"id":"99e33e4a-1fbe-43fa-bb9f-920ff0be9f1d","name":"Dr. Jordon Streich","email":"oconner.walker@example.org"}}'
         headers: []
         description: ''
         custom: []
@@ -98,7 +98,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6hg3dPZ6kvfDeb5a481acEV'
+      - 'Bearer VbadD6eg1vEa4k6fh538cPZ'
     controller: null
     method: null
     route: null
@@ -127,11 +127,11 @@ endpoints:
         name: id
         description: 'Author ID'
         required: true
-        example: qui
+        example: in
         type: string
         custom: []
     cleanUrlParameters:
-      id: qui
+      id: in
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -140,7 +140,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99dde27f-2f94-448d-8e3e-c0b0ddfbf6c8","name":"Mathew Leuschke","email":"tony.crona@example.org"}}'
+        content: '{"data":{"id":"99e33e4a-2433-4d68-a221-87b60325ae42","name":"Mr. Bernardo Kuvalis II","email":"dominic57@example.net"}}'
         headers: []
         description: ''
         custom: []
@@ -148,7 +148,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ge6PZdaDcVhEvfba3516k48'
+      - 'Bearer 86eP1dEac4k5V63avDbgfZh'
     controller: null
     method: null
     route: null
@@ -197,17 +197,17 @@ endpoints:
         name: email
         description: 'Email of author.'
         required: true
-        example: magnus.morissette@example.net
+        example: lorenza89@example.org
         type: string
         custom: []
     cleanBodyParameters:
       name: 'Isaac Johnson'
-      email: magnus.morissette@example.net
+      email: lorenza89@example.org
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99dde27f-319f-4fc5-9245-07638ff03ff5","name":"Mose Kling IV","email":"bethel.hammes@example.net"}}'
+        content: '{"data":{"id":"99e33e4a-26be-4130-b792-d38a3eea2b82","name":"Miss Ayla Bednar V","email":"pbayer@example.org"}}'
         headers: []
         description: ''
         custom: []
@@ -215,7 +215,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hEbP1fcDgda3avek56VZ864'
+      - 'Bearer vEV6gh5aZaPDce186dfb4k3'
     controller: null
     method: null
     route: null

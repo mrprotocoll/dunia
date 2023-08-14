@@ -5,12 +5,12 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'http://localhost'
+    url: 'http://dunia.healthyishng.com'
 paths:
-  /api/v1/register:
+  /api/v1/admin/register:
     post:
-      summary: 'Register a new user.'
-      operationId: registerANewUser
+      summary: 'Register a new admin.'
+      operationId: registerANewAdmin
       description: ''
       parameters: []
       responses:
@@ -22,22 +22,22 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 99dde27f-4e1e-4dbe-a8fe-e1ab690f308b
-                    name: 'Samanta Barton'
-                    email: kris80@example.org
+                    id: 99e33e4a-459c-456f-8498-c51e8aa6480a
+                    name: 'Joanie Murray MD'
+                    email: thand@example.org
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: string
-                        example: 99dde27f-4e1e-4dbe-a8fe-e1ab690f308b
+                        example: 99e33e4a-459c-456f-8498-c51e8aa6480a
                       name:
                         type: string
-                        example: 'Samanta Barton'
+                        example: 'Joanie Murray MD'
                       email:
                         type: string
-                        example: kris80@example.org
+                        example: thand@example.org
         422:
           description: ''
           content:
@@ -61,25 +61,25 @@ paths:
               properties:
                 name:
                   type: string
-                  description: ''
-                  example: reiciendis
+                  description: 'Must not be greater than 255 characters.'
+                  example: ranospzln
                 email:
                   type: string
-                  description: 'Must be a valid email address.'
-                  example: nova.koss@example.com
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: ocorwin@example.org
                 password:
                   type: string
                   description: ''
-                  example: 'l*`<:~3.6@rzYY'
+                  example: autem
               required:
                 - name
                 - email
                 - password
       security: []
-  /api/v1/login:
+  /api/v1/admin/login:
     post:
-      summary: Login.
-      operationId: login
+      summary: 'Admin Login.'
+      operationId: adminLogin
       description: ''
       parameters: []
       responses:
@@ -114,21 +114,28 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: moore.yadira@example.net
+                  example: truecker@example.org
                 password:
                   type: string
                   description: ''
-                  example: "'n}6u!,tgx2Gu-X4W(>"
+                  example: '{1xfQn"W^9a8DQOg'
               required:
                 - email
                 - password
       security: []
   /api/v1/logout:
-    get:
+    post:
       summary: Logout.
       operationId: logout
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses:
         204:
           description: ''
@@ -146,6 +153,163 @@ paths:
                     example: 'Unauthorized user'
       tags:
         - Authentication
+  /api/v1/register:
+    post:
+      summary: 'Register a new user.'
+      operationId: registerANewUser
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 99e33e4a-52ff-49b1-a971-df9c58620463
+                    name: 'Estrella Green'
+                    email: gillian.olson@example.com
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: 99e33e4a-52ff-49b1-a971-df9c58620463
+                      name:
+                        type: string
+                        example: 'Estrella Green'
+                      email:
+                        type: string
+                        example: gillian.olson@example.com
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: yachuuzqnnwwqexhdweroqn
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: melissa97@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: aut
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/v1/login:
+    post:
+      summary: 'User Login.'
+      operationId: userLogin
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n     \"token\": \"generated_token\"\n     \"data\": {\n         \"id\": 1,\n         \"name\": \"User\",\n         \"email\": \"user@email.com\"\n     }\n }"
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'The provided credentials are incorrect.'
+                properties:
+                  error:
+                    type: string
+                    example: 'The provided credentials are incorrect.'
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: carlie71@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: '{Hp8YEv/w6$y%r'
+              required:
+                - email
+                - password
+      security: []
+  /api/v1/auth/google:
+    get:
+      summary: 'Authenticate and log in a user using Google OAuth.'
+      operationId: authenticateAndLogInAUserUsingGoogleOAuth
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n    \"token\": \"generated_token\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"John Doe\",\n        \"email\": \"johndoe@example.com\",\n    }\n}"
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Unauthorized.
+                properties:
+                  error:
+                    type: string
+                    example: Unauthorized.
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Validation failed.'
+                properties:
+                  error:
+                    type: string
+                    example: 'Validation failed.'
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: 'The Google OAuth access token.'
+                  example: modi
+              required:
+                - token
       security: []
   /api/v1/admin/authors:
     get:
@@ -170,37 +334,37 @@ paths:
                 example:
                   data:
                     -
-                      id: 99dde27f-14c6-4701-a1a3-a8e0ed11da4a
-                      name: 'Xzavier Lindgren Jr.'
-                      email: ythiel@example.org
+                      id: 99e33e4a-07f9-4314-9ada-b1eb14890903
+                      name: 'Jeanie Ferry MD'
+                      email: casandra.daugherty@example.net
                     -
-                      id: 99dde27f-1934-43b8-86c1-cce863c842ff
-                      name: 'Mckenzie Stroman'
-                      email: kayli.cummerata@example.org
+                      id: 99e33e4a-19bc-4e8b-a83b-2c254a986678
+                      name: 'Edyth Erdman II'
+                      email: schmidt.colleen@example.org
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 99dde27f-14c6-4701-a1a3-a8e0ed11da4a
-                        name: 'Xzavier Lindgren Jr.'
-                        email: ythiel@example.org
+                        id: 99e33e4a-07f9-4314-9ada-b1eb14890903
+                        name: 'Jeanie Ferry MD'
+                        email: casandra.daugherty@example.net
                       -
-                        id: 99dde27f-1934-43b8-86c1-cce863c842ff
-                        name: 'Mckenzie Stroman'
-                        email: kayli.cummerata@example.org
+                        id: 99e33e4a-19bc-4e8b-a83b-2c254a986678
+                        name: 'Edyth Erdman II'
+                        email: schmidt.colleen@example.org
                     items:
                       type: object
                       properties:
                         id:
                           type: string
-                          example: 99dde27f-14c6-4701-a1a3-a8e0ed11da4a
+                          example: 99e33e4a-07f9-4314-9ada-b1eb14890903
                         name:
                           type: string
-                          example: 'Xzavier Lindgren Jr.'
+                          example: 'Jeanie Ferry MD'
                         email:
                           type: string
-                          example: ythiel@example.org
+                          example: casandra.daugherty@example.net
       tags:
         - 'Author Management'
     post:
@@ -224,22 +388,22 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 99dde27f-2ce0-44a6-9b79-072e580c522a
-                    name: 'Maddison Quigley'
-                    email: sam21@example.com
+                    id: 99e33e4a-1fbe-43fa-bb9f-920ff0be9f1d
+                    name: 'Dr. Jordon Streich'
+                    email: oconner.walker@example.org
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: string
-                        example: 99dde27f-2ce0-44a6-9b79-072e580c522a
+                        example: 99e33e4a-1fbe-43fa-bb9f-920ff0be9f1d
                       name:
                         type: string
-                        example: 'Maddison Quigley'
+                        example: 'Dr. Jordon Streich'
                       email:
                         type: string
-                        example: sam21@example.com
+                        example: oconner.walker@example.org
       tags:
         - 'Author Management'
       requestBody:
@@ -256,7 +420,7 @@ paths:
                 email:
                   type: string
                   description: 'Email of author.'
-                  example: karley55@example.net
+                  example: ondricka.amya@example.org
               required:
                 - name
                 - email
@@ -282,22 +446,22 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 99dde27f-2f94-448d-8e3e-c0b0ddfbf6c8
-                    name: 'Mathew Leuschke'
-                    email: tony.crona@example.org
+                    id: 99e33e4a-2433-4d68-a221-87b60325ae42
+                    name: 'Mr. Bernardo Kuvalis II'
+                    email: dominic57@example.net
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: string
-                        example: 99dde27f-2f94-448d-8e3e-c0b0ddfbf6c8
+                        example: 99e33e4a-2433-4d68-a221-87b60325ae42
                       name:
                         type: string
-                        example: 'Mathew Leuschke'
+                        example: 'Mr. Bernardo Kuvalis II'
                       email:
                         type: string
-                        example: tony.crona@example.org
+                        example: dominic57@example.net
       tags:
         - 'Author Management'
     put:
@@ -321,22 +485,22 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 99dde27f-319f-4fc5-9245-07638ff03ff5
-                    name: 'Mose Kling IV'
-                    email: bethel.hammes@example.net
+                    id: 99e33e4a-26be-4130-b792-d38a3eea2b82
+                    name: 'Miss Ayla Bednar V'
+                    email: pbayer@example.org
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: string
-                        example: 99dde27f-319f-4fc5-9245-07638ff03ff5
+                        example: 99e33e4a-26be-4130-b792-d38a3eea2b82
                       name:
                         type: string
-                        example: 'Mose Kling IV'
+                        example: 'Miss Ayla Bednar V'
                       email:
                         type: string
-                        example: bethel.hammes@example.net
+                        example: pbayer@example.org
       tags:
         - 'Author Management'
       requestBody:
@@ -353,7 +517,7 @@ paths:
                 email:
                   type: string
                   description: 'Email of author.'
-                  example: magnus.morissette@example.net
+                  example: lorenza89@example.org
               required:
                 - name
                 - email
@@ -362,7 +526,7 @@ paths:
         in: path
         name: id
         description: 'Author ID'
-        example: qui
+        example: in
         required: true
         schema:
           type: string
@@ -460,7 +624,7 @@ paths:
                 name:
                   type: string
                   description: 'Name of category'
-                  example: similique
+                  example: alias
               required:
                 - name
   '/api/v1/admin/categories/{id}':
@@ -544,7 +708,7 @@ paths:
                 name:
                   type: string
                   description: 'Name of category'
-                  example: facere
+                  example: id
               required:
                 - name
     parameters:
@@ -552,7 +716,7 @@ paths:
         in: path
         name: id
         description: 'Category ID'
-        example: libero
+        example: vel
         required: true
         schema:
           type: string
@@ -577,6 +741,192 @@ paths:
                     example: Unauthenticated.
       tags:
         - Endpoints
+      security: []
+  '/api/v1/verify-email/{id}/{hash}':
+    get:
+      summary: 'Handle the email verification process for the authenticated user.'
+      operationId: handleTheEmailVerificationProcessForTheAuthenticatedUser
+      description: "Mark the authenticated user's email address as verified."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Email verified successfully.'
+                  redirect_url: 'https://frontend.example.com/home?verified=1'
+                properties:
+                  message:
+                    type: string
+                    example: 'Email verified successfully.'
+                  redirect_url:
+                    type: string
+                    example: 'https://frontend.example.com/home?verified=1'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the verify email.'
+        example: consequatur
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: hash
+        description: ''
+        example: earum
+        required: true
+        schema:
+          type: string
+  /api/v1/email/verification-notification:
+    post:
+      summary: 'Send an email verification notification to the user or redirect if email is already verified.'
+      operationId: sendAnEmailVerificationNotificationToTheUserOrRedirectIfEmailIsAlreadyVerified
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: verification-link-sent
+                properties:
+                  status:
+                    type: string
+                    example: verification-link-sent
+        302:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  redirect_url: 'https://frontend.example.com/home'
+                properties:
+                  redirect_url:
+                    type: string
+                    example: 'https://frontend.example.com/home'
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/forgot-password:
+    post:
+      summary: "Send a password reset link to the user's email address."
+      operationId: sendAPasswordResetLinkToTheUsersEmailAddress
+      description: 'Handle an incoming password reset link request.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: 'Password reset link sent successfully.'
+                properties:
+                  status:
+                    type: string
+                    example: 'Password reset link sent successfully.'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Validation failed.'
+                properties:
+                  error:
+                    type: string
+                    example: 'Validation failed.'
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: "The user's email address for password reset."
+                  example: marquardt.luisa@example.org
+              required:
+                - email
+      security: []
+  /api/v1/reset-password:
+    post:
+      summary: 'Handle a new password request for password reset.'
+      operationId: handleANewPasswordRequestForPasswordReset
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: 'Password reset successfully.'
+                properties:
+                  status:
+                    type: string
+                    example: 'Password reset successfully.'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Validation failed.'
+                properties:
+                  error:
+                    type: string
+                    example: 'Validation failed.'
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: 'The token received for password reset.'
+                  example: autem
+                email:
+                  type: string
+                  description: "The user's email address."
+                  example: otorphy@example.org
+                password:
+                  type: string
+                  description: 'The new password.'
+                  example: 'kf)i*UDT{[Slb@D'
+                password_confirmation:
+                  type: string
+                  description: 'The confirmation of the new password.'
+                  example: dolor
+              required:
+                - token
+                - email
+                - password
+                - password_confirmation
       security: []
   /api/v1/order:
     post:
@@ -696,7 +1046,7 @@ paths:
                 name:
                   type: string
                   description: 'The name of the product.'
-                  example: rerum
+                  example: modi
                 images:
                   type: array
                   description: 'Must be an image. Must not be greater than 2048 kilobytes.'
@@ -706,29 +1056,29 @@ paths:
                 price:
                   type: number
                   description: 'The price of the product.'
-                  example: 16063.0324
+                  example: 0.22353
                 description:
                   type: string
                   description: 'The description of the product.'
-                  example: 'Earum aperiam velit ut recusandae a est ex.'
+                  example: 'Esse at in dolorum qui sunt in.'
                 categories:
                   type: array
                   description: 'An array of category IDs associated with the product.'
                   example:
-                    - voluptatem
+                    - accusamus
                   items:
                     type: string
                 tags:
                   type: array
                   description: 'An array of tag IDs associated with the product.'
                   example:
-                    - blanditiis
+                    - maiores
                   items:
                     type: string
                 author:
                   type: integer
                   description: 'The ID of the author of the product.'
-                  example: 8
+                  example: 20
                 'images[]':
                   type: string
                   format: binary
@@ -814,7 +1164,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: molestiae
+                  example: unde
                 images:
                   type: array
                   description: 'Must be an image. Must not be greater than 2048 kilobytes.'
@@ -824,11 +1174,11 @@ paths:
                 price:
                   type: string
                   description: ''
-                  example: minima
+                  example: eaque
                 description:
                   type: string
                   description: ''
-                  example: sed
+                  example: qui
                 categories:
                   type: array
                   description: ''
@@ -844,7 +1194,7 @@ paths:
                 author:
                   type: string
                   description: ''
-                  example: aut
+                  example: numquam
               required:
                 - name
                 - price
@@ -940,32 +1290,32 @@ paths:
           in: query
           name: name
           description: 'Search for products by name (partial match).'
-          example: voluptates
+          example: inventore
           required: false
           schema:
             type: string
             description: 'Search for products by name (partial match).'
-            example: voluptates
+            example: inventore
         -
           in: query
           name: author
           description: "Search for products by author's name."
-          example: molestiae
+          example: doloribus
           required: false
           schema:
             type: string
             description: "Search for products by author's name."
-            example: molestiae
+            example: doloribus
         -
           in: query
           name: category
           description: 'Search for products by category name.'
-          example: iusto
+          example: molestiae
           required: false
           schema:
             type: string
             description: 'Search for products by category name.'
-            example: iusto
+            example: molestiae
       responses:
         200:
           description: ''
@@ -1127,7 +1477,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: qui
+                  example: tenetur
                 images:
                   type: array
                   description: 'Must be an image. Must not be greater than 2048 kilobytes.'
@@ -1137,11 +1487,11 @@ paths:
                 price:
                   type: string
                   description: ''
-                  example: et
+                  example: aut
                 description:
                   type: string
                   description: ''
-                  example: porro
+                  example: qui
                 categories:
                   type: array
                   description: ''
@@ -1157,7 +1507,7 @@ paths:
                 author:
                   type: string
                   description: ''
-                  example: et
+                  example: rem
               required:
                 - name
                 - price
@@ -1227,7 +1577,7 @@ paths:
         in: path
         name: id
         description: 'Product ID'
-        example: perferendis
+        example: suscipit
         required: true
         schema:
           type: string
@@ -1301,11 +1651,11 @@ paths:
                 comment:
                   type: string
                   description: 'The comment for the review.'
-                  example: sint
+                  example: perferendis
                 rating:
                   type: integer
                   description: 'The rating for the review (0-5).'
-                  example: 20
+                  example: 17
               required:
                 - comment
                 - rating
@@ -1399,7 +1749,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 100 characters.'
-                  example: ogkqahcak
+                  example: zuvlat
               required:
                 - name
       security: []
@@ -1471,7 +1821,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 100 characters.'
-                  example: oq
+                  example: eqvmyhbmzurgz
               required:
                 - name
       security: []

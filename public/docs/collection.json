@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost"
+            "value": "http:\/\/dunia.healthyishng.com"
         }
     ],
     "info": {
         "name": "Dunia Internal API Documentation",
-        "_postman_id": "e78a236d-7389-4bcc-959d-c64d3f4abdea",
+        "_postman_id": "4b9989b1-d5ad-4bae-a5c6-1be2d4708a79",
         "description": "This is dunia API documentation, for internal use only",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -19,6 +19,132 @@
             "name": "Authentication",
             "description": "\nEndpoint to manage user authentication",
             "item": [
+                {
+                    "name": "Register a new admin.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"ranospzln\",\"email\":\"ocorwin@example.org\",\"password\":\"autem\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":\"99e33e4a-459c-456f-8498-c51e8aa6480a\",\"name\":\"Joanie Murray MD\",\"email\":\"thand@example.org\"}}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n      \"error\": \"Account already exist, kindly login\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Admin Login.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"truecker@example.org\",\"password\":\"{1xfQn\\\"W^9a8DQOg\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"token\": \"generated_token\"\n     \"data\": {\n         \"id\": 1,\n         \"name\": \"User\",\n         \"email\": \"user@email.com\"\n     }\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n     \"error\": \"The provided credentials are incorrect.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Logout.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 204,
+                            "body": "{\n     \"message\": \"Logged out successfully.\"\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 402,
+                            "body": "{\n     \"message\": \"Unauthorized user\"\n }",
+                            "name": ""
+                        }
+                    ]
+                },
                 {
                     "name": "Register a new user.",
                     "request": {
@@ -41,7 +167,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"reiciendis\",\"email\":\"nova.koss@example.com\",\"password\":\"l*`<:~3.6@rzYY\"}"
+                            "raw": "{\"name\":\"yachuuzqnnwwqexhdweroqn\",\"email\":\"melissa97@example.com\",\"password\":\"aut\"}"
                         },
                         "description": "",
                         "auth": {
@@ -52,19 +178,13 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99dde27f-4e1e-4dbe-a8fe-e1ab690f308b\",\"name\":\"Samanta Barton\",\"email\":\"kris80@example.org\"}}",
-                            "name": ""
-                        },
-                        {
-                            "header": [],
-                            "code": 422,
-                            "body": "{\n      \"error\": \"Account already exist, kindly login\"\n}",
+                            "body": "{\"data\":{\"id\":\"99e33e4a-52ff-49b1-a971-df9c58620463\",\"name\":\"Estrella Green\",\"email\":\"gillian.olson@example.com\"}}",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "Login.",
+                    "name": "User Login.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -85,7 +205,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"moore.yadira@example.net\",\"password\":\"'n}6u!,tgx2Gu-X4W(>\"}"
+                            "raw": "{\"email\":\"carlie71@example.com\",\"password\":\"{Hp8YEv\\\/w6$y%r\"}"
                         },
                         "description": "",
                         "auth": {
@@ -102,19 +222,19 @@
                         {
                             "header": [],
                             "code": 422,
-                            "body": "{\n     \"error\": \"The provided credentials are incorrect.\"\n }",
+                            "body": "{\n     \"error\": \"The provided credentials are incorrect.\"\n}",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "Logout.",
+                    "name": "Authenticate and log in a user using Google OAuth.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/logout",
+                            "path": "api\/v1\/auth\/google",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/logout"
+                            "raw": "{{baseUrl}}\/api\/v1\/auth\/google"
                         },
                         "method": "GET",
                         "header": [
@@ -127,7 +247,10 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"token\":\"modi\"}"
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"
@@ -136,14 +259,20 @@
                     "response": [
                         {
                             "header": [],
-                            "code": 204,
-                            "body": "{\n     \"message\": \"Logged out successfully.\"\n }",
+                            "code": 200,
+                            "body": "{\n    \"token\": \"generated_token\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"John Doe\",\n        \"email\": \"johndoe@example.com\",\n    }\n}",
                             "name": ""
                         },
                         {
                             "header": [],
-                            "code": 402,
-                            "body": "{\n     \"message\": \"Unauthorized user\"\n }",
+                            "code": 401,
+                            "body": "{\n    \"error\": \"Unauthorized.\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"error\": \"Validation failed.\"\n}",
                             "name": ""
                         }
                     ]
@@ -181,7 +310,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":\"99dde27f-14c6-4701-a1a3-a8e0ed11da4a\",\"name\":\"Xzavier Lindgren Jr.\",\"email\":\"ythiel@example.org\"},{\"id\":\"99dde27f-1934-43b8-86c1-cce863c842ff\",\"name\":\"Mckenzie Stroman\",\"email\":\"kayli.cummerata@example.org\"}]}",
+                            "body": "{\"data\":[{\"id\":\"99e33e4a-07f9-4314-9ada-b1eb14890903\",\"name\":\"Jeanie Ferry MD\",\"email\":\"casandra.daugherty@example.net\"},{\"id\":\"99e33e4a-19bc-4e8b-a83b-2c254a986678\",\"name\":\"Edyth Erdman II\",\"email\":\"schmidt.colleen@example.org\"}]}",
                             "name": ""
                         }
                     ]
@@ -208,7 +337,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"karley55@example.net\"}"
+                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"ondricka.amya@example.org\"}"
                         },
                         "description": ""
                     },
@@ -216,7 +345,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99dde27f-2ce0-44a6-9b79-072e580c522a\",\"name\":\"Maddison Quigley\",\"email\":\"sam21@example.com\"}}",
+                            "body": "{\"data\":{\"id\":\"99e33e4a-1fbe-43fa-bb9f-920ff0be9f1d\",\"name\":\"Dr. Jordon Streich\",\"email\":\"oconner.walker@example.org\"}}",
                             "name": ""
                         }
                     ]
@@ -233,7 +362,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "qui",
+                                    "value": "in",
                                     "description": "Author ID"
                                 }
                             ]
@@ -256,7 +385,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99dde27f-2f94-448d-8e3e-c0b0ddfbf6c8\",\"name\":\"Mathew Leuschke\",\"email\":\"tony.crona@example.org\"}}",
+                            "body": "{\"data\":{\"id\":\"99e33e4a-2433-4d68-a221-87b60325ae42\",\"name\":\"Mr. Bernardo Kuvalis II\",\"email\":\"dominic57@example.net\"}}",
                             "name": ""
                         }
                     ]
@@ -291,7 +420,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"magnus.morissette@example.net\"}"
+                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"lorenza89@example.org\"}"
                         },
                         "description": ""
                     },
@@ -299,7 +428,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99dde27f-319f-4fc5-9245-07638ff03ff5\",\"name\":\"Mose Kling IV\",\"email\":\"bethel.hammes@example.net\"}}",
+                            "body": "{\"data\":{\"id\":\"99e33e4a-26be-4130-b792-d38a3eea2b82\",\"name\":\"Miss Ayla Bednar V\",\"email\":\"pbayer@example.org\"}}",
                             "name": ""
                         }
                     ]
@@ -364,7 +493,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"similique\"}"
+                            "raw": "{\"name\":\"alias\"}"
                         },
                         "description": ""
                     },
@@ -389,7 +518,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "libero",
+                                    "value": "vel",
                                     "description": "Category ID"
                                 }
                             ]
@@ -447,7 +576,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"facere\"}"
+                            "raw": "{\"name\":\"id\"}"
                         },
                         "description": ""
                     },
@@ -504,12 +633,190 @@
                                     "value": "application\/json"
                                 },
                                 {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
+                                    "key": "vary",
+                                    "value": "Origin"
                                 }
                             ],
                             "code": 401,
                             "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Handle the email verification process for the authenticated user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/verify-email\/:id\/:hash",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/verify-email\/:id\/:hash",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "consequatur",
+                                    "description": "The ID of the verify email."
+                                },
+                                {
+                                    "id": "hash",
+                                    "key": "hash",
+                                    "value": "earum",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Mark the authenticated user's email address as verified.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"message\": \"Email verified successfully.\",\n    \"redirect_url\": \"https:\/\/frontend.example.com\/home?verified=1\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Send an email verification notification to the user or redirect if email is already verified.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/email\/verification-notification",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/email\/verification-notification"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": \"verification-link-sent\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 302,
+                            "body": "{\n    \"redirect_url\": \"https:\/\/frontend.example.com\/home\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Send a password reset link to the user's email address.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/forgot-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/forgot-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"marquardt.luisa@example.org\"}"
+                        },
+                        "description": "Handle an incoming password reset link request.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": \"Password reset link sent successfully.\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"error\": \"Validation failed.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Handle a new password request for password reset.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/reset-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/reset-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"token\":\"autem\",\"email\":\"otorphy@example.org\",\"password\":\"kf)i*UDT{[Slb@D\",\"password_confirmation\":\"dolor\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": \"Password reset successfully.\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"error\": \"Validation failed.\"\n}",
                             "name": ""
                         }
                     ]
@@ -579,37 +886,37 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "rerum",
+                                    "value": "modi",
                                     "type": "text",
                                     "description": "The name of the product."
                                 },
                                 {
                                     "key": "price",
-                                    "value": 16063.0324,
+                                    "value": 0.22353,
                                     "type": "text",
                                     "description": "The price of the product."
                                 },
                                 {
                                     "key": "description",
-                                    "value": "Earum aperiam velit ut recusandae a est ex.",
+                                    "value": "Esse at in dolorum qui sunt in.",
                                     "type": "text",
                                     "description": "The description of the product."
                                 },
                                 {
                                     "key": "categories[0]",
-                                    "value": "voluptatem",
+                                    "value": "accusamus",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "tags[0]",
-                                    "value": "blanditiis",
+                                    "value": "maiores",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "author",
-                                    "value": 8,
+                                    "value": 20,
                                     "type": "text",
                                     "description": "The ID of the author of the product."
                                 },
@@ -675,25 +982,25 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "molestiae",
+                                    "value": "unde",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "price",
-                                    "value": "minima",
+                                    "value": "eaque",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "description",
-                                    "value": "sed",
+                                    "value": "qui",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "author",
-                                    "value": "aut",
+                                    "value": "numquam",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -810,24 +1117,24 @@
                             "query": [
                                 {
                                     "key": "name",
-                                    "value": "voluptates",
+                                    "value": "inventore",
                                     "description": "Search for products by name (partial match).",
                                     "disabled": false
                                 },
                                 {
                                     "key": "author",
-                                    "value": "molestiae",
+                                    "value": "doloribus",
                                     "description": "Search for products by author's name.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "category",
-                                    "value": "iusto",
+                                    "value": "molestiae",
                                     "description": "Search for products by category name.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/products?name=voluptates&author=molestiae&category=iusto"
+                            "raw": "{{baseUrl}}\/api\/v1\/products?name=inventore&author=doloribus&category=molestiae"
                         },
                         "method": "GET",
                         "header": [
@@ -845,25 +1152,25 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "qui",
+                                    "value": "tenetur",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "price",
-                                    "value": "et",
+                                    "value": "aut",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "description",
-                                    "value": "porro",
+                                    "value": "qui",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "author",
-                                    "value": "et",
+                                    "value": "rem",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -880,12 +1187,6 @@
                         }
                     },
                     "response": [
-                        {
-                            "header": [],
-                            "code": 200,
-                            "body": "{\"data\":[{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[]},{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[]}]}",
-                            "name": ""
-                        },
                         {
                             "header": [],
                             "code": 200,
@@ -906,7 +1207,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "perferendis",
+                                    "value": "suscipit",
                                     "description": "Product ID"
                                 }
                             ]
@@ -973,7 +1274,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"comment\":\"sint\",\"rating\":20}"
+                            "raw": "{\"comment\":\"perferendis\",\"rating\":17}"
                         },
                         "description": ""
                     },
@@ -1049,7 +1350,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ogkqahcak\"}"
+                            "raw": "{\"name\":\"zuvlat\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1138,7 +1439,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"oq\"}"
+                            "raw": "{\"name\":\"eqvmyhbmzurgz\"}"
                         },
                         "description": "",
                         "auth": {
