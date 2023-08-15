@@ -24,6 +24,7 @@ class AuthorRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:50'],
             'email' => ['required', 'email'],
+            'description' => ['nullable','string'],
         ];
     }
 }

@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\V1\BillingAddressController;
 use App\Http\Controllers\Api\V1\OrderController;
 use App\Http\Controllers\Api\V1\ProductController;
 use App\Http\Controllers\Api\V1\ReviewController;
+use App\Http\Controllers\Api\V1\UserController;
 use App\Models\BillingAddress;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,10 +27,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
 Route::prefix('admin')->group(function (){
     Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
@@ -47,6 +44,9 @@ Route::prefix('admin')->group(function (){
 
         Route::post('products/{product}/images', [ProductImageController::class, 'store']);
         Route::delete('products/{product}/images/{productImage}', [Admin\ProductImageController::class, 'destroy']);
+
+        Route::apiResource('users', Admin\ProductController::class)
+            ->only(['index', 'show']);
     });
 
     // admin Authentication
@@ -62,6 +62,8 @@ Route::middleware(['auth:sanctum'])->group(function (){
     });
 
     Route::post('products/{product}/reviews', [ReviewController::class, 'store']);
+    Route::get('profile', [UserController::class, 'show']);
+    Route::post('changePassword', [UserController::class, 'changePassword']);
 });
 
 // Authentications
