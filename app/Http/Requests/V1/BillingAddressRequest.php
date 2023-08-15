@@ -25,8 +25,8 @@ class BillingAddressRequest extends FormRequest
         return [
             //
             'country' => ['required', 'exists:countries,id'],
-            'states' => ['required', 'exists:states,id'],
-            'cities' => ['required', 'exists:cities,id'],
+            'state' => ['required', 'exists:states,id'],
+            'city' => ['required', 'exists:cities,id'],
             'address' => ['required', 'string'],
         ];
     }

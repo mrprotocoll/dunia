@@ -22,7 +22,7 @@ class ProductController extends Controller
     /**
      * Retrieve a paginated list of products with optional filters.
      *
-     * @param ProductRequest $request The product index request.
+     * @param ProductListRequest $request The product index request.
      *
      * @queryParam name string Search for products by name (partial match).
      * @queryParam author string Search for products by author's name.
@@ -80,10 +80,10 @@ class ProductController extends Controller
      *
      * @return ResourceCollection
      */
-    public function index(ProductRequest $request): ResourceCollection
+    public function index(ProductListRequest $request): ResourceCollection
     {
         //
-        $products = Product::with(['category', 'author'])
+        $products = Product::with(['categories', 'author'])
             ->when($request->name, function ($query) use ($request) {
                 $query->where('name', 'LIKE', '%' . $request->name . '%');
             })

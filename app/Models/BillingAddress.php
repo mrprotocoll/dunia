@@ -13,15 +13,21 @@ class BillingAddress extends Model
 {
     use HasFactory, HasUuids;
 
-    public function countries(): HasMany {
-        return $this->hasMany(Country::class);
+    protected $fillable = ['address'];
+
+    public function user(): BelongsTo {
+        return $this->BelongsTo(User::class);
     }
 
-    public function states(): HasMany {
-        return $this->hasMany(State::class);
+    public function country(): BelongsTo {
+        return $this->belongsTo(Country::class);
     }
 
-    public function cities(): HasMany {
-        return $this->hasMany(City::class);
+    public function state(): BelongsTo {
+        return $this->BelongsTo(State::class);
+    }
+
+    public function city(): BelongsTo {
+        return $this->BelongsTo(City::class);
     }
 }

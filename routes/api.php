@@ -8,9 +8,11 @@ use App\Http\Controllers\Api\V1\Auth\LoginController;
 use App\Http\Controllers\Api\V1\Auth\LogoutController;
 use App\Http\Controllers\Api\V1\Auth\RegisterController;
 use App\Http\Controllers\Api\V1\Auth\VerifyEmailController;
+use App\Http\Controllers\Api\V1\BillingAddressController;
 use App\Http\Controllers\Api\V1\OrderController;
 use App\Http\Controllers\Api\V1\ProductController;
 use App\Http\Controllers\Api\V1\ReviewController;
+use App\Models\BillingAddress;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -56,6 +58,7 @@ Route::prefix('admin')->group(function (){
 Route::middleware(['auth:sanctum'])->group(function (){
     Route::middleware(['role:customer'])->group(function () {
         Route::post('order', [OrderController::class, 'store']);
+        Route::apiResource('billingAddresses', BillingAddressController::class);
     });
 
     Route::post('products/{product}/reviews', [ReviewController::class, 'store']);
