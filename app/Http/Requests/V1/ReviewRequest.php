@@ -24,7 +24,7 @@ class ReviewRequest extends FormRequest
     {
         return [
             'comment' => ['required'],
-            'rating' => ['required','integer', Rule::in([1, 2, 3, 4, 5])],
+            'rating' => ['required','float', Rule::in([1, 2, 3, 4, 5])],
         ];
     }
 }

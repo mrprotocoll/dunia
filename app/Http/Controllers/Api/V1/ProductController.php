@@ -82,7 +82,6 @@ class ProductController extends Controller
      */
     public function index(ProductListRequest $request): ResourceCollection
     {
-        //
         $products = Product::with(['categories', 'author'])
             ->when($request->name, function ($query) use ($request) {
                 $query->where('name', 'LIKE', '%' . $request->name . '%');
