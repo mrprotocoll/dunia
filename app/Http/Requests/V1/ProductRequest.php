@@ -32,7 +32,10 @@ class ProductRequest extends FormRequest
             'categories.*' => ['exists:categories,id'],
             'tags' => ['array'],
             'tags.*' => ['exists:tags,id'],
-            'author' => ['required', 'exists:authors,id']
+            'author' => ['required', 'exists:authors,id'],
+            'product_file' => ['required', 'pdf'],
+            'preview' => ['required', 'pdf'],
+            'weight' => ['required', 'float']
         ];
     }
 }

@@ -4,17 +4,11 @@ use App\Http\Controllers\Api\V1\Admin;
 use App\Http\Controllers\Api\V1\Admin\ProductImageController;
 use App\Http\Controllers\Api\V1\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Api\V1\Auth\EmailVerificationNotificationController;
-use App\Http\Controllers\Api\V1\Auth\LoginController;
-use App\Http\Controllers\Api\V1\Auth\LogoutController;
-use App\Http\Controllers\Api\V1\Auth\RegisterController;
 use App\Http\Controllers\Api\V1\Auth\VerifyEmailController;
 use App\Http\Controllers\Api\V1\BillingAddressController;
 use App\Http\Controllers\Api\V1\OrderController;
-use App\Http\Controllers\Api\V1\ProductController;
 use App\Http\Controllers\Api\V1\ReviewController;
 use App\Http\Controllers\Api\V1\UserController;
-use App\Models\BillingAddress;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,7 +56,7 @@ Route::middleware(['auth:sanctum'])->group(function (){
     });
 
     Route::post('products/{product}/reviews', [ReviewController::class, 'store']);
-    Route::get('profile', [UserController::class, 'show']);
+    Route::get('/profile', [UserController::class, 'show']);
     Route::post('changePassword', [UserController::class, 'changePassword']);
 });
 

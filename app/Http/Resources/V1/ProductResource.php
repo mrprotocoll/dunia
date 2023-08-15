@@ -18,13 +18,15 @@ class ProductResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'weight' => $this->weight,
             'price' => number_format($this->price, 2),
             'description' => $this->description,
             'author' => new AuthorResource($this->author),
             'categories' => CategoryResource::collection($this->categories),
             'tags' => TagResource::collection($this->tags),
             'images' => ProductImageResource::collection($this->images),
-            'reviews' => ReviewResource::collection($this->reviews)
+            'reviews' => ReviewResource::collection($this->reviews),
+            'preview' => asset('storage/' . $this->preview),
         ];
     }
 }
