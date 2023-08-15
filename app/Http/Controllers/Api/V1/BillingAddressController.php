@@ -19,8 +19,8 @@ class BillingAddressController extends Controller
     public function index()
     {
         $user = User::current();
-        $billing = $user->billingAddresses;
-        return new BillingAddressResource($billing);
+        $billing = $user->billingAddresses()->with(['country', 'state', 'city'])->get();
+        return BillingAddressResource::collection($billing);
     }
 
     /**
