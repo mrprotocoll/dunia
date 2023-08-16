@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\V1;
 
+use App\Rules\ValidRating;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -24,7 +25,7 @@ class ReviewRequest extends FormRequest
     {
         return [
             'comment' => ['required'],
-            'rating' => ['required','float', Rule::in([1, 2, 3, 4, 5])],
+            'rating' => ['required','float', new ValidRating()],
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Requests\V1;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\File;
 
 class ProductRequest extends FormRequest
 {
@@ -27,15 +28,16 @@ class ProductRequest extends FormRequest
             'images' => ['array'],
             'images.*' => ['image', 'max:2048'],
             'price' => ['required'],
+            'print_price' => ['required', 'numeric'],
             'description' => ['required'],
             'categories' => ['required', 'array'],
             'categories.*' => ['exists:categories,id'],
             'tags' => ['array'],
             'tags.*' => ['exists:tags,id'],
             'author' => ['required', 'exists:authors,id'],
-            'product_file' => ['required', 'pdf'],
+            'product_file' => ['required', File::type(['pdf'])],
             'preview' => ['required', 'pdf'],
-            'weight' => ['required', 'float']
+            'weight' => ['required', 'numeric']
         ];
     }
 }

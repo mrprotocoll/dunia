@@ -9,6 +9,8 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Tag;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 /**
  * @group Product Management
@@ -71,11 +73,22 @@ class ProductController extends Controller
         $product->author_id = $request->author;
         $product->price = $request->price;
         $product->description = $request->description;
+        $product->preview = $request->file('preview');
+        $product->product_file = $request->file('product_file');
         $categories = Category::whereIn('id', $request->categories)->get();
         $tags = Tag::whereIn('id', $request->tags)->get();
 
+
         DB::transaction(function () use ($product, $categories, $tags, $request){
+            $previewName = Str::slug($product->preview->getClientOriginalName(), '_');
+            $productFileName = Str::slug($product->product_file->getClientOriginalName(), '_');
+
+            // Store the product pdfs in the 'public' disk (storage/app/public)
+            Storage::disk('public')->put($previewName, file_get_contents($product->preview));
+            Storage::disk('public')->put($productFileName, file_get_contents($product->product_file));
+
             $product->save();
+
             // save categories
             $product->categories()->attach($categories);
 
