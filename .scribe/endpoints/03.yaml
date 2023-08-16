@@ -1,62 +1,26 @@
-name: 'Categories Management'
-description: ''
+name: 'Product Management'
+description: |-
+
+  Endpoints to manage products
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/v1/admin/categories
-    metadata:
-      groupName: 'Categories Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display a listing of categories.'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"},{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"}]}'
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 1Egvaaf8663cdDbkVZPe4h5'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - POST
-    uri: api/v1/admin/categories
+    uri: api/v1/admin/products
     metadata:
-      groupName: 'Categories Management'
-      groupDescription: ''
+      groupName: 'Product Management'
+      groupDescription: |-
+
+        Endpoints to manage products
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create a new category.'
+      title: 'Store a newly created resource in storage.'
       description: ''
       authenticated: true
       custom: []
     headers:
       Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -65,18 +29,139 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: 'Name of category'
+        description: 'The name of the product.'
         required: true
-        example: alias
+        example: blanditiis
         type: string
+        custom: []
+      images:
+        name: images
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: false
+        example:
+          - null
+        type: 'file[]'
+        custom: []
+      price:
+        name: price
+        description: 'The price of the product.'
+        required: true
+        example: 9544.63008
+        type: number
+        custom: []
+      description:
+        name: description
+        description: 'The description of the product.'
+        required: true
+        example: 'Neque quidem earum ut.'
+        type: string
+        custom: []
+      categories:
+        name: categories
+        description: 'An array of category IDs associated with the product.'
+        required: true
+        example:
+          - et
+        type: 'string[]'
+        custom: []
+      tags:
+        name: tags
+        description: 'An array of tag IDs associated with the product.'
+        required: true
+        example:
+          - porro
+        type: 'string[]'
+        custom: []
+      author:
+        name: author
+        description: 'The ID of the author of the product.'
+        required: true
+        example: 12
+        type: integer
+        custom: []
+      product_file:
+        name: product_file
+        description: ''
+        required: true
+        example: eum
+        type: string
+        custom: []
+      preview:
+        name: preview
+        description: ''
+        required: true
+        example: ipsum
+        type: string
+        custom: []
+      weight:
+        name: weight
+        description: ''
+        required: true
+        example: eos
+        type: string
+        custom: []
+      'images[]':
+        name: 'images[]'
+        description: 'An array of image files for the product.'
+        required: false
+        example: null
+        type: file
         custom: []
     cleanBodyParameters:
-      name: alias
-    fileParameters: []
+      name: blanditiis
+      price: 9544.63008
+      description: 'Neque quidem earum ut.'
+      categories:
+        - et
+      tags:
+        - porro
+      author: 12
+      product_file: eum
+      preview: ipsum
+      weight: eos
+    fileParameters:
+      images:
+        - null
+      'images[]': null
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"}}'
+        content: '{"data":{"id":null,"name":null,"weight":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[],"preview":"http:\/\/dunia.healthyishng.com\/storage"}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: |-
+          {
+               "data": {
+                   "id": 1,
+                   "name": "Sample Product",
+                   "author_id": 1,
+                   "price": 19.99,
+                   "description": "A description of the sample product.",
+                   "categories": [
+                       {
+                           "id": 1,
+                           "name": "Category A"
+                       },
+                       {
+                           "id": 2,
+                           "name": "Category B"
+                       }
+                   ],
+                   "tags": [
+                       {
+                           "id": 1,
+                           "name": "Tag X"
+                       },
+                       {
+                           "id": 2,
+                           "name": "Tag Y"
+                       }
+                   ]
+               }
+           }
         headers: []
         description: ''
         custom: []
@@ -84,55 +169,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fP6ka1vaZDh3b5cd6e4EV8g'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/v1/admin/categories/{id}'
-    metadata:
-      groupName: 'Categories Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display the specific category by ID.'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'Category ID'
-        required: true
-        example: vel
-        type: string
-        custom: []
-    cleanUrlParameters:
-      id: vel
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"}}'
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer P5vdgbZfkcheVa6aE86341D'
+      - 'Bearer ecDP48bEV1g6f5v63Zaadkh'
     controller: null
     method: null
     route: null
@@ -141,13 +178,199 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/v1/admin/categories/{id}'
+    uri: 'api/v1/admin/products/{id}'
     metadata:
-      groupName: 'Categories Management'
-      groupDescription: ''
+      groupName: 'Product Management'
+      groupDescription: |-
+
+        Endpoints to manage products
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update the specific category.'
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 99d35264-8076-49a5-a8d5-8cd88f85a773
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 99d35264-8076-49a5-a8d5-8cd88f85a773
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: ut
+        type: string
+        custom: []
+      images:
+        name: images
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: false
+        example:
+          - null
+        type: 'file[]'
+        custom: []
+      price:
+        name: price
+        description: ''
+        required: true
+        example: quos
+        type: string
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: true
+        example: ad
+        type: string
+        custom: []
+      categories:
+        name: categories
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      tags:
+        name: tags
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        custom: []
+      author:
+        name: author
+        description: ''
+        required: true
+        example: fugiat
+        type: string
+        custom: []
+      product_file:
+        name: product_file
+        description: ''
+        required: true
+        example: ad
+        type: string
+        custom: []
+      preview:
+        name: preview
+        description: ''
+        required: true
+        example: tempore
+        type: string
+        custom: []
+      weight:
+        name: weight
+        description: ''
+        required: true
+        example: error
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: ut
+      price: quos
+      description: ad
+      author: fugiat
+      product_file: ad
+      preview: tempore
+      weight: error
+    fileParameters:
+      images:
+        - null
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":null,"name":null,"weight":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[],"preview":"http:\/\/dunia.healthyishng.com\/storage"}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kdevDcE8Zahg166Vb43Pf5a'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/admin/products/{product_id}/images'
+    metadata:
+      groupName: 'Product Management'
+      groupDescription: |-
+
+        Endpoints to manage products
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Add images to a product'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      product_id:
+        name: product_id
+        description: 'The ID of the product.'
+        required: true
+        example: 99d35264-8076-49a5-a8d5-8cd88f85a773
+        type: string
+        custom: []
+    cleanUrlParameters:
+      product_id: 99d35264-8076-49a5-a8d5-8cd88f85a773
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      images:
+        name: images
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: false
+        example:
+          - null
+        type: 'file[]'
+        custom: []
+    cleanBodyParameters: []
+    fileParameters:
+      images:
+        - null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 14c6kE65veabV3fPgaD8hZd'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/admin/products/{product_id}/images/{productImage_id}'
+    metadata:
+      groupName: 'Product Management'
+      groupDescription: |-
+
+        Endpoints to manage products
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete image from product'
       description: ''
       authenticated: true
       custom: []
@@ -156,40 +379,215 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the category.'
+      product_id:
+        name: product_id
+        description: 'The ID of the product.'
         required: true
-        example: 99cfdfea-c72f-451b-aed3-ec3eb26bd2c5
+        example: 99d35264-8076-49a5-a8d5-8cd88f85a773
+        type: string
+        custom: []
+      productImage_id:
+        name: productImage_id
+        description: 'The ID of the productImage.'
+        required: true
+        example: 99d35a23-2f11-406d-afde-f05b8efb9968
         type: string
         custom: []
     cleanUrlParameters:
-      id: 99cfdfea-c72f-451b-aed3-ec3eb26bd2c5
+      product_id: 99d35264-8076-49a5-a8d5-8cd88f85a773
+      productImage_id: 99d35a23-2f11-406d-afde-f05b8efb9968
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: 'Name of category'
-        required: true
-        example: id
-        type: string
-        custom: []
-    cleanBodyParameters:
-      name: id
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"}}'
-        headers: []
-        description: ''
-        custom: []
+    responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ceab6V45PaEfZg368khvd1D'
+      - 'Bearer 6kc41g3dvE8aaZVe5DhfPb6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/products
+    metadata:
+      groupName: 'Product Management'
+      groupDescription: |-
+
+        Endpoints to manage products
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Retrieve a paginated list of products with optional filters.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      name:
+        name: name
+        description: 'Search for products by name (partial match).'
+        required: false
+        example: aspernatur
+        type: string
+        custom: []
+      author:
+        name: author
+        description: "Search for products by author's name."
+        required: false
+        example: id
+        type: string
+        custom: []
+      category:
+        name: category
+        description: 'Search for products by category name.'
+        required: false
+        example: recusandae
+        type: string
+        custom: []
+    cleanQueryParameters:
+      name: aspernatur
+      author: id
+      category: recusandae
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: atque
+        type: string
+        custom: []
+      author:
+        name: author
+        description: ''
+        required: false
+        example: et
+        type: string
+        custom: []
+      category:
+        name: category
+        description: ''
+        required: false
+        example: voluptas
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: atque
+      author: et
+      category: voluptas
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "data": [
+                  {
+                      "id": 1,
+                      "name": "Product A",
+                      "author_id": 1,
+                      "price": 19.99,
+                      "description": "Description of Product A",
+                      "category": {
+                          "id": 2,
+                          "name": "Category X"
+                      },
+                      "author": {
+                          "id": 1,
+                          "name": "Author Y"
+                      }
+                  },
+                  {
+                      "id": 2,
+                      "name": "Product B",
+                      "author_id": 2,
+                      "price": 29.99,
+                      "description": "Description of Product B",
+                      "category": {
+                          "id": 3,
+                          "name": "Category Z"
+                      },
+                      "author": {
+                          "id": 2,
+                          "name": "Author Z"
+                      }
+                  }
+              ],
+              "links": {
+                  "first": "https://api.example.com/products?page=1",
+                  "last": "https://api.example.com/products?page=3",
+                  "prev": null,
+                  "next": "https://api.example.com/products?page=2"
+              },
+              "meta": {
+                  "current_page": 1,
+                  "from": 1,
+                  "last_page": 3,
+                  "path": "https://api.example.com/products",
+                  "per_page": 10,
+                  "to": 10,
+                  "total": 25
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/products/{id}'
+    metadata:
+      groupName: 'Product Management'
+      groupDescription: |-
+
+        Endpoints to manage products
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a specific product by ID.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'Product ID'
+        required: true
+        example: nulla
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: nulla
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":null,"name":null,"weight":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[],"preview":"http:\/\/dunia.healthyishng.com\/storage"}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
     controller: null
     method: null
     route: null

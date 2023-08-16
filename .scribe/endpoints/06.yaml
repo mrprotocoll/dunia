@@ -1,20 +1,16 @@
-name: 'Order Management'
-description: |-
-
-  Endpoint to manage customers orders
+name: Endpoints
+description: ''
 endpoints:
   -
     httpMethods:
-      - POST
-    uri: api/v1/order
+      - GET
+    uri: api/v1/billingAddresses
     metadata:
-      groupName: 'Order Management'
-      groupDescription: |-
-
-        Endpoint to manage customers orders
+      groupName: Endpoints
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
+      title: 'Display a listing of the resource.'
       description: ''
       authenticated: false
       custom: []
@@ -28,7 +24,427 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/billingAddresses
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a newly created resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      country:
+        name: country
+        description: ''
+        required: true
+        example: et
+        type: string
+        custom: []
+      state:
+        name: state
+        description: ''
+        required: true
+        example: eos
+        type: string
+        custom: []
+      city:
+        name: city
+        description: ''
+        required: true
+        example: vel
+        type: string
+        custom: []
+      address:
+        name: address
+        description: ''
+        required: true
+        example: quo
+        type: string
+        custom: []
+    cleanBodyParameters:
+      country: et
+      state: eos
+      city: vel
+      address: quo
+    fileParameters: []
     responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/billingAddresses/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the billingAddress.'
+        required: true
+        example: 99e5413a-ffc7-4a30-847e-031d4b4ac187
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 99e5413a-ffc7-4a30-847e-031d4b4ac187
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      country:
+        name: country
+        description: ''
+        required: true
+        example: velit
+        type: string
+        custom: []
+      state:
+        name: state
+        description: ''
+        required: true
+        example: in
+        type: string
+        custom: []
+      city:
+        name: city
+        description: ''
+        required: true
+        example: voluptates
+        type: string
+        custom: []
+      address:
+        name: address
+        description: ''
+        required: true
+        example: sint
+        type: string
+        custom: []
+    cleanBodyParameters:
+      country: velit
+      state: in
+      city: voluptates
+      address: sint
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/billingAddresses/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the billingAddress.'
+        required: true
+        example: 99e5413a-ffc7-4a30-847e-031d4b4ac187
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 99e5413a-ffc7-4a30-847e-031d4b4ac187
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/verify-email/{id}/{hash}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle the email verification process for the authenticated user.'
+      description: "Mark the authenticated user's email address as verified."
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the verify email.'
+        required: true
+        example: tempore
+        type: string
+        custom: []
+      hash:
+        name: hash
+        description: ''
+        required: true
+        example: delectus
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: tempore
+      hash: delectus
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "message": "Email verified successfully.",
+              "redirect_url": "https://frontend.example.com/home?verified=1"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/email/verification-notification
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Send an email verification notification to the user or redirect if email is already verified.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "status": "verification-link-sent"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 302
+        content: |-
+          {
+              "redirect_url": "https://frontend.example.com/home"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/forgot-password
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Send a password reset link to the user's email address."
+      description: 'Handle an incoming password reset link request.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: "The user's email address for password reset."
+        required: true
+        example: kellie.hagenes@example.org
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: kellie.hagenes@example.org
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "status": "Password reset link sent successfully."
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+              "error": "Validation failed."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/reset-password
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle a new password request for password reset.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      token:
+        name: token
+        description: 'The token received for password reset.'
+        required: true
+        example: dolorum
+        type: string
+        custom: []
+      email:
+        name: email
+        description: "The user's email address."
+        required: true
+        example: mueller.noemy@example.net
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'The new password.'
+        required: true
+        example: '/p4%7&aKg`Z_Wn'
+        type: string
+        custom: []
+      password_confirmation:
+        name: password_confirmation
+        description: 'The confirmation of the new password.'
+        required: true
+        example: distinctio
+        type: string
+        custom: []
+    cleanBodyParameters:
+      token: dolorum
+      email: mueller.noemy@example.net
+      password: '/p4%7&aKg`Z_Wn'
+      password_confirmation: distinctio
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "status": "Password reset successfully."
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+              "error": "Validation failed."
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null

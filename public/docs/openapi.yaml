@@ -22,22 +22,22 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 99e33e4a-459c-456f-8498-c51e8aa6480a
-                    name: 'Joanie Murray MD'
-                    email: thand@example.org
+                    id: 99e72421-71c8-4465-8de6-279a0ca28f3d
+                    name: 'Dr. Delbert Trantow'
+                    email: duane.hane@example.net
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: string
-                        example: 99e33e4a-459c-456f-8498-c51e8aa6480a
+                        example: 99e72421-71c8-4465-8de6-279a0ca28f3d
                       name:
                         type: string
-                        example: 'Joanie Murray MD'
+                        example: 'Dr. Delbert Trantow'
                       email:
                         type: string
-                        example: thand@example.org
+                        example: duane.hane@example.net
         422:
           description: ''
           content:
@@ -62,15 +62,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ranospzln
+                  example: uj
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: ocorwin@example.org
+                  example: mekhi77@example.org
                 password:
                   type: string
                   description: ''
-                  example: autem
+                  example: exercitationem
               required:
                 - name
                 - email
@@ -114,11 +114,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: truecker@example.org
+                  example: hartmann.roma@example.org
                 password:
                   type: string
                   description: ''
-                  example: '{1xfQn"W^9a8DQOg'
+                  example: 'Ntar:B!pN'
               required:
                 - email
                 - password
@@ -168,22 +168,22 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 99e33e4a-52ff-49b1-a971-df9c58620463
-                    name: 'Estrella Green'
-                    email: gillian.olson@example.com
+                    id: 99e72421-856c-4d47-b4c5-5d5dcbdb6303
+                    name: 'Ms. Estel Graham IV'
+                    email: dach.lavinia@example.net
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: string
-                        example: 99e33e4a-52ff-49b1-a971-df9c58620463
+                        example: 99e72421-856c-4d47-b4c5-5d5dcbdb6303
                       name:
                         type: string
-                        example: 'Estrella Green'
+                        example: 'Ms. Estel Graham IV'
                       email:
                         type: string
-                        example: gillian.olson@example.com
+                        example: dach.lavinia@example.net
       tags:
         - Authentication
       requestBody:
@@ -196,15 +196,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: yachuuzqnnwwqexhdweroqn
+                  example: wwitszmoeqrqdifloffkvd
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: melissa97@example.com
+                  example: samir.corkery@example.com
                 password:
                   type: string
                   description: ''
-                  example: aut
+                  example: cupiditate
               required:
                 - name
                 - email
@@ -248,11 +248,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: carlie71@example.com
+                  example: vicente.beier@example.net
                 password:
                   type: string
                   description: ''
-                  example: '{Hp8YEv/w6$y%r'
+                  example: 'r]6^<nc!&6sm[E_$UTX.'
               required:
                 - email
                 - password
@@ -307,7 +307,7 @@ paths:
                 token:
                   type: string
                   description: 'The Google OAuth access token.'
-                  example: modi
+                  example: est
               required:
                 - token
       security: []
@@ -334,37 +334,44 @@ paths:
                 example:
                   data:
                     -
-                      id: 99e33e4a-07f9-4314-9ada-b1eb14890903
-                      name: 'Jeanie Ferry MD'
-                      email: casandra.daugherty@example.net
+                      id: 99e72421-3457-412c-b607-0a092175128f
+                      name: 'Mariano Powlowski'
+                      email: macie.baumbach@example.net
+                      description: null
                     -
-                      id: 99e33e4a-19bc-4e8b-a83b-2c254a986678
-                      name: 'Edyth Erdman II'
-                      email: schmidt.colleen@example.org
+                      id: 99e72421-4957-4465-8638-cae4705e672b
+                      name: 'Adelle Hane'
+                      email: bartell.ford@example.com
+                      description: null
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 99e33e4a-07f9-4314-9ada-b1eb14890903
-                        name: 'Jeanie Ferry MD'
-                        email: casandra.daugherty@example.net
+                        id: 99e72421-3457-412c-b607-0a092175128f
+                        name: 'Mariano Powlowski'
+                        email: macie.baumbach@example.net
+                        description: null
                       -
-                        id: 99e33e4a-19bc-4e8b-a83b-2c254a986678
-                        name: 'Edyth Erdman II'
-                        email: schmidt.colleen@example.org
+                        id: 99e72421-4957-4465-8638-cae4705e672b
+                        name: 'Adelle Hane'
+                        email: bartell.ford@example.com
+                        description: null
                     items:
                       type: object
                       properties:
                         id:
                           type: string
-                          example: 99e33e4a-07f9-4314-9ada-b1eb14890903
+                          example: 99e72421-3457-412c-b607-0a092175128f
                         name:
                           type: string
-                          example: 'Jeanie Ferry MD'
+                          example: 'Mariano Powlowski'
                         email:
                           type: string
-                          example: casandra.daugherty@example.net
+                          example: macie.baumbach@example.net
+                        description:
+                          type: string
+                          example: null
       tags:
         - 'Author Management'
     post:
@@ -388,22 +395,26 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 99e33e4a-1fbe-43fa-bb9f-920ff0be9f1d
-                    name: 'Dr. Jordon Streich'
-                    email: oconner.walker@example.org
+                    id: 99e72421-4e3b-4cd0-a268-868b7e0f813d
+                    name: 'Mr. Monty Schuppe IV'
+                    email: acremin@example.com
+                    description: null
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: string
-                        example: 99e33e4a-1fbe-43fa-bb9f-920ff0be9f1d
+                        example: 99e72421-4e3b-4cd0-a268-868b7e0f813d
                       name:
                         type: string
-                        example: 'Dr. Jordon Streich'
+                        example: 'Mr. Monty Schuppe IV'
                       email:
                         type: string
-                        example: oconner.walker@example.org
+                        example: acremin@example.com
+                      description:
+                        type: string
+                        example: null
       tags:
         - 'Author Management'
       requestBody:
@@ -420,7 +431,11 @@ paths:
                 email:
                   type: string
                   description: 'Email of author.'
-                  example: ondricka.amya@example.org
+                  example: nwintheiser@example.net
+                description:
+                  type: string
+                  description: ''
+                  example: 'Reiciendis vero rerum aut voluptatem.'
               required:
                 - name
                 - email
@@ -446,22 +461,26 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 99e33e4a-2433-4d68-a221-87b60325ae42
-                    name: 'Mr. Bernardo Kuvalis II'
-                    email: dominic57@example.net
+                    id: 99e72421-54e7-4896-8886-0f846f86ad97
+                    name: 'Hosea Padberg'
+                    email: newton.fahey@example.com
+                    description: null
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: string
-                        example: 99e33e4a-2433-4d68-a221-87b60325ae42
+                        example: 99e72421-54e7-4896-8886-0f846f86ad97
                       name:
                         type: string
-                        example: 'Mr. Bernardo Kuvalis II'
+                        example: 'Hosea Padberg'
                       email:
                         type: string
-                        example: dominic57@example.net
+                        example: newton.fahey@example.com
+                      description:
+                        type: string
+                        example: null
       tags:
         - 'Author Management'
     put:
@@ -485,22 +504,26 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 99e33e4a-26be-4130-b792-d38a3eea2b82
-                    name: 'Miss Ayla Bednar V'
-                    email: pbayer@example.org
+                    id: 99e72421-5815-40f8-86dc-37fd05914c46
+                    name: 'Katrina Labadie'
+                    email: reynolds.dolly@example.net
+                    description: null
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: string
-                        example: 99e33e4a-26be-4130-b792-d38a3eea2b82
+                        example: 99e72421-5815-40f8-86dc-37fd05914c46
                       name:
                         type: string
-                        example: 'Miss Ayla Bednar V'
+                        example: 'Katrina Labadie'
                       email:
                         type: string
-                        example: pbayer@example.org
+                        example: reynolds.dolly@example.net
+                      description:
+                        type: string
+                        example: null
       tags:
         - 'Author Management'
       requestBody:
@@ -517,7 +540,11 @@ paths:
                 email:
                   type: string
                   description: 'Email of author.'
-                  example: lorenza89@example.org
+                  example: yost.nat@example.org
+                description:
+                  type: string
+                  description: ''
+                  example: 'Sunt eum perspiciatis et aut.'
               required:
                 - name
                 - email
@@ -526,7 +553,7 @@ paths:
         in: path
         name: id
         description: 'Author ID'
-        example: in
+        example: sed
         required: true
         schema:
           type: string
@@ -624,7 +651,7 @@ paths:
                 name:
                   type: string
                   description: 'Name of category'
-                  example: alias
+                  example: optio
               required:
                 - name
   '/api/v1/admin/categories/{id}':
@@ -708,7 +735,7 @@ paths:
                 name:
                   type: string
                   description: 'Name of category'
-                  example: id
+                  example: totam
               required:
                 - name
     parameters:
@@ -716,14 +743,14 @@ paths:
         in: path
         name: id
         description: 'Category ID'
-        example: vel
+        example: illo
         required: true
         schema:
           type: string
-  /api/v1/user:
+  /api/v1/billingAddresses:
     get:
-      summary: ''
-      operationId: getApiV1User
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
       description: ''
       parameters: []
       responses:
@@ -742,6 +769,99 @@ paths:
       tags:
         - Endpoints
       security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                country:
+                  type: string
+                  description: ''
+                  example: et
+                state:
+                  type: string
+                  description: ''
+                  example: eos
+                city:
+                  type: string
+                  description: ''
+                  example: vel
+                address:
+                  type: string
+                  description: ''
+                  example: quo
+              required:
+                - country
+                - state
+                - city
+                - address
+      security: []
+  '/api/v1/billingAddresses/{id}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                country:
+                  type: string
+                  description: ''
+                  example: velit
+                state:
+                  type: string
+                  description: ''
+                  example: in
+                city:
+                  type: string
+                  description: ''
+                  example: voluptates
+                address:
+                  type: string
+                  description: ''
+                  example: sint
+              required:
+                - country
+                - state
+                - city
+                - address
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the billingAddress.'
+        example: 99e5413a-ffc7-4a30-847e-031d4b4ac187
+        required: true
+        schema:
+          type: string
   '/api/v1/verify-email/{id}/{hash}':
     get:
       summary: 'Handle the email verification process for the authenticated user.'
@@ -773,7 +893,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the verify email.'
-        example: consequatur
+        example: tempore
         required: true
         schema:
           type: string
@@ -781,7 +901,7 @@ paths:
         in: path
         name: hash
         description: ''
-        example: earum
+        example: delectus
         required: true
         schema:
           type: string
@@ -862,7 +982,7 @@ paths:
                 email:
                   type: string
                   description: "The user's email address for password reset."
-                  example: marquardt.luisa@example.org
+                  example: kellie.hagenes@example.org
               required:
                 - email
       security: []
@@ -909,19 +1029,19 @@ paths:
                 token:
                   type: string
                   description: 'The token received for password reset.'
-                  example: autem
+                  example: dolorum
                 email:
                   type: string
                   description: "The user's email address."
-                  example: otorphy@example.org
+                  example: mueller.noemy@example.net
                 password:
                   type: string
                   description: 'The new password.'
-                  example: 'kf)i*UDT{[Slb@D'
+                  example: '/p4%7&aKg`Z_Wn'
                 password_confirmation:
                   type: string
                   description: 'The confirmation of the new password.'
-                  example: dolor
+                  example: distinctio
               required:
                 - token
                 - email
@@ -1046,7 +1166,7 @@ paths:
                 name:
                   type: string
                   description: 'The name of the product.'
-                  example: modi
+                  example: blanditiis
                 images:
                   type: array
                   description: 'Must be an image. Must not be greater than 2048 kilobytes.'
@@ -1056,29 +1176,41 @@ paths:
                 price:
                   type: number
                   description: 'The price of the product.'
-                  example: 0.22353
+                  example: 9544.63008
                 description:
                   type: string
                   description: 'The description of the product.'
-                  example: 'Esse at in dolorum qui sunt in.'
+                  example: 'Neque quidem earum ut.'
                 categories:
                   type: array
                   description: 'An array of category IDs associated with the product.'
                   example:
-                    - accusamus
+                    - et
                   items:
                     type: string
                 tags:
                   type: array
                   description: 'An array of tag IDs associated with the product.'
                   example:
-                    - maiores
+                    - porro
                   items:
                     type: string
                 author:
                   type: integer
                   description: 'The ID of the author of the product.'
-                  example: 20
+                  example: 12
+                product_file:
+                  type: string
+                  description: ''
+                  example: eum
+                preview:
+                  type: string
+                  description: ''
+                  example: ipsum
+                weight:
+                  type: string
+                  description: ''
+                  example: eos
                 'images[]':
                   type: string
                   format: binary
@@ -1090,6 +1222,9 @@ paths:
                 - categories
                 - tags
                 - author
+                - product_file
+                - preview
+                - weight
   '/api/v1/admin/products/{id}':
     put:
       summary: 'Update the specified resource in storage.'
@@ -1114,6 +1249,7 @@ paths:
                   data:
                     id: null
                     name: null
+                    weight: null
                     price: '0.00'
                     description: null
                     author: null
@@ -1121,6 +1257,7 @@ paths:
                     tags: []
                     images: []
                     reviews: []
+                    preview: 'http://dunia.healthyishng.com/storage'
                 properties:
                   data:
                     type: object
@@ -1129,6 +1266,9 @@ paths:
                         type: string
                         example: null
                       name:
+                        type: string
+                        example: null
+                      weight:
                         type: string
                         example: null
                       price:
@@ -1152,6 +1292,9 @@ paths:
                       reviews:
                         type: array
                         example: []
+                      preview:
+                        type: string
+                        example: 'http://dunia.healthyishng.com/storage'
       tags:
         - 'Product Management'
       requestBody:
@@ -1164,7 +1307,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: unde
+                  example: ut
                 images:
                   type: array
                   description: 'Must be an image. Must not be greater than 2048 kilobytes.'
@@ -1174,11 +1317,11 @@ paths:
                 price:
                   type: string
                   description: ''
-                  example: eaque
+                  example: quos
                 description:
                   type: string
                   description: ''
-                  example: qui
+                  example: ad
                 categories:
                   type: array
                   description: ''
@@ -1194,12 +1337,27 @@ paths:
                 author:
                   type: string
                   description: ''
-                  example: numquam
+                  example: fugiat
+                product_file:
+                  type: string
+                  description: ''
+                  example: ad
+                preview:
+                  type: string
+                  description: ''
+                  example: tempore
+                weight:
+                  type: string
+                  description: ''
+                  example: error
               required:
                 - name
                 - price
                 - description
                 - author
+                - product_file
+                - preview
+                - weight
     parameters:
       -
         in: path
@@ -1290,32 +1448,32 @@ paths:
           in: query
           name: name
           description: 'Search for products by name (partial match).'
-          example: inventore
+          example: aspernatur
           required: false
           schema:
             type: string
             description: 'Search for products by name (partial match).'
-            example: inventore
+            example: aspernatur
         -
           in: query
           name: author
           description: "Search for products by author's name."
-          example: doloribus
+          example: id
           required: false
           schema:
             type: string
             description: "Search for products by author's name."
-            example: doloribus
+            example: id
         -
           in: query
           name: category
           description: 'Search for products by category name.'
-          example: molestiae
+          example: recusandae
           required: false
           schema:
             type: string
             description: 'Search for products by category name.'
-            example: molestiae
+            example: recusandae
       responses:
         200:
           description: ''
@@ -1468,51 +1626,24 @@ paths:
       tags:
         - 'Product Management'
       requestBody:
-        required: true
+        required: false
         content:
-          multipart/form-data:
+          application/json:
             schema:
               type: object
               properties:
                 name:
                   type: string
                   description: ''
-                  example: tenetur
-                images:
-                  type: array
-                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
-                  items:
-                    type: string
-                    format: binary
-                price:
-                  type: string
-                  description: ''
-                  example: aut
-                description:
-                  type: string
-                  description: ''
-                  example: qui
-                categories:
-                  type: array
-                  description: ''
-                  example: null
-                  items:
-                    type: string
-                tags:
-                  type: array
-                  description: ''
-                  example: null
-                  items:
-                    type: string
+                  example: atque
                 author:
                   type: string
                   description: ''
-                  example: rem
-              required:
-                - name
-                - price
-                - description
-                - author
+                  example: et
+                category:
+                  type: string
+                  description: ''
+                  example: voluptas
       security: []
   '/api/v1/products/{id}':
     get:
@@ -1531,6 +1662,7 @@ paths:
                   data:
                     id: null
                     name: null
+                    weight: null
                     price: '0.00'
                     description: null
                     author: null
@@ -1538,6 +1670,7 @@ paths:
                     tags: []
                     images: []
                     reviews: []
+                    preview: 'http://dunia.healthyishng.com/storage'
                 properties:
                   data:
                     type: object
@@ -1546,6 +1679,9 @@ paths:
                         type: string
                         example: null
                       name:
+                        type: string
+                        example: null
+                      weight:
                         type: string
                         example: null
                       price:
@@ -1569,6 +1705,9 @@ paths:
                       reviews:
                         type: array
                         example: []
+                      preview:
+                        type: string
+                        example: 'http://dunia.healthyishng.com/storage'
       tags:
         - 'Product Management'
       security: []
@@ -1577,7 +1716,7 @@ paths:
         in: path
         name: id
         description: 'Product ID'
-        example: suscipit
+        example: nulla
         required: true
         schema:
           type: string
@@ -1651,11 +1790,11 @@ paths:
                 comment:
                   type: string
                   description: 'The comment for the review.'
-                  example: perferendis
+                  example: qui
                 rating:
                   type: integer
                   description: 'The rating for the review (0-5).'
-                  example: 17
+                  example: 5
               required:
                 - comment
                 - rating
@@ -1749,7 +1888,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 100 characters.'
-                  example: zuvlat
+                  example: wflkz
               required:
                 - name
       security: []
@@ -1821,7 +1960,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 100 characters.'
-                  example: eqvmyhbmzurgz
+                  example: pxz
               required:
                 - name
       security: []
@@ -1834,6 +1973,104 @@ paths:
         required: true
         schema:
           type: string
+  /api/v1/profile:
+    get:
+      summary: 'Display information about the currently logged-in user.'
+      operationId: displayInformationAboutTheCurrentlyLoggedInUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"John Doe\",\n        \"email\": \"johndoe@example.com\",\n    }\n}"
+      tags:
+        - User
+  /api/v1/changePassword:
+    post:
+      summary: "Change the authenticated user's password."
+      operationId: changeTheAuthenticatedUsersPassword
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Password changed successfully'
+                properties:
+                  message:
+                    type: string
+                    example: 'Password changed successfully'
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Current password is incorrect'
+                properties:
+                  error:
+                    type: string
+                    example: 'Current password is incorrect'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Validation failed.'
+                properties:
+                  error:
+                    type: string
+                    example: 'Validation failed.'
+      tags:
+        - User
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_password:
+                  type: string
+                  description: "The user's current password."
+                  example: optio
+                new_password:
+                  type: string
+                  description: 'The new password.'
+                  example: quas
+                new_password_confirmation:
+                  type: string
+                  description: 'The confirmation of the new password.'
+                  example: quaerat
+              required:
+                - current_password
+                - new_password
+                - new_password_confirmation
 tags:
   -
     name: Authentication
@@ -1859,6 +2096,9 @@ tags:
   -
     name: 'Tags Management'
     description: "\nEndpoint to manage tags"
+  -
+    name: User
+    description: ''
 components:
   securitySchemes:
     default:

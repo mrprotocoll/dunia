@@ -1,24 +1,21 @@
-name: 'Tags Management'
-description: |-
-
-  Endpoint to manage tags
+name: 'Categories Management'
+description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/admin/tags
+    uri: api/v1/admin/categories
     metadata:
-      groupName: 'Tags Management'
-      groupDescription: |-
-
-        Endpoint to manage tags
+      groupName: 'Categories Management'
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display a listing of the tags.'
+      title: 'Display a listing of categories.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -31,12 +28,15 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":null,"name":null},{"id":null,"name":null}]}'
+        content: '{"data":[{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"},{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"}]}'
         headers: []
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer P1V686kEbhZae3fad4vcg5D'
     controller: null
     method: null
     route: null
@@ -44,19 +44,18 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/admin/tags
+    uri: api/v1/admin/categories
     metadata:
-      groupName: 'Tags Management'
-      groupDescription: |-
-
-        Endpoint to manage tags
+      groupName: 'Categories Management'
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create a new Tag.'
+      title: 'Create a new category.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -66,23 +65,26 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: 'Must not be greater than 100 characters.'
+        description: 'Name of category'
         required: true
-        example: zuvlat
+        example: optio
         type: string
         custom: []
     cleanBodyParameters:
-      name: zuvlat
+      name: optio
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"name":null}}'
+        content: '{"data":{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"}}'
         headers: []
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1ZeD6g4EkPVbva8df6a5ch3'
     controller: null
     method: null
     route: null
@@ -90,31 +92,30 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/admin/tags/{id}'
+    uri: 'api/v1/admin/categories/{id}'
     metadata:
-      groupName: 'Tags Management'
-      groupDescription: |-
-
-        Endpoint to manage tags
+      groupName: 'Categories Management'
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display the specific tag by ID.'
+      title: 'Display the specific category by ID.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
       id:
         name: id
-        description: 'The ID of the tag.'
+        description: 'Category ID'
         required: true
-        example: 99cfd9ed-a48a-40d9-b896-4549d534fb7a
+        example: illo
         type: string
         custom: []
     cleanUrlParameters:
-      id: 99cfd9ed-a48a-40d9-b896-4549d534fb7a
+      id: illo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -123,12 +124,15 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"name":null}}'
+        content: '{"data":{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"}}'
         headers: []
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 16bc3eDkZhEV6v5g8d4aaPf'
     controller: null
     method: null
     route: null
@@ -137,53 +141,55 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/v1/admin/tags/{id}'
+    uri: 'api/v1/admin/categories/{id}'
     metadata:
-      groupName: 'Tags Management'
-      groupDescription: |-
-
-        Endpoint to manage tags
+      groupName: 'Categories Management'
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update a specific tag by ID.'
+      title: 'Update the specific category.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
       id:
         name: id
-        description: 'The ID of the tag.'
+        description: 'The ID of the category.'
         required: true
-        example: 99cfd9ed-a48a-40d9-b896-4549d534fb7a
+        example: 99cfdfea-c72f-451b-aed3-ec3eb26bd2c5
         type: string
         custom: []
     cleanUrlParameters:
-      id: 99cfd9ed-a48a-40d9-b896-4549d534fb7a
+      id: 99cfdfea-c72f-451b-aed3-ec3eb26bd2c5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
       name:
         name: name
-        description: 'Must not be greater than 100 characters.'
+        description: 'Name of category'
         required: true
-        example: eqvmyhbmzurgz
+        example: totam
         type: string
         custom: []
     cleanBodyParameters:
-      name: eqvmyhbmzurgz
+      name: totam
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"name":null}}'
+        content: '{"data":{"id":"99cfdfea-c72f-451b-aed3-ec3eb26bd2c5","name":"category one"}}'
         headers: []
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3f1dbvPcgk68aDZ6Vae5E4h'
     controller: null
     method: null
     route: null

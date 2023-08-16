@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Dunia Internal API Documentation",
-        "_postman_id": "4b9989b1-d5ad-4bae-a5c6-1be2d4708a79",
+        "_postman_id": "7fac50b6-7e1e-4a68-8610-b7bdc7e06541",
         "description": "This is dunia API documentation, for internal use only",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ranospzln\",\"email\":\"ocorwin@example.org\",\"password\":\"autem\"}"
+                            "raw": "{\"name\":\"uj\",\"email\":\"mekhi77@example.org\",\"password\":\"exercitationem\"}"
                         },
                         "description": "",
                         "auth": {
@@ -52,7 +52,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99e33e4a-459c-456f-8498-c51e8aa6480a\",\"name\":\"Joanie Murray MD\",\"email\":\"thand@example.org\"}}",
+                            "body": "{\"data\":{\"id\":\"99e72421-71c8-4465-8de6-279a0ca28f3d\",\"name\":\"Dr. Delbert Trantow\",\"email\":\"duane.hane@example.net\"}}",
                             "name": ""
                         },
                         {
@@ -85,7 +85,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"truecker@example.org\",\"password\":\"{1xfQn\\\"W^9a8DQOg\"}"
+                            "raw": "{\"email\":\"hartmann.roma@example.org\",\"password\":\"Ntar:B!pN\"}"
                         },
                         "description": "",
                         "auth": {
@@ -167,7 +167,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"yachuuzqnnwwqexhdweroqn\",\"email\":\"melissa97@example.com\",\"password\":\"aut\"}"
+                            "raw": "{\"name\":\"wwitszmoeqrqdifloffkvd\",\"email\":\"samir.corkery@example.com\",\"password\":\"cupiditate\"}"
                         },
                         "description": "",
                         "auth": {
@@ -178,7 +178,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99e33e4a-52ff-49b1-a971-df9c58620463\",\"name\":\"Estrella Green\",\"email\":\"gillian.olson@example.com\"}}",
+                            "body": "{\"data\":{\"id\":\"99e72421-856c-4d47-b4c5-5d5dcbdb6303\",\"name\":\"Ms. Estel Graham IV\",\"email\":\"dach.lavinia@example.net\"}}",
                             "name": ""
                         }
                     ]
@@ -205,7 +205,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"carlie71@example.com\",\"password\":\"{Hp8YEv\\\/w6$y%r\"}"
+                            "raw": "{\"email\":\"vicente.beier@example.net\",\"password\":\"r]6^<nc!&6sm[E_$UTX.\"}"
                         },
                         "description": "",
                         "auth": {
@@ -249,7 +249,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"modi\"}"
+                            "raw": "{\"token\":\"est\"}"
                         },
                         "description": "",
                         "auth": {
@@ -310,7 +310,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":\"99e33e4a-07f9-4314-9ada-b1eb14890903\",\"name\":\"Jeanie Ferry MD\",\"email\":\"casandra.daugherty@example.net\"},{\"id\":\"99e33e4a-19bc-4e8b-a83b-2c254a986678\",\"name\":\"Edyth Erdman II\",\"email\":\"schmidt.colleen@example.org\"}]}",
+                            "body": "{\"data\":[{\"id\":\"99e72421-3457-412c-b607-0a092175128f\",\"name\":\"Mariano Powlowski\",\"email\":\"macie.baumbach@example.net\",\"description\":null},{\"id\":\"99e72421-4957-4465-8638-cae4705e672b\",\"name\":\"Adelle Hane\",\"email\":\"bartell.ford@example.com\",\"description\":null}]}",
                             "name": ""
                         }
                     ]
@@ -337,7 +337,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"ondricka.amya@example.org\"}"
+                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"nwintheiser@example.net\",\"description\":\"Reiciendis vero rerum aut voluptatem.\"}"
                         },
                         "description": ""
                     },
@@ -345,7 +345,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99e33e4a-1fbe-43fa-bb9f-920ff0be9f1d\",\"name\":\"Dr. Jordon Streich\",\"email\":\"oconner.walker@example.org\"}}",
+                            "body": "{\"data\":{\"id\":\"99e72421-4e3b-4cd0-a268-868b7e0f813d\",\"name\":\"Mr. Monty Schuppe IV\",\"email\":\"acremin@example.com\",\"description\":null}}",
                             "name": ""
                         }
                     ]
@@ -362,7 +362,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "in",
+                                    "value": "sed",
                                     "description": "Author ID"
                                 }
                             ]
@@ -385,7 +385,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99e33e4a-2433-4d68-a221-87b60325ae42\",\"name\":\"Mr. Bernardo Kuvalis II\",\"email\":\"dominic57@example.net\"}}",
+                            "body": "{\"data\":{\"id\":\"99e72421-54e7-4896-8886-0f846f86ad97\",\"name\":\"Hosea Padberg\",\"email\":\"newton.fahey@example.com\",\"description\":null}}",
                             "name": ""
                         }
                     ]
@@ -420,7 +420,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"lorenza89@example.org\"}"
+                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"yost.nat@example.org\",\"description\":\"Sunt eum perspiciatis et aut.\"}"
                         },
                         "description": ""
                     },
@@ -428,7 +428,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99e33e4a-26be-4130-b792-d38a3eea2b82\",\"name\":\"Miss Ayla Bednar V\",\"email\":\"pbayer@example.org\"}}",
+                            "body": "{\"data\":{\"id\":\"99e72421-5815-40f8-86dc-37fd05914c46\",\"name\":\"Katrina Labadie\",\"email\":\"reynolds.dolly@example.net\",\"description\":null}}",
                             "name": ""
                         }
                     ]
@@ -493,7 +493,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"alias\"}"
+                            "raw": "{\"name\":\"optio\"}"
                         },
                         "description": ""
                     },
@@ -518,7 +518,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "vel",
+                                    "value": "illo",
                                     "description": "Category ID"
                                 }
                             ]
@@ -576,7 +576,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"id\"}"
+                            "raw": "{\"name\":\"totam\"}"
                         },
                         "description": ""
                     },
@@ -596,13 +596,13 @@
             "description": "",
             "item": [
                 {
-                    "name": "GET api\/v1\/user",
+                    "name": "Display a listing of the resource.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/user",
+                            "path": "api\/v1\/billingAddresses",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/user"
+                            "raw": "{{baseUrl}}\/api\/v1\/billingAddresses"
                         },
                         "method": "GET",
                         "header": [
@@ -644,6 +644,112 @@
                     ]
                 },
                 {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/billingAddresses",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/billingAddresses"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"country\":\"et\",\"state\":\"eos\",\"city\":\"vel\",\"address\":\"quo\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/billingAddresses\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/billingAddresses\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "99e5413a-ffc7-4a30-847e-031d4b4ac187",
+                                    "description": "The ID of the billingAddress."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"country\":\"velit\",\"state\":\"in\",\"city\":\"voluptates\",\"address\":\"sint\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/billingAddresses\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/billingAddresses\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "99e5413a-ffc7-4a30-847e-031d4b4ac187",
+                                    "description": "The ID of the billingAddress."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
                     "name": "Handle the email verification process for the authenticated user.",
                     "request": {
                         "url": {
@@ -655,13 +761,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "consequatur",
+                                    "value": "tempore",
                                     "description": "The ID of the verify email."
                                 },
                                 {
                                     "id": "hash",
                                     "key": "hash",
-                                    "value": "earum",
+                                    "value": "delectus",
                                     "description": ""
                                 }
                             ]
@@ -755,7 +861,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"marquardt.luisa@example.org\"}"
+                            "raw": "{\"email\":\"kellie.hagenes@example.org\"}"
                         },
                         "description": "Handle an incoming password reset link request.",
                         "auth": {
@@ -799,7 +905,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"autem\",\"email\":\"otorphy@example.org\",\"password\":\"kf)i*UDT{[Slb@D\",\"password_confirmation\":\"dolor\"}"
+                            "raw": "{\"token\":\"dolorum\",\"email\":\"mueller.noemy@example.net\",\"password\":\"\\\/p4%7&aKg`Z_Wn\",\"password_confirmation\":\"distinctio\"}"
                         },
                         "description": "",
                         "auth": {
@@ -886,39 +992,57 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "modi",
+                                    "value": "blanditiis",
                                     "type": "text",
                                     "description": "The name of the product."
                                 },
                                 {
                                     "key": "price",
-                                    "value": 0.22353,
+                                    "value": 9544.63008,
                                     "type": "text",
                                     "description": "The price of the product."
                                 },
                                 {
                                     "key": "description",
-                                    "value": "Esse at in dolorum qui sunt in.",
+                                    "value": "Neque quidem earum ut.",
                                     "type": "text",
                                     "description": "The description of the product."
                                 },
                                 {
                                     "key": "categories[0]",
-                                    "value": "accusamus",
+                                    "value": "et",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "tags[0]",
-                                    "value": "maiores",
+                                    "value": "porro",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "author",
-                                    "value": 20,
+                                    "value": 12,
                                     "type": "text",
                                     "description": "The ID of the author of the product."
+                                },
+                                {
+                                    "key": "product_file",
+                                    "value": "eum",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "preview",
+                                    "value": "ipsum",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "weight",
+                                    "value": "eos",
+                                    "type": "text",
+                                    "description": ""
                                 },
                                 {
                                     "key": "images[]",
@@ -938,7 +1062,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[]}}",
+                            "body": "{\"data\":{\"id\":null,\"name\":null,\"weight\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[],\"preview\":\"http:\\\/\\\/dunia.healthyishng.com\\\/storage\"}}",
                             "name": ""
                         },
                         {
@@ -982,25 +1106,43 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "unde",
+                                    "value": "ut",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "price",
-                                    "value": "eaque",
+                                    "value": "quos",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "description",
-                                    "value": "qui",
+                                    "value": "ad",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "author",
-                                    "value": "numquam",
+                                    "value": "fugiat",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "product_file",
+                                    "value": "ad",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "preview",
+                                    "value": "tempore",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "weight",
+                                    "value": "error",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -1022,7 +1164,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[]}}",
+                            "body": "{\"data\":{\"id\":null,\"name\":null,\"weight\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[],\"preview\":\"http:\\\/\\\/dunia.healthyishng.com\\\/storage\"}}",
                             "name": ""
                         }
                     ]
@@ -1117,30 +1259,30 @@
                             "query": [
                                 {
                                     "key": "name",
-                                    "value": "inventore",
+                                    "value": "aspernatur",
                                     "description": "Search for products by name (partial match).",
                                     "disabled": false
                                 },
                                 {
                                     "key": "author",
-                                    "value": "doloribus",
+                                    "value": "id",
                                     "description": "Search for products by author's name.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "category",
-                                    "value": "molestiae",
+                                    "value": "recusandae",
                                     "description": "Search for products by category name.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/products?name=inventore&author=doloribus&category=molestiae"
+                            "raw": "{{baseUrl}}\/api\/v1\/products?name=aspernatur&author=id&category=recusandae"
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "multipart\/form-data"
+                                "value": "application\/json"
                             },
                             {
                                 "key": "Accept",
@@ -1148,38 +1290,8 @@
                             }
                         ],
                         "body": {
-                            "mode": "formdata",
-                            "formdata": [
-                                {
-                                    "key": "name",
-                                    "value": "tenetur",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "price",
-                                    "value": "aut",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "description",
-                                    "value": "qui",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "author",
-                                    "value": "rem",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "images[]",
-                                    "src": [],
-                                    "type": "file"
-                                }
-                            ]
+                            "mode": "raw",
+                            "raw": "{\"name\":\"atque\",\"author\":\"et\",\"category\":\"voluptas\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1207,7 +1319,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "suscipit",
+                                    "value": "nulla",
                                     "description": "Product ID"
                                 }
                             ]
@@ -1233,7 +1345,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"name\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[]}}",
+                            "body": "{\"data\":{\"id\":null,\"name\":null,\"weight\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[],\"preview\":\"http:\\\/\\\/dunia.healthyishng.com\\\/storage\"}}",
                             "name": ""
                         }
                     ]
@@ -1274,7 +1386,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"comment\":\"perferendis\",\"rating\":17}"
+                            "raw": "{\"comment\":\"qui\",\"rating\":5}"
                         },
                         "description": ""
                     },
@@ -1350,7 +1462,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"zuvlat\"}"
+                            "raw": "{\"name\":\"wflkz\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1439,7 +1551,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"eqvmyhbmzurgz\"}"
+                            "raw": "{\"name\":\"pxz\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1451,6 +1563,91 @@
                             "header": [],
                             "code": 200,
                             "body": "{\"data\":{\"id\":null,\"name\":null}}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "User",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display information about the currently logged-in user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/profile"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"John Doe\",\n        \"email\": \"johndoe@example.com\",\n    }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Change the authenticated user's password.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/changePassword",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/changePassword"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"current_password\":\"optio\",\"new_password\":\"quas\",\"new_password_confirmation\":\"quaerat\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"message\": \"Password changed successfully\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"error\": \"Current password is incorrect\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"error\": \"Validation failed.\"\n}",
                             "name": ""
                         }
                     ]
