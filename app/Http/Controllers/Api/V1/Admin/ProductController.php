@@ -83,11 +83,12 @@ class ProductController extends Controller
             $previewName = Str::slug($product->preview->getClientOriginalName(), '_');
             $productFileName = Str::slug($product->product_file->getClientOriginalName(), '_');
 
-            // Store the product pdfs in the 'public' disk (storage/app/public)
-            Storage::disk('public')->put($previewName, file_get_contents($product->preview));
-            Storage::disk('public')->put($productFileName, file_get_contents($product->product_file));
+            if($product->save()){
+                // Store the product pdfs in the 'public' disk (storage/app/public)
+                Storage::disk('public')->put($previewName, file_get_contents($product->preview));
+                Storage::disk('public')->put($productFileName, file_get_contents($product->product_file));
 
-            $product->save();
+            }
 
             // save categories
             $product->categories()->attach($categories);
