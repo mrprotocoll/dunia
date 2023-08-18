@@ -23,7 +23,8 @@ class GoogleAuthController extends Controller
      * Handle the registration or login of a user via OAuth (Google or Facebook).
      *
      * @param Request $request The OAuth registration/login request.
-     *
+     * @return JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
      * @bodyParam oauth string required The OAuth provider (google or facebook).
      * @bodyParam oauth_id string required The user's OAuth ID.
      * @bodyParam name string required The user's name.
@@ -38,33 +39,26 @@ class GoogleAuthController extends Controller
      *     }
      * }
      *
-     * @response 500 {
-     *     "message": "Oops something went wrong"
-     * }
-     *
-     * @return JsonResponse
      */
     public function __invoke(Request $request): JsonResponse
     {
         //
-        try {
             $request->validate([
                 'oauth' => ['required', 'string', Rule::in(['google', 'facebook'])],
                 'oauth_id' => ['required', 'string'],
                 'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+                'email' => ['required', 'string', 'email', 'max:255'],
             ]);
 
             //check if user exists
             $device = substr($request->userAgent() ?? '', 0, 255);
-
             $user = User::updateOrCreate([
                 'email' => $request->email,
             ], [
                 'name' => $request->name,
+                'auth_type' => $request->oauth,
                 'oauth_id' => $request->oauth_id,
                 'oauth' => true,
-                'auth_type' => $request->oauth,
             ]);
 
             Auth::login($user);
@@ -72,10 +66,5 @@ class GoogleAuthController extends Controller
             $token = $user->createToken($device)->plainTextToken;
 
             return response()->json(['token' => $token, 'data' => new UserResource($user)], 201);
-        }
-        catch (\Exception $e) {
-            Log::error('An exception occurred', ['exception' => $e]);
-            return response()->json(['message' => 'Oops something went wrong'], 500);
-        }
     }
 }
