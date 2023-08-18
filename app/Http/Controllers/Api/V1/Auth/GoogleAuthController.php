@@ -8,7 +8,8 @@ use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\Rule;
 
 /**
  * @group Authentication
@@ -17,12 +18,16 @@ use Laravel\Socialite\Facades\Socialite;
  */
 class GoogleAuthController extends Controller
 {
+
     /**
-     * Authenticate and log in a user using Google OAuth.
+     * Handle the registration or login of a user via OAuth (Google or Facebook).
      *
-     * @param Request $request The authentication request.
+     * @param Request $request The OAuth registration/login request.
      *
-     * @bodyParam token string required The Google OAuth access token.
+     * @bodyParam oauth string required The OAuth provider (google or facebook).
+     * @bodyParam oauth_id string required The user's OAuth ID.
+     * @bodyParam name string required The user's name.
+     * @bodyParam email string required The user's email address.
      *
      * @response {
      *     "token": "generated_token",
@@ -32,11 +37,9 @@ class GoogleAuthController extends Controller
      *         "email": "johndoe@example.com",
      *     }
      * }
-     * @response 422 {
-     *     "error": "Validation failed."
-     * }
-     * @response 401 {
-     *     "error": "Unauthorized."
+     *
+     * @response 500 {
+     *     "message": "Oops something went wrong"
      * }
      *
      * @return JsonResponse
@@ -44,28 +47,35 @@ class GoogleAuthController extends Controller
     public function __invoke(Request $request): JsonResponse
     {
         //
-        $request->validate([
-            'token' => ['required', 'string', 'max:255'],
-        ]);
+        try {
+            $request->validate([
+                'oauth' => ['required', 'string', Rule::in(['google', 'facebook'])],
+                'oauth_id' => ['required', 'string'],
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            ]);
 
-        $googleUser = Socialite::driver('github')->userFromToken($request->token);
-        $device = substr($request->userAgent() ?? '', 0, 255);
+            //check if user exists
+            $device = substr($request->userAgent() ?? '', 0, 255);
 
-        $user = User::updateOrCreate([
-            'google_id' => $googleUser->id,
-        ], [
-            'name' => $googleUser->name,
-            'email' => $googleUser->email,
-            'password' => $device,
-            'oauth' => true,
-            'google_token' => $googleUser->token,
-            'google_refresh_token' => $googleUser->refreshToken,
-        ]);
+            $user = User::updateOrCreate([
+                'email' => $request->email,
+            ], [
+                'name' => $request->name,
+                'oauth_id' => $request->oauth_id,
+                'oauth' => true,
+                'auth_type' => $request->oauth,
+            ]);
 
-        Auth::login($user);
+            Auth::login($user);
 
-        $token = $user->createToken($device)->plainTextToken;
+            $token = $user->createToken($device)->plainTextToken;
 
-        return response()->json(['token' => $token, 'data' => new UserResource($user)], 201);
+            return response()->json(['token' => $token, 'data' => new UserResource($user)], 201);
+        }
+        catch (\Exception $e) {
+            Log::error('An exception occurred', ['exception' => $e]);
+            return response()->json(['message' => 'Oops something went wrong'], 500);
+        }
     }
 }

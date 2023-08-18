@@ -18,7 +18,7 @@ Route::post('/login', [AuthenticatedSessionController::class, 'store'])
     ->middleware('guest')
     ->name('login');
 
-Route::get('/auth/google', GoogleAuthController::class)
+Route::post('/auth/oauth', GoogleAuthController::class)
     ->middleware('guest')
     ->name('auth.google');
 

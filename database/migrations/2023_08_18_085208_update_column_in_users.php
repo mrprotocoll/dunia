@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->boolean('oauth')->default(false);
-            $table->string('google_id')->nullable();
-            $table->string('google_token')->nullable();
-            $table->string('google_refresh_token')->nullable();
+            $table->string('oauth_id')->nullable();
+            $table->enum('auth_type', ['email', 'google', 'facebook'])->default('email');
+            $table->string('password')->nullable()->change();
         });
     }
 
