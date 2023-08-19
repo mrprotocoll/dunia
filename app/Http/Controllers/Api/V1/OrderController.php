@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\OrderRequest;
 use App\Models\Order;
 use App\Models\Product;
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,6 +42,10 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         //
+    }
+
+    public function checkout(Request $request) {
+        $stripe = new \Stripe\StripeClient(env(STRIPE_SECRET));
     }
 
 }
