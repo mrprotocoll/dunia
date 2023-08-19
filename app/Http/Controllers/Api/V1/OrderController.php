@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\OrderRequest;
 use App\Models\Order;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
+use Stripe\StripeClient;
 
 /**
  * @group Order Management
@@ -41,6 +44,33 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         //
+    }
+
+    public function checkout(Request $request) {
+        $request->validate([
+            'success_url' => ['required', 'url'],
+            'cancel_url' => ['required', 'url'],
+            'cart' => ['required', 'array'],
+            'shipping' => []
+        ]);
+
+        $stripe = new StripeClient(env('STRIPE_SECRET'));
+
+        $checkout_session = $stripe->checkout->sessions->create([
+            'line_items' => [[
+                'price_data' => [
+                    'currency' => 'usd',
+                    'product_data' => [
+                        'name' => 'T-shirt',
+                    ],
+                    'unit_amount' => 2000,
+                ],
+                'quantity' => 1,
+            ]],
+            'mode' => 'payment',
+            'success_url' => $request->success_url,
+            'cancel_url' => $request->cancel_url,
+        ]);
     }
 
 }
