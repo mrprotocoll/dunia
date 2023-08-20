@@ -35,8 +35,8 @@ class ProductRequest extends FormRequest
             'tags' => ['array'],
             'tags.*' => ['exists:tags,id'],
             'author' => ['required', 'exists:authors,id'],
-            'product_file' => ['required', File::type(['pdf'])],
-            'preview' => ['required', 'pdf'],
+            'product_file' => ['required', 'file', 'mimes:pdf'],
+            'preview' => ['required', 'file', 'mimes:pdf'],
             'weight' => ['required', 'numeric']
         ];
     }

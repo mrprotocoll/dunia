@@ -80,14 +80,23 @@ class ProductController extends Controller
 
 
         DB::transaction(function () use ($product, $categories, $tags, $request){
-            $previewName = Str::slug($product->preview->getClientOriginalName(), '_');
-            $productFileName = Str::slug($product->product_file->getClientOriginalName(), '_');
+            // Handle BOOK preview upload
+            if ($request->hasFile('preview')) {
+                $previewName = Str::slug($request->file('preview')->getClientOriginalName(), '_');
+                Storage::disk('public')->put($previewName, $request->file('preview'));
+                $product->preview = $previewName;
+            }
 
-            if($product->save()){
-                // Store the product pdfs in the 'public' disk (storage/app/public)
-                Storage::disk('public')->put($previewName, file_get_contents($product->preview));
-                Storage::disk('public')->put($productFileName, file_get_contents($product->product_file));
+            // Handle product file upload
+            if ($request->hasFile('product_file')) {
+                $productFileName = Str::slug($request->file('product_file')->getClientOriginalName(), '_');
+                Storage::disk('public')->put($productFileName, $request->file('product_file'));
+                $product->product_file = $productFileName;
+            }
 
+            if (!$product->save()) {
+                // Handle failed save
+                return response()->json(['Error occured. Try again'], 500);
             }
 
             // save categories
