@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\FileHelper;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -43,8 +44,10 @@ class Product extends Model
      * @return void
      */
     public function addImages($request): void {
-        foreach ($request->file('images') as $image) {
-            $imageName = time() . '_' . Str::slug($image->getClientOriginalName(), '_');
+        foreach ($request->images as $image) {
+//            print_r($image->getClientOriginalName());
+//            print_r(Str::slug($image->getClientOriginalName(), '_'));
+            $imageName = "book_images/". FileHelper::formatName($image->getClientOriginalName());
 
             // Store the image in the 'public' disk (storage/app/public)
             Storage::disk('public')->put($imageName, file_get_contents($image));
