@@ -27,7 +27,7 @@ class GoogleAuthController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      * @bodyParam oauth string required The OAuth provider (google or facebook).
      * @bodyParam oauth_id string required The user's OAuth ID.
-     * @bodyParam name string required The user's name.
+     * @bodyParam name string required The user's name.AAAAAAQ
      * @bodyParam email string required The user's email address.
      *
      * @response {

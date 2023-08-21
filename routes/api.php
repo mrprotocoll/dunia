@@ -52,6 +52,7 @@ Route::prefix('admin')->group(function (){
 Route::middleware(['auth:sanctum'])->group(function (){
     Route::middleware(['role:customer'])->group(function () {
         Route::post('order', [OrderController::class, 'store']);
+        Route::post('checkout', [OrderController::class, 'checkout']);
         Route::apiResource('billingAddresses', BillingAddressController::class);
     });
 
