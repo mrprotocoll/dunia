@@ -17,15 +17,29 @@ class OrderResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id' => $this->id,
             'code' => $this->order_number,
             'shippingPrice' => $this->shipping_price > 1 ? number_format($this->shipping_price,2) : null,
-            'billingAddress' => $this->billing_address_id ? BillingAddress::find($this->billing_address_id) : "",
+            'billingAddress' => $this->billing_address_id ? new BillingAddressResource($this->billing_address_id) : "",
             'totalPrice' => number_format($this->total_price,2),
             'status' => strtolower($this->status),
             'createdAt' => $this->created_at,
             'updatedAt' => $this->updated_at,
-            'cart' => ResourceCollection::collection($this->products),
-            'customer' => new UserResource($this->user_id)
+            'cart' => $this->cartDetails(),
+            'customer' => new UserResource($this->whenLoaded('user'))
         ];
+    }
+
+    // Create a method to extract cart details
+    private function cartDetails()
+    {
+        return $this->products->map(function ($product) {
+            return [
+                'product_id' => $product->id,
+                'product_name' => $product->name,
+                'quantity' => $product->pivot->quantity,
+                'total_price' => $product->pivot->total_price,
+            ];
+        });
     }
 }
