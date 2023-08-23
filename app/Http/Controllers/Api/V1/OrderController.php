@@ -50,6 +50,8 @@ class OrderController extends Controller
     }
 
     /**
+     *
+     * Get customer orders
      * Retrieve a paginated list of orders for the currently authenticated customer.
      *
      * @authenticated
@@ -89,6 +91,7 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse | ResourceCollection
      */
+
     public function index() {
         try {
             $user = User::current();
@@ -101,6 +104,7 @@ class OrderController extends Controller
     }
 
     /**
+     * Get Customer order by order ID
      * Retrieve detailed information about a specific order for the currently authenticated user.
      *
      * @authenticated

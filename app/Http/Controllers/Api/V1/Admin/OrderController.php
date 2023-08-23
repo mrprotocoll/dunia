@@ -22,6 +22,7 @@ use Stripe\StripeClient;
 class OrderController extends Controller
 {
     /**
+     * Get All orders
      * Retrieve a paginated list of orders.
      *
      * @authenticated
@@ -75,6 +76,7 @@ class OrderController extends Controller
 
 
     /**
+     * Get order by ID
      * Retrieve detailed information about a specific order.
      *
      * @authenticated

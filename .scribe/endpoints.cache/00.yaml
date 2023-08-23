@@ -34,7 +34,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":"99f6280e-c2cd-4616-ad07-8d7111e9f7e7","name":"Theodora Predovic","email":"lwitting@example.com","description":null},{"id":"99f6280e-c681-495d-8e44-2ff6fd73c859","name":"Melany Jacobs","email":"harmon14@example.com","description":null}]}'
+        content: '{"data":[{"id":"99f629e0-e873-4154-aa10-52d086d1bb9b","name":"Abigale Turner","email":"moore.tessie@example.com","description":null},{"id":"99f629e0-ea32-4e28-b1e5-0208771b0fda","name":"Prof. Yvette Kulas II","email":"gwatsica@example.net","description":null}]}'
         headers: []
         description: ''
         custom: []
@@ -42,7 +42,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4518ca6gVdafDhb6EZvk3Pe'
+      - 'Bearer d56Vg8D3a6faE1chebk4ZPv'
     controller: null
     method: null
     route: null
@@ -82,25 +82,25 @@ endpoints:
         name: email
         description: 'Email of author.'
         required: true
-        example: toy.layla@example.com
+        example: deron61@example.org
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: false
-        example: 'Omnis accusamus quo quia sequi harum repellat a.'
+        example: 'Et quia assumenda et iusto quae perferendis assumenda similique.'
         type: string
         custom: []
     cleanBodyParameters:
       name: 'Isaac Johnson'
-      email: toy.layla@example.com
-      description: 'Omnis accusamus quo quia sequi harum repellat a.'
+      email: deron61@example.org
+      description: 'Et quia assumenda et iusto quae perferendis assumenda similique.'
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99f6280e-cd9c-41bd-b6c8-2f2fe705db8f","name":"Dr. Darion Marks","email":"uhamill@example.com","description":null}}'
+        content: '{"data":{"id":"99f629e0-ee1b-4457-9b88-93cd7dee7ee6","name":"Prof. Davonte Pfannerstill III","email":"gunnar.ward@example.net","description":null}}'
         headers: []
         description: ''
         custom: []
@@ -108,7 +108,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eZ18bga43EDdf5V66vaPckh'
+      - 'Bearer 14Va8356bcdDkZagePE6hvf'
     controller: null
     method: null
     route: null
@@ -137,11 +137,11 @@ endpoints:
         name: id
         description: 'Author ID'
         required: true
-        example: quaerat
+        example: eos
         type: string
         custom: []
     cleanUrlParameters:
-      id: quaerat
+      id: eos
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -150,7 +150,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99f6280e-d0bb-4aa3-a3a3-d17d7cca2ac4","name":"Casimir O''Keefe DDS","email":"olang@example.com","description":null}}'
+        content: '{"data":{"id":"99f629e0-f11b-4915-a347-07625dc80f4c","name":"Zena Carter","email":"cronin.pierce@example.org","description":null}}'
         headers: []
         description: ''
         custom: []
@@ -158,7 +158,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 14bZ8Ec56a3VdfgvD6hekPa'
+      - 'Bearer 4Z6618EabdDVckvP53gahef'
     controller: null
     method: null
     route: null
@@ -207,25 +207,25 @@ endpoints:
         name: email
         description: 'Email of author.'
         required: true
-        example: iwilkinson@example.org
+        example: jlarson@example.net
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: false
-        example: 'Et consequatur possimus veritatis illo dolores ut.'
+        example: 'Et mollitia magni reprehenderit voluptates.'
         type: string
         custom: []
     cleanBodyParameters:
       name: 'Isaac Johnson'
-      email: iwilkinson@example.org
-      description: 'Et consequatur possimus veritatis illo dolores ut.'
+      email: jlarson@example.net
+      description: 'Et mollitia magni reprehenderit voluptates.'
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99f6280e-d2c7-4f33-a148-38bb9420a503","name":"Elena Keeling","email":"mason06@example.com","description":null}}'
+        content: '{"data":{"id":"99f629e0-f374-45d0-bbb1-b3264c393d44","name":"Mrs. Nikki McGlynn II","email":"hickle.juliet@example.com","description":null}}'
         headers: []
         description: ''
         custom: []
@@ -233,7 +233,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer k8DZb16cPfEV635aead4vhg'
+      - 'Bearer 6aeD48Zgk5d63vbVPah1fcE'
     controller: null
     method: null
     route: null

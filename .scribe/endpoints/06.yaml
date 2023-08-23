@@ -61,7 +61,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 38VhEfvdag64cPZabe51kD6'
+      - 'Bearer b56Pg1Vkafd4v63aeZh8EDc'
     controller: null
     method: null
     route: null
@@ -96,35 +96,35 @@ endpoints:
         name: country
         description: 'The ID of the country for the address.'
         required: true
-        example: 7
+        example: 19
         type: integer
         custom: []
       state:
         name: state
         description: 'The ID of the state for the address.'
         required: true
-        example: 3
+        example: 11
         type: integer
         custom: []
       city:
         name: city
         description: 'The ID of the city for the address.'
         required: true
-        example: 18
+        example: 5
         type: integer
         custom: []
       address:
         name: address
         description: 'The address information.'
         required: true
-        example: atque
+        example: sed
         type: string
         custom: []
     cleanBodyParameters:
-      country: 7
-      state: 3
-      city: 18
-      address: atque
+      country: 19
+      state: 11
+      city: 5
+      address: sed
     fileParameters: []
     responses:
       -
@@ -156,7 +156,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E1d8ZbVDkPefh3agcv6a645'
+      - 'Bearer 1ZcD48Va5Pk3h6Evf6aebdg'
     controller: null
     method: null
     route: null
@@ -200,35 +200,35 @@ endpoints:
         name: country
         description: 'The ID of the country for the address.'
         required: true
-        example: 8
+        example: 20
         type: integer
         custom: []
       state:
         name: state
         description: 'The ID of the state for the address.'
         required: true
-        example: 2
+        example: 4
         type: integer
         custom: []
       city:
         name: city
         description: 'The ID of the city for the address.'
         required: true
-        example: 5
+        example: 12
         type: integer
         custom: []
       address:
         name: address
         description: 'The address information.'
         required: true
-        example: dicta
+        example: omnis
         type: string
         custom: []
     cleanBodyParameters:
-      country: 8
-      state: 2
-      city: 5
-      address: dicta
+      country: 20
+      state: 4
+      city: 12
+      address: omnis
     fileParameters: []
     responses:
       -
@@ -269,7 +269,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vaab5DPgE6k1e4h83dcZfv6'
+      - 'Bearer ZPkVeDv61ga4hEa6fc8db35'
     controller: null
     method: null
     route: null

@@ -45,7 +45,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hZ6af6v3E48DVecka15gdPb'
+      - 'Bearer Ev4bZ1gVafcaP566kd83ehD'
     controller: null
     method: null
     route: null
@@ -76,27 +76,27 @@ endpoints:
         name: current_password
         description: "The user's current password."
         required: true
-        example: et
+        example: autem
         type: string
         custom: []
       new_password:
         name: new_password
         description: 'The new password.'
         required: true
-        example: est
+        example: cumque
         type: string
         custom: []
       new_password_confirmation:
         name: new_password_confirmation
         description: 'The confirmation of the new password.'
         required: true
-        example: tempore
+        example: et
         type: string
         custom: []
     cleanBodyParameters:
-      current_password: et
-      new_password: est
-      new_password_confirmation: tempore
+      current_password: autem
+      new_password: cumque
+      new_password_confirmation: et
     fileParameters: []
     responses:
       -
@@ -130,7 +130,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vD5cVd64b1egaakfE6PZh83'
+      - 'Bearer 6ekgcEP6Dh81bV5f34Zaadv'
     controller: null
     method: null
     route: null

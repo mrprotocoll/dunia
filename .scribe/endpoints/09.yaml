@@ -22,19 +22,19 @@ endpoints:
         name: id
         description: 'The ID of the verify email.'
         required: true
-        example: itaque
+        example: nulla
         type: string
         custom: []
       hash:
         name: hash
         description: ''
         required: true
-        example: enim
+        example: aut
         type: string
         custom: []
     cleanUrlParameters:
-      id: itaque
-      hash: enim
+      id: nulla
+      hash: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -130,11 +130,11 @@ endpoints:
         name: email
         description: "The user's email address for password reset."
         required: true
-        example: yrippin@example.com
+        example: dianna.schiller@example.org
         type: string
         custom: []
     cleanBodyParameters:
-      email: yrippin@example.com
+      email: dianna.schiller@example.org
     fileParameters: []
     responses:
       -
@@ -186,35 +186,35 @@ endpoints:
         name: token
         description: 'The token received for password reset.'
         required: true
-        example: sint
+        example: quidem
         type: string
         custom: []
       email:
         name: email
         description: "The user's email address."
         required: true
-        example: farrell.robyn@example.net
+        example: stroman.kaela@example.com
         type: string
         custom: []
       password:
         name: password
         description: 'The new password.'
         required: true
-        example: 0+3iQ9!QFM^-e
+        example: '*[hx?B'
         type: string
         custom: []
       password_confirmation:
         name: password_confirmation
         description: 'The confirmation of the new password.'
         required: true
-        example: quas
+        example: ut
         type: string
         custom: []
     cleanBodyParameters:
-      token: sint
-      email: farrell.robyn@example.net
-      password: 0+3iQ9!QFM^-e
-      password_confirmation: quas
+      token: quidem
+      email: stroman.kaela@example.com
+      password: '*[hx?B'
+      password_confirmation: ut
     fileParameters: []
     responses:
       -
