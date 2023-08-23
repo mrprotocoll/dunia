@@ -32,7 +32,7 @@ endpoints:
         name: name
         description: 'The name of the product.'
         required: true
-        example: quibusdam
+        example: ipsum
         type: string
         custom: []
       images:
@@ -47,21 +47,21 @@ endpoints:
         name: price
         description: 'The price of the product.'
         required: true
-        example: 509.0
+        example: 13900.9329216
         type: number
         custom: []
       print_price:
         name: print_price
         description: 'The printing price of the product.'
         required: true
-        example: 141.0
+        example: 604.474
         type: number
         custom: []
       description:
         name: description
         description: 'The description of the product.'
         required: true
-        example: 'Quaerat consequatur eum animi iure voluptas.'
+        example: 'Rerum porro officiis omnis quae.'
         type: string
         custom: []
       categories:
@@ -69,7 +69,7 @@ endpoints:
         description: 'The array of category IDs associated with the product.'
         required: true
         example:
-          - sunt
+          - iure
         type: 'string[]'
         custom: []
       tags:
@@ -77,14 +77,14 @@ endpoints:
         description: 'The array of tag IDs associated with the product.'
         required: true
         example:
-          - repellendus
+          - consequuntur
         type: 'string[]'
         custom: []
       author:
         name: author
         description: "The ID of the product's author."
         required: true
-        example: 12
+        example: 18
         type: integer
         custom: []
       product_file:
@@ -105,7 +105,7 @@ endpoints:
         name: weight
         description: 'The weight of the product.'
         required: true
-        example: 4781.41958043
+        example: 48436.1805946
         type: number
         custom: []
       'images[]':
@@ -116,16 +116,16 @@ endpoints:
         type: file
         custom: []
     cleanBodyParameters:
-      name: quibusdam
-      price: 509.0
-      print_price: 141.0
-      description: 'Quaerat consequatur eum animi iure voluptas.'
+      name: ipsum
+      price: 13900.9329216
+      print_price: 604.474
+      description: 'Rerum porro officiis omnis quae.'
       categories:
-        - sunt
+        - iure
       tags:
-        - repellendus
-      author: 12
-      weight: 4781.41958043
+        - consequuntur
+      author: 18
+      weight: 48436.1805946
     fileParameters:
       images:
         - null
@@ -207,7 +207,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: ut
+        example: molestiae
         type: string
         custom: []
       images:
@@ -222,21 +222,21 @@ endpoints:
         name: price
         description: ''
         required: true
-        example: aut
+        example: nisi
         type: string
         custom: []
       print_price:
         name: print_price
         description: ''
         required: true
-        example: 20288098.544616
+        example: 303106.3912
         type: number
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: sed
+        example: perferendis
         type: string
         custom: []
       categories:
@@ -257,7 +257,7 @@ endpoints:
         name: author
         description: ''
         required: true
-        example: sed
+        example: tempora
         type: string
         custom: []
       product_file:
@@ -278,16 +278,16 @@ endpoints:
         name: weight
         description: ''
         required: true
-        example: 128949.9
+        example: 209922632.07544
         type: number
         custom: []
     cleanBodyParameters:
-      name: ut
-      price: aut
-      print_price: 20288098.544616
-      description: sed
-      author: sed
-      weight: 128949.9
+      name: molestiae
+      price: nisi
+      print_price: 303106.3912
+      description: perferendis
+      author: tempora
+      weight: 209922632.07544
     fileParameters:
       images:
         - null
@@ -304,7 +304,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PkZd4fb6aE6DcgeaV15h38v'
+      - 'Bearer V8cvZb1D365ke4d6aPEghaf'
     controller: null
     method: null
     route: null
@@ -358,7 +358,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hkE8D46Zevad1ga5fcV3Pb6'
+      - 'Bearer 1EhaVgdak534feZb6c6v8DP'
     controller: null
     method: null
     route: null
@@ -410,7 +410,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ve51kcP4ba6ZdEV3a8hDgf6'
+      - 'Bearer hZVe8cP5aED14dgf63kv6ba'
     controller: null
     method: null
     route: null
@@ -440,53 +440,53 @@ endpoints:
         name: name
         description: 'Search for products by name (partial match).'
         required: false
-        example: sit
+        example: error
         type: string
         custom: []
       author:
         name: author
         description: "Search for products by author's name."
         required: false
-        example: et
+        example: hic
         type: string
         custom: []
       category:
         name: category
         description: 'Search for products by category name.'
         required: false
-        example: perspiciatis
+        example: ea
         type: string
         custom: []
     cleanQueryParameters:
-      name: sit
-      author: et
-      category: perspiciatis
+      name: error
+      author: hic
+      category: ea
     bodyParameters:
       name:
         name: name
         description: ''
         required: false
-        example: ut
+        example: tempore
         type: string
         custom: []
       author:
         name: author
         description: ''
         required: false
-        example: dolor
+        example: ad
         type: string
         custom: []
       category:
         name: category
         description: ''
         required: false
-        example: voluptates
+        example: culpa
         type: string
         custom: []
     cleanBodyParameters:
-      name: ut
-      author: dolor
-      category: voluptates
+      name: tempore
+      author: ad
+      category: culpa
     fileParameters: []
     responses:
       -
@@ -573,11 +573,11 @@ endpoints:
         name: id
         description: 'Product ID'
         required: true
-        example: neque
+        example: magni
         type: string
         custom: []
     cleanUrlParameters:
-      id: neque
+      id: magni
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

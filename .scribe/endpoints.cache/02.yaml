@@ -38,7 +38,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dgZVacEDk5hba1e66834Pvf'
+      - 'Bearer ePdcDhv5a1gE6f4b3a6kZV8'
     controller: null
     method: null
     route: null
@@ -69,11 +69,11 @@ endpoints:
         name: name
         description: 'Name of category'
         required: true
-        example: vel
+        example: quis
         type: string
         custom: []
     cleanBodyParameters:
-      name: vel
+      name: quis
     fileParameters: []
     responses:
       -
@@ -86,7 +86,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kgZPaDEV6adbv3e64f8c51h'
+      - 'Bearer vaDfa1b4gc86h5dPZEk3Ve6'
     controller: null
     method: null
     route: null
@@ -113,11 +113,11 @@ endpoints:
         name: id
         description: 'Category ID'
         required: true
-        example: illo
+        example: error
         type: string
         custom: []
     cleanUrlParameters:
-      id: illo
+      id: error
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -134,7 +134,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gDZva65a4ecPk6h1fVd83Eb'
+      - 'Bearer a1hPZgEVbd8eD6fk65cav43'
     controller: null
     method: null
     route: null
@@ -174,11 +174,11 @@ endpoints:
         name: name
         description: 'Name of category'
         required: true
-        example: ut
+        example: molestiae
         type: string
         custom: []
     cleanBodyParameters:
-      name: ut
+      name: molestiae
     fileParameters: []
     responses:
       -
@@ -191,7 +191,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vfDE6Zkh61egd8ba3Va4P5c'
+      - 'Bearer b4dE6DZ8g5aPV1kchva6e3f'
     controller: null
     method: null
     route: null

@@ -30,32 +30,32 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: fwsxnhfhckzonqqben
+        example: tggxlaigqveexzwyhtlawunrz
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: elsie.murphy@example.org
+        example: corkery.pedro@example.com
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: sit
+        example: reprehenderit
         type: string
         custom: []
     cleanBodyParameters:
-      name: fwsxnhfhckzonqqben
-      email: elsie.murphy@example.org
-      password: sit
+      name: tggxlaigqveexzwyhtlawunrz
+      email: corkery.pedro@example.com
+      password: reprehenderit
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99f620a9-cb51-4cd0-a3e2-500cc48c6ad9","name":"Noe Feest","email":"ezequiel44@example.org"}}'
+        content: '{"data":{"id":"99f6280e-e964-4663-b2fd-9798e64274d0","name":"Desmond Bernhard","email":"west.ariane@example.org"}}'
         headers: []
         description: ''
         custom: []
@@ -101,19 +101,19 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: bartell.cecelia@example.org
+        example: hilpert.lilyan@example.com
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: 'OC:5H8fX0'
+        example: )xYIq/o
         type: string
         custom: []
     cleanBodyParameters:
-      email: bartell.cecelia@example.org
-      password: 'OC:5H8fX0'
+      email: hilpert.lilyan@example.com
+      password: )xYIq/o
     fileParameters: []
     responses:
       -
@@ -194,7 +194,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5Z4Pv38bgf66De1EVhkadac'
+      - 'Bearer dPaf43Vv8hcgD6bk5ea16EZ'
     controller: null
     method: null
     route: null
@@ -226,32 +226,32 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: dhsh
+        example: phthiutalqklzjhgfdlwruy
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: ines54@example.org
+        example: kianna70@example.org
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: ut
+        example: consectetur
         type: string
         custom: []
     cleanBodyParameters:
-      name: dhsh
-      email: ines54@example.org
-      password: ut
+      name: phthiutalqklzjhgfdlwruy
+      email: kianna70@example.org
+      password: consectetur
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99f620a9-e316-4b1c-9fdb-d1f0810620c6","name":"Miss Juana Connelly","email":"hwilkinson@example.com"}}'
+        content: '{"data":{"id":"99f6280e-fba8-4a69-b756-c6dad1b57d9c","name":"Dr. Arnold Botsford","email":"hailee06@example.net"}}'
         headers: []
         description: ''
         custom: []
@@ -288,19 +288,19 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: braden01@example.org
+        example: lennie03@example.net
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: 'D&&AEF8**bG'
+        example: 'iQH]!^X_&S6[\g9N$XT5'
         type: string
         custom: []
     cleanBodyParameters:
-      email: braden01@example.org
-      password: 'D&&AEF8**bG'
+      email: lennie03@example.net
+      password: 'iQH]!^X_&S6[\g9N$XT5'
     fileParameters: []
     responses:
       -
@@ -359,35 +359,35 @@ endpoints:
         name: oauth
         description: 'The OAuth provider (google or facebook).'
         required: true
-        example: nemo
+        example: cupiditate
         type: string
         custom: []
       oauth_id:
         name: oauth_id
         description: "The user's OAuth ID."
         required: true
-        example: et
+        example: inventore
         type: string
         custom: []
       name:
         name: name
         description: "The user's name.AAAAAAQ"
         required: true
-        example: velit
+        example: voluptatem
         type: string
         custom: []
       email:
         name: email
         description: "The user's email address."
         required: true
-        example: irma.volkman@example.com
+        example: stroman.christ@example.org
         type: string
         custom: []
     cleanBodyParameters:
-      oauth: nemo
-      oauth_id: et
-      name: velit
-      email: irma.volkman@example.com
+      oauth: cupiditate
+      oauth_id: inventore
+      name: voluptatem
+      email: stroman.christ@example.org
     fileParameters: []
     responses:
       -

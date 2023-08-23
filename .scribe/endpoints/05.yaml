@@ -5,7 +5,7 @@ description: |-
 endpoints:
   -
     httpMethods:
-      - POST
+      - GET
     uri: api/v1/order
     metadata:
       groupName: 'Order Management'
@@ -14,11 +14,12 @@ endpoints:
         Endpoint to manage customers orders
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created order in storage.'
+      title: 'Retrieve a paginated list of orders for the currently authenticated customer.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -28,9 +29,135 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "data": [
+                  {
+                      "id": 1,
+                      "user": {
+                          "id": 2,
+                          "name": "John Doe",
+                          "email": "johndoe@example.com"
+                      },
+                      "cart": [...],
+                  },
+                  ...
+              ],
+              "links": {
+                  "first": "...",
+                  "last": "...",
+                  "prev": null,
+                  "next": "..."
+              },
+              "meta": {
+                  "current_page": 1,
+                  "from": 1,
+                  "last_page": 3,
+                  "path": "...",
+                  "per_page": 10,
+                  "to": 10,
+                  "total": 30
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+              "message": "Oops something went wrong"
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer hePa66f8vaEk3dcZbVDg154'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/order/{order_id}'
+    metadata:
+      groupName: 'Order Management'
+      groupDescription: |-
+
+        Endpoint to manage customers orders
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Retrieve detailed information about a specific order for the currently authenticated user.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      order_id:
+        name: order_id
+        description: 'The ID of the order.'
+        required: true
+        example: 99ee5dad-531c-4ba0-aee9-c0bda1d418ce
+        type: string
+        custom: []
+    cleanUrlParameters:
+      order_id: 99ee5dad-531c-4ba0-aee9-c0bda1d418ce
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "data": {
+                  "id": 1,
+                  "user": {
+                      "id": 2,
+                      "name": "John Doe",
+                      "email": "johndoe@example.com"
+                  },
+                  "cart": [...],
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+              "message": "Order not found"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+              "message": "Oops something went wrong"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer cE4vdfeZPk1ga56aDhV8b36'
     controller: null
     method: null
     route: null
@@ -63,14 +190,14 @@ endpoints:
         name: success_url
         description: 'The URL to redirect to on successful payment.'
         required: true
-        example: 'https://www.block.com/perferendis-voluptas-aperiam-optio-qui-dicta-incidunt-dolore'
+        example: 'http://marks.com/modi-aliquid-rerum-nihil-minus-dignissimos-aut-rerum-in'
         type: string
         custom: []
       cancel_url:
         name: cancel_url
         description: 'The URL to redirect to on payment cancellation.'
         required: true
-        example: 'http://ondricka.com/illo-facilis-porro-ut-voluptatibus-iure'
+        example: 'http://graham.net/a-rerum-dolores-quia'
         type: string
         custom: []
       cart:
@@ -78,7 +205,7 @@ endpoints:
         description: 'The array of products in the cart.'
         required: true
         example:
-          - fugit
+          - quisquam
         type: 'string[]'
         custom: []
       shipping:
@@ -92,21 +219,21 @@ endpoints:
         name: shipping.price
         description: 'The shipping price if shipping is involved.'
         required: true
-        example: 261241956.07321
+        example: 78.4490701
         type: number
         custom: []
       shipping.billing_address_id:
         name: shipping.billing_address_id
         description: 'shipping address_id if shipping is involved.'
         required: false
-        example: et
+        example: beatae
         type: string
         custom: []
       'cart[].product_id':
         name: 'cart[].product_id'
         description: 'The ID of the product in the cart.'
         required: true
-        example: 18
+        example: 10
         type: integer
         custom: []
       'cart[].quantity':
@@ -117,13 +244,13 @@ endpoints:
         type: integer
         custom: []
     cleanBodyParameters:
-      success_url: 'https://www.block.com/perferendis-voluptas-aperiam-optio-qui-dicta-incidunt-dolore'
-      cancel_url: 'http://ondricka.com/illo-facilis-porro-ut-voluptatibus-iure'
+      success_url: 'http://marks.com/modi-aliquid-rerum-nihil-minus-dignissimos-aut-rerum-in'
+      cancel_url: 'http://graham.net/a-rerum-dolores-quia'
       cart:
-        - fugit
+        - quisquam
       shipping:
-        price: 261241956.07321
-        billing_address_id: et
+        price: 78.4490701
+        billing_address_id: beatae
     fileParameters: []
     responses:
       -
@@ -140,7 +267,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3dPD66cfa58VahgbkZ1veE4'
+      - 'Bearer a361gve56aVE4hbdDZP8cfk'
     controller: null
     method: null
     route: null
