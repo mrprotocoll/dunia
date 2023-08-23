@@ -45,8 +45,6 @@ class Product extends Model
      */
     public function addImages($request): void {
         foreach ($request->images as $image) {
-//            print_r($image->getClientOriginalName());
-//            print_r(Str::slug($image->getClientOriginalName(), '_'));
             $imageName = "book_images/". FileHelper::formatName($image->getClientOriginalName());
 
             // Store the image in the 'public' disk (storage/app/public)

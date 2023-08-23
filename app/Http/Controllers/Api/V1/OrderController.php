@@ -4,13 +4,17 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\OrderRequest;
+use App\Http\Resources\V1\OrderResource;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
 use Stripe\Event;
+use Stripe\Stripe;
 use Stripe\StripeClient;
+use Stripe\Webhook;
 
 /**
  * @group Order Management
@@ -21,17 +25,18 @@ class OrderController extends Controller
 {
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created order in storage.
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
+        $user = User::current();
         DB::transaction(function () use ($user, $request) {
             $shipping = $request['shipping'];
             $order = $user->orders()->create([
                 'total_price' => $request['total'],
                 'shipping_price' => $shipping['price'] ?? 0,
-                'billing_address_id' => $shipping['billing_address_id']
+                'billing_address_id' => $shipping['billing_address_id'],
+                'session_id' => $request['session_id']
             ]);
 
             foreach($request['cart'] as $productData){
@@ -45,11 +50,99 @@ class OrderController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Retrieve a paginated list of orders for the currently authenticated customer.
+     *
+     * @authenticated
+     *
+     * @response {
+     *     "data": [
+     *         {
+     *             "id": 1,
+     *             "user": {
+     *                 "id": 2,
+     *                 "name": "John Doe",
+     *                 "email": "johndoe@example.com"
+     *             },
+     *             "cart": [...],
+     *         },
+     *         ...
+     *     ],
+     *     "links": {
+     *         "first": "...",
+     *         "last": "...",
+     *         "prev": null,
+     *         "next": "..."
+     *     },
+     *     "meta": {
+     *         "current_page": 1,
+     *         "from": 1,
+     *         "last_page": 3,
+     *         "path": "...",
+     *         "per_page": 10,
+     *         "to": 10,
+     *         "total": 30
+     *     }
+     * }
+     * @response 500 {
+     *     "message": "Oops something went wrong"
+     * }
+     *
+     * @return \Illuminate\Http\JsonResponse | ResourceCollection
+     */
+    public function index() {
+        try {
+            $user = User::current();
+            $orders = $user->orders()->with(['user:id,name,email', 'products'])->paginate();
+            return OrderResource::collection($orders);
+        }
+        catch (\Exception $exception) {
+            return response()->json('Oops something went wrong', 500);
+        }
+    }
+
+    /**
+     * Retrieve detailed information about a specific order for the currently authenticated user.
+     *
+     * @authenticated
+     *
+     * @param Order $order The order to retrieve.
+     *
+     * @response {
+     *     "data": {
+     *         "id": 1,
+     *         "user": {
+     *             "id": 2,
+     *             "name": "John Doe",
+     *             "email": "johndoe@example.com"
+     *         },
+     *         "cart": [...],
+     *     }
+     * }
+     * @response 404 {
+     *     "message": "Order not found"
+     * }
+     * @response 500 {
+     *     "message": "Oops something went wrong"
+     * }
+     *
+     * @return \Illuminate\Http\JsonResponse | OrderResource
      */
     public function show(Order $order)
     {
-        //
+        try {
+            $user = User::current();
+            // Eager load the user and products relationships during the query
+            $order = $user->orders()->with(['user', 'products'])->find($order->id);
+
+            if (!$order) {
+                return response()->json(['message' => 'Order not found'], 404);
+            }
+
+            return new OrderResource($order);
+        }
+        catch (\Exception $exception) {
+            return response()->json('Oops something went wrong', 500);
+        }
     }
 
     /**
@@ -119,11 +212,12 @@ class OrderController extends Controller
         $checkout_session = $stripe->checkout->sessions->create([
             'line_items' => $line_items,
             'mode' => 'payment',
-            'success_url' => $request->success_url,
+            'success_url' => $request->success_url."?session_id={CHECKOUT_SESSION_ID}",
             'cancel_url' => $request->cancel_url,
         ]);
 
         if($checkout_session->url) {
+            $request['session_id'] = $checkout_session->id;
             // add a new order
             $this->store($request);
         }
@@ -132,38 +226,75 @@ class OrderController extends Controller
     }
 
     public function webhook() {
+        // Set secret key.
+        Stripe::setApiKey(env('STRIPE_SECRET'));
+
+        // You can find your endpoint's secret in your webhook settings
+        $endpoint_secret = env('WEBHOOK_SECRET');
+
         $payload = @file_get_contents('php://input');
+        $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];
         $event = null;
-        $webhookSecret = env('WEBHOOK_SECRET');
 
         try {
-            $event = Event::constructFrom(
-                json_decode($payload, true)
+            $event = Webhook::constructEvent(
+                $payload, $sig_header, $endpoint_secret
             );
         } catch(\UnexpectedValueException $e) {
             // Invalid payload
-            response()->json('error',400);
+            http_response_code(400);
+            exit();
+        } catch(\Stripe\Exception\SignatureVerificationException $e) {
+            // Invalid signature
+            http_response_code(400);
             exit();
         }
 
-        // Handle the event
-        switch ($event->type) {
-            case 'payment_intent.succeeded':
-                $paymentIntent = $event->data->object; // contains a \Stripe\PaymentIntent
-                // Then define and call a method to handle the successful payment intent.
-                // handlePaymentIntentSucceeded($paymentIntent);
-                break;
-            case 'payment_method.attached':
-                $paymentMethod = $event->data->object; // contains a \Stripe\PaymentMethod
-                // Then define and call a method to handle the successful attachment of a PaymentMethod.
-                // handlePaymentMethodAttached($paymentMethod);
-            break;
-            // ... handle other event types
-            default:
-                echo 'Received unknown event type ' . $event->type;
+        function fulfill_order($session) {
+
+            Order::update(
+                ['session_id' => $session->id],
+                [
+                    'status' => "SUCCESS"
+                ]
+            );
+            // TODO: Send email to customer
+
         }
 
-        response(200);
+        function email_customer_about_failed_payment($session) {
+            // TODO fill me in
+        }
+
+        switch ($event->type) {
+            case 'checkout.session.completed':
+                $session = $event->data->object;
+
+                // A delayed notification payment will have an `unpaid` status, as
+                if ($session->payment_status == 'paid') {
+                    // Fulfill the purchase
+                    fulfill_order($session);
+                }
+
+                break;
+
+            case 'checkout.session.async_payment_succeeded':
+                $session = $event->data->object;
+
+                // Fulfill the purchase
+                fulfill_order($session);
+
+                break;
+
+            case 'checkout.session.async_payment_failed':
+                $session = $event->data->object;
+                // TODO: send email to customer of failed transaction
+                // Send an email to the customer asking them to retry their order
+                email_customer_about_failed_payment($session);
+                break;
+        }
+
+        response('',200);
     }
 
 }
