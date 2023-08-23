@@ -29,7 +29,7 @@ class OrderRequest extends FormRequest
             'cart.*.quantity' => ['required', 'numeric', 'gt:0'],
             'shipping' => ['array'],
             'shipping.price' => ['required_if:shipping,*'],
-            'shipping.destination' => ['required_if:shipping,*','exists:billing_addresses,id']
+            'shipping.billing_address_id' => ['required_if:shipping,*','exists:billing_addresses,id']
         ];
     }
 }

@@ -31,7 +31,7 @@ class OrderController extends Controller
             $order = $user->orders()->create([
                 'total_price' => $request['total'],
                 'shipping_price' => $shipping['price'] ?? 0,
-                'billing_address_id' => $shipping['destination']
+                'billing_address_id' => $shipping['billing_address_id']
             ]);
 
             foreach($request['cart'] as $productData){
@@ -52,6 +52,27 @@ class OrderController extends Controller
         //
     }
 
+    /**
+     * Process the checkout for placing an order.
+     *
+     * @authenticated
+     * @param OrderRequest $request The order request.
+     *
+     * @bodyParam cart array required The array of products in the cart.
+     * @bodyParam cart[].product_id int required The ID of the product in the cart.
+     * @bodyParam cart[].quantity int required The quantity of the product in the cart.
+     * @bodyParam shipping.billing_address_id string shipping address_id if shipping is involved.
+     * @bodyParam shipping.price float required The shipping price if shipping is involved.
+     * @bodyParam success_url string required The URL to redirect to on successful payment.
+     * @bodyParam cancel_url string required The URL to redirect to on payment cancellation.
+     *
+     * @response {
+     *     "url": "https://checkout.stripe.com/session/...",
+     *     "message": "Checkout initiated successfully"
+     * }
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function checkout(OrderRequest $request) {
         $request->validated();
         $stripe = new StripeClient(env('STRIPE_SECRET'));
@@ -82,7 +103,7 @@ class OrderController extends Controller
             ];
         }
 
-        if($request['shipping']) {
+        if(count($request['shipping']) > 1) {
             $line_items[] = [
                 'price_data' => [
                     'currency' => 'usd',
@@ -121,7 +142,7 @@ class OrderController extends Controller
             );
         } catch(\UnexpectedValueException $e) {
             // Invalid payload
-            response(400);
+            response()->json('error',400);
             exit();
         }
 
