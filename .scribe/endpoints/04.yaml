@@ -30,32 +30,32 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: uj
+        example: fwsxnhfhckzonqqben
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: mekhi77@example.org
+        example: elsie.murphy@example.org
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: exercitationem
+        example: sit
         type: string
         custom: []
     cleanBodyParameters:
-      name: uj
-      email: mekhi77@example.org
-      password: exercitationem
+      name: fwsxnhfhckzonqqben
+      email: elsie.murphy@example.org
+      password: sit
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99e72421-71c8-4465-8de6-279a0ca28f3d","name":"Dr. Delbert Trantow","email":"duane.hane@example.net"}}'
+        content: '{"data":{"id":"99f620a9-cb51-4cd0-a3e2-500cc48c6ad9","name":"Noe Feest","email":"ezequiel44@example.org"}}'
         headers: []
         description: ''
         custom: []
@@ -101,19 +101,19 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: hartmann.roma@example.org
+        example: bartell.cecelia@example.org
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: 'Ntar:B!pN'
+        example: 'OC:5H8fX0'
         type: string
         custom: []
     cleanBodyParameters:
-      email: hartmann.roma@example.org
-      password: 'Ntar:B!pN'
+      email: bartell.cecelia@example.org
+      password: 'OC:5H8fX0'
     fileParameters: []
     responses:
       -
@@ -194,7 +194,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1a6kda3h8cbEDgfv4ZV5P6e'
+      - 'Bearer 5Z4Pv38bgf66De1EVhkadac'
     controller: null
     method: null
     route: null
@@ -226,32 +226,32 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: wwitszmoeqrqdifloffkvd
+        example: dhsh
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: samir.corkery@example.com
+        example: ines54@example.org
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: cupiditate
+        example: ut
         type: string
         custom: []
     cleanBodyParameters:
-      name: wwitszmoeqrqdifloffkvd
-      email: samir.corkery@example.com
-      password: cupiditate
+      name: dhsh
+      email: ines54@example.org
+      password: ut
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":"99e72421-856c-4d47-b4c5-5d5dcbdb6303","name":"Ms. Estel Graham IV","email":"dach.lavinia@example.net"}}'
+        content: '{"data":{"id":"99f620a9-e316-4b1c-9fdb-d1f0810620c6","name":"Miss Juana Connelly","email":"hwilkinson@example.com"}}'
         headers: []
         description: ''
         custom: []
@@ -288,19 +288,19 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: vicente.beier@example.net
+        example: braden01@example.org
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: 'r]6^<nc!&6sm[E_$UTX.'
+        example: 'D&&AEF8**bG'
         type: string
         custom: []
     cleanBodyParameters:
-      email: vicente.beier@example.net
-      password: 'r]6^<nc!&6sm[E_$UTX.'
+      email: braden01@example.org
+      password: 'D&&AEF8**bG'
     fileParameters: []
     responses:
       -
@@ -334,8 +334,8 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - GET
-    uri: api/v1/auth/google
+      - POST
+    uri: api/v1/auth/oauth
     metadata:
       groupName: Authentication
       groupDescription: |-
@@ -343,7 +343,7 @@ endpoints:
         Endpoint to manage user authentication
       subgroup: ''
       subgroupDescription: ''
-      title: 'Authenticate and log in a user using Google OAuth.'
+      title: 'Handle the registration or login of a user via OAuth (Google or Facebook).'
       description: ''
       authenticated: false
       custom: []
@@ -355,15 +355,39 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      token:
-        name: token
-        description: 'The Google OAuth access token.'
+      oauth:
+        name: oauth
+        description: 'The OAuth provider (google or facebook).'
         required: true
-        example: est
+        example: nemo
+        type: string
+        custom: []
+      oauth_id:
+        name: oauth_id
+        description: "The user's OAuth ID."
+        required: true
+        example: et
+        type: string
+        custom: []
+      name:
+        name: name
+        description: "The user's name.AAAAAAQ"
+        required: true
+        example: velit
+        type: string
+        custom: []
+      email:
+        name: email
+        description: "The user's email address."
+        required: true
+        example: irma.volkman@example.com
         type: string
         custom: []
     cleanBodyParameters:
-      token: est
+      oauth: nemo
+      oauth_id: et
+      name: velit
+      email: irma.volkman@example.com
     fileParameters: []
     responses:
       -
@@ -376,24 +400,6 @@ endpoints:
                   "name": "John Doe",
                   "email": "johndoe@example.com",
               }
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 401
-        content: |-
-          {
-              "error": "Unauthorized."
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 422
-        content: |-
-          {
-              "error": "Validation failed."
           }
         headers: []
         description: ''

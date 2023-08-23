@@ -16,7 +16,7 @@ endpoints:
         Endpoint to manage customers orders
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
+      title: 'Store a newly created order in storage.'
       description: ''
       authenticated: false
       custom: []
@@ -33,6 +33,116 @@ endpoints:
     responses: []
     responseFields: []
     auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/checkout
+    metadata:
+      groupName: 'Order Management'
+      groupDescription: |-
+
+        Endpoint to manage customers orders
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Process the checkout for placing an order.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      success_url:
+        name: success_url
+        description: 'The URL to redirect to on successful payment.'
+        required: true
+        example: 'https://www.block.com/perferendis-voluptas-aperiam-optio-qui-dicta-incidunt-dolore'
+        type: string
+        custom: []
+      cancel_url:
+        name: cancel_url
+        description: 'The URL to redirect to on payment cancellation.'
+        required: true
+        example: 'http://ondricka.com/illo-facilis-porro-ut-voluptatibus-iure'
+        type: string
+        custom: []
+      cart:
+        name: cart
+        description: 'The array of products in the cart.'
+        required: true
+        example:
+          - fugit
+        type: 'string[]'
+        custom: []
+      shipping:
+        name: shipping
+        description: ''
+        required: false
+        example: null
+        type: object
+        custom: []
+      shipping.price:
+        name: shipping.price
+        description: 'The shipping price if shipping is involved.'
+        required: true
+        example: 261241956.07321
+        type: number
+        custom: []
+      shipping.billing_address_id:
+        name: shipping.billing_address_id
+        description: 'shipping address_id if shipping is involved.'
+        required: false
+        example: et
+        type: string
+        custom: []
+      'cart[].product_id':
+        name: 'cart[].product_id'
+        description: 'The ID of the product in the cart.'
+        required: true
+        example: 18
+        type: integer
+        custom: []
+      'cart[].quantity':
+        name: 'cart[].quantity'
+        description: 'The quantity of the product in the cart.'
+        required: true
+        example: 14
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      success_url: 'https://www.block.com/perferendis-voluptas-aperiam-optio-qui-dicta-incidunt-dolore'
+      cancel_url: 'http://ondricka.com/illo-facilis-porro-ut-voluptatibus-iure'
+      cart:
+        - fugit
+      shipping:
+        price: 261241956.07321
+        billing_address_id: et
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "url": "https://checkout.stripe.com/session/...",
+              "message": "Checkout initiated successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3dPD66cfa58VahgbkZ1veE4'
     controller: null
     method: null
     route: null

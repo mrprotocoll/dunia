@@ -67,35 +67,35 @@ endpoints:
         name: country
         description: ''
         required: true
-        example: et
+        example: natus
         type: string
         custom: []
       state:
         name: state
         description: ''
         required: true
-        example: eos
+        example: eum
         type: string
         custom: []
       city:
         name: city
         description: ''
         required: true
-        example: vel
+        example: ut
         type: string
         custom: []
       address:
         name: address
         description: ''
         required: true
-        example: quo
+        example: dolore
         type: string
         custom: []
     cleanBodyParameters:
-      country: et
-      state: eos
-      city: vel
-      address: quo
+      country: natus
+      state: eum
+      city: ut
+      address: dolore
     fileParameters: []
     responses: []
     responseFields: []
@@ -138,35 +138,35 @@ endpoints:
         name: country
         description: ''
         required: true
-        example: velit
+        example: earum
         type: string
         custom: []
       state:
         name: state
         description: ''
         required: true
-        example: in
+        example: et
         type: string
         custom: []
       city:
         name: city
         description: ''
         required: true
-        example: voluptates
+        example: minus
         type: string
         custom: []
       address:
         name: address
         description: ''
         required: true
-        example: sint
+        example: fuga
         type: string
         custom: []
     cleanBodyParameters:
-      country: velit
-      state: in
-      city: voluptates
-      address: sint
+      country: earum
+      state: et
+      city: minus
+      address: fuga
     fileParameters: []
     responses: []
     responseFields: []
@@ -234,19 +234,19 @@ endpoints:
         name: id
         description: 'The ID of the verify email.'
         required: true
-        example: tempore
+        example: dolorum
         type: string
         custom: []
       hash:
         name: hash
         description: ''
         required: true
-        example: delectus
+        example: voluptatem
         type: string
         custom: []
     cleanUrlParameters:
-      id: tempore
-      hash: delectus
+      id: dolorum
+      hash: voluptatem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -342,11 +342,11 @@ endpoints:
         name: email
         description: "The user's email address for password reset."
         required: true
-        example: kellie.hagenes@example.org
+        example: jefferey.kihn@example.org
         type: string
         custom: []
     cleanBodyParameters:
-      email: kellie.hagenes@example.org
+      email: jefferey.kihn@example.org
     fileParameters: []
     responses:
       -
@@ -398,35 +398,35 @@ endpoints:
         name: token
         description: 'The token received for password reset.'
         required: true
-        example: dolorum
+        example: et
         type: string
         custom: []
       email:
         name: email
         description: "The user's email address."
         required: true
-        example: mueller.noemy@example.net
+        example: ckuhlman@example.com
         type: string
         custom: []
       password:
         name: password
         description: 'The new password.'
         required: true
-        example: '/p4%7&aKg`Z_Wn'
+        example: '*zYeS*sG&o7M'
         type: string
         custom: []
       password_confirmation:
         name: password_confirmation
         description: 'The confirmation of the new password.'
         required: true
-        example: distinctio
+        example: illo
         type: string
         custom: []
     cleanBodyParameters:
-      token: dolorum
-      email: mueller.noemy@example.net
-      password: '/p4%7&aKg`Z_Wn'
-      password_confirmation: distinctio
+      token: et
+      email: ckuhlman@example.com
+      password: '*zYeS*sG&o7M'
+      password_confirmation: illo
     fileParameters: []
     responses:
       -

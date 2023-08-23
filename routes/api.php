@@ -51,7 +51,8 @@ Route::prefix('admin')->group(function (){
 // Customer protected routes
 Route::middleware(['auth:sanctum'])->group(function (){
     Route::middleware(['role:customer'])->group(function () {
-        Route::post('order', [OrderController::class, 'store']);
+        Route::get('order', [OrderController::class, 'index']);
+        Route::get('order/{order}', [OrderController::class, 'show']);
         Route::post('checkout', [OrderController::class, 'checkout']);
         Route::post('webhooks', [OrderController::class, 'webhooks']);
         Route::apiResource('billingAddresses', BillingAddressController::class);

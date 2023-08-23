@@ -41,19 +41,19 @@ endpoints:
         name: comment
         description: 'The comment for the review.'
         required: true
-        example: qui
+        example: rem
         type: string
         custom: []
       rating:
         name: rating
         description: 'The rating for the review (0-5).'
         required: true
-        example: 5
+        example: 8
         type: integer
         custom: []
     cleanBodyParameters:
-      comment: qui
-      rating: 5
+      comment: rem
+      rating: 8
     fileParameters: []
     responses:
       -
@@ -79,7 +79,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5eh6kfDV6bgvPc81a34dZaE'
+      - 'Bearer Ed1Ze4hvaVbgk68cP53D6af'
     controller: null
     method: null
     route: null

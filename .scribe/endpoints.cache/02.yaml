@@ -38,7 +38,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P1V686kEbhZae3fad4vcg5D'
+      - 'Bearer dgZVacEDk5hba1e66834Pvf'
     controller: null
     method: null
     route: null
@@ -69,11 +69,11 @@ endpoints:
         name: name
         description: 'Name of category'
         required: true
-        example: optio
+        example: vel
         type: string
         custom: []
     cleanBodyParameters:
-      name: optio
+      name: vel
     fileParameters: []
     responses:
       -
@@ -86,7 +86,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1ZeD6g4EkPVbva8df6a5ch3'
+      - 'Bearer kgZPaDEV6adbv3e64f8c51h'
     controller: null
     method: null
     route: null
@@ -134,7 +134,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 16bc3eDkZhEV6v5g8d4aaPf'
+      - 'Bearer gDZva65a4ecPk6h1fVd83Eb'
     controller: null
     method: null
     route: null
@@ -174,11 +174,11 @@ endpoints:
         name: name
         description: 'Name of category'
         required: true
-        example: totam
+        example: ut
         type: string
         custom: []
     cleanBodyParameters:
-      name: totam
+      name: ut
     fileParameters: []
     responses:
       -
@@ -191,7 +191,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3f1dbvPcgk68aDZ6Vae5E4h'
+      - 'Bearer vfDE6Zkh61egd8ba3Va4P5c'
     controller: null
     method: null
     route: null
