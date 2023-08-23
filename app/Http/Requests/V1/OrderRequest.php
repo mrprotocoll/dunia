@@ -11,7 +11,7 @@ class OrderRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class OrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'success_url' => ['required', 'url'],
+            'cancel_url' => ['required', 'url'],
+            'cart' => ['required', 'array'],
+            'cart.*.product_id' => ['required', 'exists:products,id'],
+            'cart.*.quantity' => ['required', 'numeric', 'gt:0'],
+            'shipping' => ['array'],
+            'shipping.price' => ['required_if:shipping,*'],
+            'shipping.destination' => ['required_if:shipping,*','exists:billing_addresses,id']
         ];
     }
 }

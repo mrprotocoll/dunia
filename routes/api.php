@@ -53,6 +53,7 @@ Route::middleware(['auth:sanctum'])->group(function (){
     Route::middleware(['role:customer'])->group(function () {
         Route::post('order', [OrderController::class, 'store']);
         Route::post('checkout', [OrderController::class, 'checkout']);
+        Route::post('webhook', [OrderController::class, 'webhook']);
         Route::apiResource('billingAddresses', BillingAddressController::class);
     });
 

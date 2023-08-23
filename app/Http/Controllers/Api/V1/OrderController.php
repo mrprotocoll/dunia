@@ -9,7 +9,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Rule;
+use Stripe\Event;
 use Stripe\StripeClient;
 
 /**
@@ -52,18 +52,8 @@ class OrderController extends Controller
         //
     }
 
-    public function checkout(Request $request) {
-        $request->validate([
-            'success_url' => ['required', 'url'],
-            'cancel_url' => ['required', 'url'],
-            'cart' => ['required', 'array'],
-            'cart.*.product_id' => ['required', 'exists:products,id'],
-            'cart.*.quantity' => ['required', 'numeric', 'gt:0'],
-            'shipping' => ['array'],
-            'shipping.price' => ['required_if:shipping,*'],
-            'shipping.destination' => ['required_if:shipping,*','exists:billing_addresses,id']
-        ]);
-
+    public function checkout(OrderRequest $request) {
+        $request->validated();
         $stripe = new StripeClient(env('STRIPE_SECRET'));
 
         $line_items = [];
@@ -118,6 +108,41 @@ class OrderController extends Controller
         }
 
         return response()->json(['url' => $checkout_session->url]);
+    }
+
+    public function webhook() {
+        $payload = @file_get_contents('php://input');
+        $event = null;
+        $webhookSecret = env('WEBHOOK_SECRET');
+
+        try {
+            $event = Event::constructFrom(
+                json_decode($payload, true)
+            );
+        } catch(\UnexpectedValueException $e) {
+            // Invalid payload
+            response(400);
+            exit();
+        }
+
+        // Handle the event
+        switch ($event->type) {
+            case 'payment_intent.succeeded':
+                $paymentIntent = $event->data->object; // contains a \Stripe\PaymentIntent
+                // Then define and call a method to handle the successful payment intent.
+                // handlePaymentIntentSucceeded($paymentIntent);
+                break;
+            case 'payment_method.attached':
+                $paymentMethod = $event->data->object; // contains a \Stripe\PaymentMethod
+                // Then define and call a method to handle the successful attachment of a PaymentMethod.
+                // handlePaymentMethodAttached($paymentMethod);
+            break;
+            // ... handle other event types
+            default:
+                echo 'Received unknown event type ' . $event->type;
+        }
+
+        response(200);
     }
 
 }
