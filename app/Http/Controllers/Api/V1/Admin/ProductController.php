@@ -65,6 +65,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = $request->name;
         $product->author_id = $request->author;
+        $product->age_range_id = $request->age;
         $product->price = $request->price;
         $product->description = $request->description;
         $product->weight = $request->weight;
@@ -127,6 +128,7 @@ class ProductController extends Controller
         //
         $product->name = $request->name;
         $product->author_id = $request->author;
+        $product->age_range_id = $request->age;
         $product->price = $request->price;
         $product->weight = $request->weight;
         $product->print_price = $request->print_price;
