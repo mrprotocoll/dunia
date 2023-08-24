@@ -33,6 +33,8 @@ Route::prefix('admin')->group(function (){
         Route::apiResource('categories', Admin\CategoryController::class)
             ->only(['index', 'show', 'store', 'update']);
 
+        Route::apiResource('ageranges', Admin\CategoryController::class);
+
         Route::apiResource('products', Admin\ProductController::class)
             ->only(['store', 'update']);
 
