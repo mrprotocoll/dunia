@@ -8,6 +8,7 @@ use App\Http\Resources\V1\BillingAddressResource;
 use App\Models\BillingAddress;
 use App\Models\Product;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Support\Facades\Auth;
@@ -44,7 +45,7 @@ class BillingAddressController extends Controller
      *     "message": "Oops something went wrong"
      * }
      *
-     * @return \Illuminate\Http\JsonResponse | ResourceCollection
+     * @return JsonResponse | ResourceCollection
      */
     public function index()
     {
@@ -82,7 +83,7 @@ class BillingAddressController extends Controller
      * }
      *
      * @param BillingAddressRequest $request The billing address request.
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function store(BillingAddressRequest $request)
     {
@@ -141,7 +142,7 @@ class BillingAddressController extends Controller
      *     "message": "Oops something went wrong"
      * }
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse | BillingAddressResource
      */
     public function update(BillingAddressRequest $request, BillingAddress $billingAddress)
     {
@@ -181,7 +182,7 @@ class BillingAddressController extends Controller
      *     "message": "Oops something went wrong"
      * }
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function destroy(string $id)
     {

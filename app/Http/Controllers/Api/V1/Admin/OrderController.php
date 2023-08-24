@@ -102,7 +102,7 @@ class OrderController extends Controller
      *     "message": "Oops something went wrong"
      * }
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\JsonResponse | OrderResource
      */
     public function show(Order $order)
     {
