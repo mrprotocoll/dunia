@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             //
-            $table->foreignUuid('age_range_id');
+            $table->foreignUuid('age_range_id')
+                ->constrained()
+                ->onDelete('cascade');
         });
     }
 

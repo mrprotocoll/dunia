@@ -7,10 +7,37 @@ use App\Models\AgeRange;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
+/**
+ * @group Age Range
+ *
+ * The age range management
+ */
 class AgeRangeController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
+     *
+     * Retrieve a list of all age ranges.
+     *
+     * @authenticated
+     *
+     * @response {
+     *     "data": [
+     *         {
+     *             "id": 1,
+     *             "name": "Age Range Name",
+     *             "description": "Age range description",
+     *             "created_at": "2023-08-11T12:34:56Z",
+     *             "updated_at": "2023-08-11T12:34:56Z"
+     *         },
+     *         ...
+     *     ]
+     * }
+     * @response 500 {
+     *     "message": "Oops something went wrong"
+     * }
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -23,7 +50,27 @@ class AgeRangeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new age range.
+     * @authenticated
+     * @bodyParam name string required The name of the age range.
+     * @bodyParam description string The description of the age range.
+     *
+     * @response 201 {
+     *     "id": 1,
+     *     "name": "Age Range Name",
+     *     "description": "Age range description",
+     *     "created_at": "2023-08-11T12:34:56Z",
+     *     "updated_at": "2023-08-11T12:34:56Z"
+     * }
+     * @response 422 {
+     *     "errors": {...}
+     * }
+     * @response 500 {
+     *     "errors": "Oops something went wrong"
+     * }
+     *
+     * @param Request $request The request instance.
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
@@ -46,7 +93,25 @@ class AgeRangeController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Retrieve details of a specific age range.
+     * @authenticated
+     * @param \App\Models\AgeRange $ageRange The age range to retrieve details for.
+     *
+     * @response {
+     *     "id": 1,
+     *     "name": "Age Range Name",
+     *     "description": "Age range description",
+     *     "created_at": "2023-08-11T12:34:56Z",
+     *     "updated_at": "2023-08-11T12:34:56Z"
+     * }
+     * @response 422 {
+     *     "errors": {...}
+     * }
+     * @response 500 {
+     *     "errors": "Oops something went wrong"
+     * }
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(AgeRange $ageRange)
     {
@@ -62,7 +127,29 @@ class AgeRangeController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update an existing age range.
+     * @authenticated
+     * @bodyParam name string required The name of the age range.
+     * @bodyParam description string The description of the age range.
+     *
+     * @param \Illuminate\Http\Request $request The request instance.
+     * @param AgeRange $ageRange The age range to update.
+     *
+     * @response {
+     *     "id": 1,
+     *     "name": "Updated Age Range Name",
+     *     "description": "Updated age range description",
+     *     "created_at": "2023-08-11T12:34:56Z",
+     *     "updated_at": "2023-08-11T12:34:56Z"
+     * }
+     * @response 422 {
+     *     "errors": {...}
+     * }
+     * @response 500 {
+     *     "errors": "Oops something went wrong"
+     * }
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, AgeRange $ageRange)
     {
@@ -84,15 +171,26 @@ class AgeRangeController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete an age range.
+     *
+     * @param AgeRange $ageRange The age range to delete.
+     *
+     * @response 200 {
+     *     "message": "Age range deleted successfully"
+     * }
+     * @response 500 {
+     *     "message": "Oops something went wrong"
+     * }
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy(AgeRange $ageRange)
     {
         try {
-            return response()->json($ageRange->delete());
-        }
-        catch (\Exception $exception) {
-            return response()->json(['errors' => 'Oops something went wrong'], 500);
+            $ageRange->delete();
+            return response()->json(['message' => 'Age range deleted successfully'], 200);
+        } catch (\Exception $exception) {
+            return response()->json(['message' => 'Oops something went wrong'], 500);
         }
     }
 }
