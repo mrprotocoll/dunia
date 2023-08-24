@@ -33,3 +33,4 @@ Route::post('/reset-password', [NewPasswordController::class, 'store'])
 //products
 Route::apiResource('products', ProductController::class)
     ->only(['index', 'show']);
+Route::get('products/{category}', [ProductController::class, 'categories']);

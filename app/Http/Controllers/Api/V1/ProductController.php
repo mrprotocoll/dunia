@@ -120,4 +120,56 @@ class ProductController extends Controller
         $product->with('author')->get();
         return new ProductResource($product);
     }
+
+    /**
+     * Get product by category
+     *
+     * Retrieve paginated list of products within a specific category.
+     *
+     * @param Category $category The category to retrieve products from.
+     *
+     * @response {
+     *     "data": [
+     *         {
+     *             "id": 1,
+     *             "name": "Product Name",
+     *             "author": {...},
+     *             "price": 19.99,
+     *             "description": "Product description",
+     *         },
+     *         ...
+     *     ],
+     *     "links": {
+     *         "first": "...",
+     *         "last": "...",
+     *         "prev": null,
+     *         "next": "..."
+     *     },
+     *     "meta": {
+     *         "current_page": 1,
+     *         "from": 1,
+     *         "last_page": 3,
+     *         "path": "...",
+     *         "per_page": 10,
+     *         "to": 10,
+     *         "total": 30
+     *     }
+     * }
+     * @response 500 {
+     *     "message": "Oops something went wrong"
+     * }
+     *
+     * @return \Illuminate\Http\JsonResponse | ResourceCollection
+     */
+    public function categories(Category $category) {
+        try {
+            // Retrieve paginated products within the specified category
+            $products = $category->products()->paginate();
+            return ProductResource::collection($products);
+        }
+        catch (\Exception $exception) {
+            return response()->json('Oops something went wrong', 500);
+        }
+
+    }
 }
