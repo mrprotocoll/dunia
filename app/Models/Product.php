@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -57,5 +58,9 @@ class Product extends Model
 
     public function reviews(): HasMany {
         return $this->hasMany(Review::class);
+    }
+
+    public function age_range(): BelongsTo {
+        return $this->belongsTo(AgeRange::class);
     }
 }

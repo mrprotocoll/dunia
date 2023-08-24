@@ -23,6 +23,7 @@ class ProductResource extends JsonResource
             'printPrice' => number_format($this->print_price, 2),
             'description' => $this->description,
             'author' => new AuthorResource($this->author),
+            'age' => $this->age_range()->name,
             'categories' => CategoryResource::collection($this->categories),
             'tags' => TagResource::collection($this->tags),
             'images' => ProductImageResource::collection($this->images),

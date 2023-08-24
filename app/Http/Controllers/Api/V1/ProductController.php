@@ -168,8 +168,7 @@ class ProductController extends Controller
             return ProductResource::collection($products);
         }
         catch (\Exception $exception) {
-            return response()->json('Oops something went wrong', 500);
+            return response()->json(['message' =>'Oops something went wrong'], 500);
         }
-
     }
 }
