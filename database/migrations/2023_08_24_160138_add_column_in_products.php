@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('age_ranges', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('name')->unique();
-            $table->text('description');
-            $table->timestamps();
+        Schema::table('products', function (Blueprint $table) {
+            //
+            $table->foreignUuid('age_range_id');
         });
     }
 
@@ -24,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('age_ranges');
+        Schema::table('products', function (Blueprint $table) {
+            //
+        });
     }
 };
