@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::table('product_user', function (Blueprint $table) {
-            $table->foreignUuid('user_id');
-            $table->foreignUuid('product_id');
+        Schema::create('product_user', function (Blueprint $table) {
+            $table->foreignUuid('user_id')->constrained()->onDelete('cascade');
+            $table->foreignUuid('product_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('product_user');
     }
 };

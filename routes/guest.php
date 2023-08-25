@@ -1,12 +1,10 @@
 <?php
 
 use App\Http\Controllers\Api\V1\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Api\V1\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Api\V1\Auth\GoogleAuthController;
 use App\Http\Controllers\Api\V1\Auth\NewPasswordController;
 use App\Http\Controllers\Api\V1\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Api\V1\Auth\RegisteredUserController;
-use App\Http\Controllers\Api\V1\Auth\VerifyEmailController;
 use App\Http\Controllers\Api\V1\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,3 +32,5 @@ Route::post('/reset-password', [NewPasswordController::class, 'store'])
 Route::apiResource('products', ProductController::class)
     ->only(['index', 'show']);
 Route::get('products/{category}', [ProductController::class, 'categories']);
+Route::post('products/filter', [ProductController::class, 'filter']);
+

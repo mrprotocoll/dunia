@@ -225,7 +225,9 @@ class ProductController extends Controller
      */
     public function filter(ProductFilterRequest $request) {
         try {
-
+            if (!filled($request->release_date) && !filled($request->age) && !filled($request->price)) {
+                return response()->json(['message' => "At least One of the fields must be filled"], 400);
+            }
             $products = Product::with(['categories', 'author', 'age_range'])
                 ->when($request->age, function ($query) use ($request) {
                     $query->where('age_range_id', $request->age);

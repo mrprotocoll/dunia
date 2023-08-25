@@ -30,7 +30,6 @@ class AgeRangeController extends Controller
      *             "created_at": "2023-08-11T12:34:56Z",
      *             "updated_at": "2023-08-11T12:34:56Z"
      *         },
-     *         ...
      *     ]
      * }
      * @response 500 {
@@ -95,7 +94,7 @@ class AgeRangeController extends Controller
     /**
      * Retrieve details of a specific age range.
      * @authenticated
-     * @param \App\Models\AgeRange $ageRange The age range to retrieve details for.
+     * @param \App\Models\AgeRange $age The age range to retrieve details for.
      *
      * @response {
      *     "id": 1,
@@ -113,10 +112,10 @@ class AgeRangeController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show(AgeRange $ageRange)
+    public function show(AgeRange $age)
     {
         try {
-            return response()->json(AgeRange::find($ageRange->id));
+            return response()->json(AgeRange::find($age->id));
         }
         catch (ValidationException $validationException) {
             return response()->json(['errors' => $validationException->errors()], 422);
@@ -133,7 +132,7 @@ class AgeRangeController extends Controller
      * @bodyParam description string The description of the age range.
      *
      * @param \Illuminate\Http\Request $request The request instance.
-     * @param AgeRange $ageRange The age range to update.
+     * @param AgeRange $age The age range to update.
      *
      * @response {
      *     "id": 1,
@@ -151,7 +150,7 @@ class AgeRangeController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, AgeRange $ageRange)
+    public function update(Request $request, AgeRange $age)
     {
         try {
             $validatedData = $request->validate([
@@ -159,8 +158,8 @@ class AgeRangeController extends Controller
                 'description' => ['nullable']
             ]);
 
-            $age = $ageRange->update($validatedData);
-            return response()->json($age);
+            $age->update($validatedData);
+            return response()->json(AgeRange::find($age->id));
         }
         catch (ValidationException $validationException) {
             return response()->json(['errors' => $validationException->errors()], 422);
@@ -173,7 +172,7 @@ class AgeRangeController extends Controller
     /**
      * Delete an age range.
      *
-     * @param AgeRange $ageRange The age range to delete.
+     * @param AgeRange $age The age range to delete.
      *
      * @response 200 {
      *     "message": "Age range deleted successfully"
@@ -184,10 +183,10 @@ class AgeRangeController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy(AgeRange $ageRange)
+    public function destroy(AgeRange $age)
     {
         try {
-            $ageRange->delete();
+            $age->delete();
             return response()->json(['message' => 'Age range deleted successfully'], 200);
         } catch (\Exception $exception) {
             return response()->json(['message' => 'Oops something went wrong'], 500);

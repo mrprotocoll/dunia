@@ -22,6 +22,7 @@ class ProductFilterRequest extends FormRequest
      */
     public function rules(): array
     {
+        // ensure at least one of the request param is present
         return [
             'release_date' => ['nullable', Rule::in(['ASC', 'DESC'])],
             'age' => ['nullable', 'exists:age_ranges,id'],
