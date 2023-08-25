@@ -33,11 +33,16 @@ Route::prefix('admin')->group(function (){
         Route::apiResource('categories', Admin\CategoryController::class)
             ->only(['index', 'show', 'store', 'update']);
 
+        Route::apiResource('ages', Admin\AgeRangeController::class);
+
         Route::apiResource('products', Admin\ProductController::class)
             ->only(['store', 'update']);
 
         Route::post('products/{product}/images', [ProductImageController::class, 'store']);
         Route::delete('products/{product}/images/{productImage}', [Admin\ProductImageController::class, 'destroy']);
+
+        Route::get('orders', [OrderController::class, 'index']);
+        Route::get('orders/{order}', [OrderController::class, 'show']);
 
         Route::apiResource('users', Admin\ProductController::class)
             ->only(['index', 'show']);
@@ -51,8 +56,10 @@ Route::prefix('admin')->group(function (){
 // Customer protected routes
 Route::middleware(['auth:sanctum'])->group(function (){
     Route::middleware(['role:customer'])->group(function () {
-        Route::post('order', [OrderController::class, 'store']);
+        Route::get('orders', [OrderController::class, 'index']);
+        Route::get('orders/{order}', [OrderController::class, 'show']);
         Route::post('checkout', [OrderController::class, 'checkout']);
+        Route::post('webhooks', [OrderController::class, 'webhooks']);
         Route::apiResource('billingAddresses', BillingAddressController::class);
     });
 

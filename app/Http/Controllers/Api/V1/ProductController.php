@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\V1\ProductFilterRequest;
 use App\Http\Requests\V1\ProductListRequest;
-use App\Http\Requests\V1\ProductRequest;
 use App\Http\Resources\V1\ProductResource;
 use App\Models\Author;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Validation\ValidationException;
 
 /**
  * @group Product Management
@@ -119,5 +120,131 @@ class ProductController extends Controller
         //
         $product->with('author')->get();
         return new ProductResource($product);
+    }
+
+    /**
+     * Get product by category
+     *
+     * Retrieve paginated list of products within a specific category.
+     *
+     * @param Category $category The category to retrieve products from.
+     *
+     * @response {
+     *     "data": [
+     *         {
+     *             "id": 1,
+     *             "name": "Product Name",
+     *             "author": {...},
+     *             "price": 19.99,
+     *             "description": "Product description",
+     *         },
+     *         ...
+     *     ],
+     *     "links": {
+     *         "first": "...",
+     *         "last": "...",
+     *         "prev": null,
+     *         "next": "..."
+     *     },
+     *     "meta": {
+     *         "current_page": 1,
+     *         "from": 1,
+     *         "last_page": 3,
+     *         "path": "...",
+     *         "per_page": 10,
+     *         "to": 10,
+     *         "total": 30
+     *     }
+     * }
+     * @response 500 {
+     *     "message": "Oops something went wrong"
+     * }
+     *
+     * @return \Illuminate\Http\JsonResponse | ResourceCollection
+     */
+    public function categories(Category $category) {
+        try {
+            // Retrieve paginated products within the specified category
+            $products = $category->products()->paginate();
+            return ProductResource::collection($products);
+        }
+        catch (\Exception $exception) {
+            return response()->json(['message' =>'Oops something went wrong'], 500);
+        }
+    }
+
+    /**
+     * Filter Products
+     * Retrieve a paginated list of products based on filtering criteria.
+     *
+     * @queryParam release_date string|null The release date sorting order (ASC or DESC).
+     * @queryParam age int|null The ID of the age range to filter products by.
+     * @queryParam price string|null The price sorting order (ASC or DESC).
+     *
+     * @response {
+     *     "data": [
+     *         {
+     *             "id": 1,
+     *             "name": "Product Name",
+     *             "author": {...},
+     *             "price": 19.99,
+     *             "description": "Product description",
+     *             "categories": [...],
+     *             "age_range": {...}
+     *         },
+     *     ],
+     *     "links": {
+     *         "first": "...",
+     *         "last": "...",
+     *         "prev": null,
+     *         "next": "..."
+     *     },
+     *     "meta": {
+     *         "current_page": 1,
+     *         "from": 1,
+     *         "last_page": 3,
+     *         "path": "...",
+     *         "per_page": 10,
+     *         "to": 10,
+     *         "total": 30
+     *     }
+     * }
+     * @response 422 {
+     *     "errors": {
+     *         "release_date": ["The selected release date is invalid."],
+     *         "age": ["The selected age is invalid."],
+     *         "price": ["The selected price is invalid."]
+     *     }
+     * }
+     * @response 500 {
+     *     "message": "Oops something went wrong"
+     * }
+     *
+     * @param ProductFilterRequest $request The request object containing filter parameters.
+     * @return \Illuminate\Http\JsonResponse | ResourceCollection
+     */
+    public function filter(ProductFilterRequest $request) {
+        try {
+            if (!filled($request->release_date) && !filled($request->age) && !filled($request->price)) {
+                return response()->json(['message' => "At least One of the fields must be filled"], 400);
+            }
+            $products = Product::with(['categories', 'author', 'age_range'])
+                ->when($request->age, function ($query) use ($request) {
+                    $query->where('age_range_id', $request->age);
+                })
+                ->when($request->release_date, function ($query) use ($request) {
+                    $query->orderBy('created_at', $request->release_date );
+                })
+                ->when($request->price, function ($query) use ($request) {
+                    $query->orderBy('price', $request->price );
+                })->paginate();
+            return ProductResource::collection($products);
+        }
+        catch (ValidationException $validationException) {
+            return response()->json(['errors' => $validationException->errors()], 422);
+        }
+        catch (\Exception $exception) {
+            return response()->json(['message' =>'Oops something went wrong'], 500);
+        }
     }
 }

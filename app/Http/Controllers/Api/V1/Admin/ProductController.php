@@ -65,6 +65,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = $request->name;
         $product->author_id = $request->author;
+        $product->age_range_id = $request->age;
         $product->price = $request->price;
         $product->description = $request->description;
         $product->weight = $request->weight;
@@ -127,7 +128,10 @@ class ProductController extends Controller
         //
         $product->name = $request->name;
         $product->author_id = $request->author;
+        $product->age_range_id = $request->age;
         $product->price = $request->price;
+        $product->weight = $request->weight;
+        $product->print_price = $request->print_price;
         $product->description = $request->description;
         $categories = Category::whereIn('id', $request->categories)->get();
         $tags = Tag::whereIn('id', $request->tags)->get();
@@ -144,11 +148,4 @@ class ProductController extends Controller
         return new ProductResource($product);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Product $product)
-    {
-        //
-    }
 }

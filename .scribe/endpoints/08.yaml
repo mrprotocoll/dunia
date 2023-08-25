@@ -43,7 +43,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kaVhdE6a18g6PeD4Zc53bvf'
+      - 'Bearer Ev4bZ1gVafcaP566kd83ehD'
     controller: null
     method: null
     route: null
@@ -74,27 +74,27 @@ endpoints:
         name: current_password
         description: "The user's current password."
         required: true
-        example: optio
+        example: autem
         type: string
         custom: []
       new_password:
         name: new_password
         description: 'The new password.'
         required: true
-        example: quas
+        example: cumque
         type: string
         custom: []
       new_password_confirmation:
         name: new_password_confirmation
         description: 'The confirmation of the new password.'
         required: true
-        example: quaerat
+        example: et
         type: string
         custom: []
     cleanBodyParameters:
-      current_password: optio
-      new_password: quas
-      new_password_confirmation: quaerat
+      current_password: autem
+      new_password: cumque
+      new_password_confirmation: et
     fileParameters: []
     responses:
       -
@@ -128,7 +128,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ev6gkaV4D3f156Ehbc8adPZ'
+      - 'Bearer 6ekgcEP6Dh81bV5f34Zaadv'
     controller: null
     method: null
     route: null

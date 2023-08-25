@@ -1,20 +1,25 @@
-name: Endpoints
-description: ''
+name: 'Billing Address'
+description: |-
+
+  Endpoint to manage customers billing address
 endpoints:
   -
     httpMethods:
       - GET
     uri: api/v1/billingAddresses
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'Billing Address'
+      groupDescription: |-
+
+        Endpoint to manage customers billing address
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display a listing of the resource.'
-      description: ''
-      authenticated: false
+      title: 'Get all customer Billing addresses'
+      description: 'Retrieve the billing addresses associated with the currently authenticated user.'
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -26,16 +31,37 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
+        status: 200
+        content: |-
+          {
+              "data": [
+                  {
+                      "id": 1,
+                      "country": {...},
+                      "address": "123 Main St",
+                      "city": {...},
+                      "state": {...},
+                  },
+                  ...
+              ]
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+              "message": "Oops something went wrong"
+          }
+        headers: []
+        description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer b56Pg1Vkafd4v63aeZh8EDc'
     controller: null
     method: null
     route: null
@@ -45,15 +71,20 @@ endpoints:
       - POST
     uri: api/v1/billingAddresses
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'Billing Address'
+      groupDescription: |-
+
+        Endpoint to manage customers billing address
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
+      title: |-
+        Create billing address
+        Store a new billing address for the currently authenticated user.
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -63,41 +94,69 @@ endpoints:
     bodyParameters:
       country:
         name: country
-        description: ''
+        description: 'The ID of the country for the address.'
         required: true
-        example: et
-        type: string
+        example: 19
+        type: integer
         custom: []
       state:
         name: state
-        description: ''
+        description: 'The ID of the state for the address.'
         required: true
-        example: eos
-        type: string
+        example: 11
+        type: integer
         custom: []
       city:
         name: city
-        description: ''
+        description: 'The ID of the city for the address.'
         required: true
-        example: vel
-        type: string
+        example: 5
+        type: integer
         custom: []
       address:
         name: address
-        description: ''
+        description: 'The address information.'
         required: true
-        example: quo
+        example: sed
         type: string
         custom: []
     cleanBodyParameters:
-      country: et
-      state: eos
-      city: vel
-      address: quo
+      country: 19
+      state: 11
+      city: 5
+      address: sed
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "data": {
+                  "id": 1,
+                  "country": {...},
+                  "address": "123 Main St",
+                  "city": {...},
+                  "state": {...},
+              },
+              "message": "Billing address created successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+              "message": "Oops something went wrong"
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1ZcD48Va5Pk3h6Evf6aebdg'
     controller: null
     method: null
     route: null
@@ -108,15 +167,20 @@ endpoints:
       - PATCH
     uri: 'api/v1/billingAddresses/{id}'
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'Billing Address'
+      groupDescription: |-
+
+        Endpoint to manage customers billing address
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
+      title: |-
+        Update billing address
+        Update an existing billing address for the currently authenticated user.
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -134,41 +198,78 @@ endpoints:
     bodyParameters:
       country:
         name: country
-        description: ''
+        description: 'The ID of the country for the address.'
         required: true
-        example: velit
-        type: string
+        example: 20
+        type: integer
         custom: []
       state:
         name: state
-        description: ''
+        description: 'The ID of the state for the address.'
         required: true
-        example: in
-        type: string
+        example: 4
+        type: integer
         custom: []
       city:
         name: city
-        description: ''
+        description: 'The ID of the city for the address.'
         required: true
-        example: voluptates
-        type: string
+        example: 12
+        type: integer
         custom: []
       address:
         name: address
-        description: ''
+        description: 'The address information.'
         required: true
-        example: sint
+        example: omnis
         type: string
         custom: []
     cleanBodyParameters:
-      country: velit
-      state: in
-      city: voluptates
-      address: sint
+      country: 20
+      state: 4
+      city: 12
+      address: omnis
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "data": {
+                  "id": 1,
+                  "country": {...},
+                  "address": "123 Main St",
+                  "city": {...},
+                  "state": {...},
+              },
+              "message": "Billing address updated successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+              "errors": {...}
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+              "message": "Oops something went wrong"
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ZPkVeDv61ga4hEa6fc8db35'
     controller: null
     method: null
     route: null
@@ -178,11 +279,13 @@ endpoints:
       - DELETE
     uri: 'api/v1/billingAddresses/{id}'
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'Billing Address'
+      groupDescription: |-
+
+        Endpoint to manage customers billing address
       subgroup: ''
       subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
+      title: 'Delete a billing address.'
       description: ''
       authenticated: false
       custom: []
@@ -204,243 +307,30 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/v1/verify-email/{id}/{hash}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Handle the email verification process for the authenticated user.'
-      description: "Mark the authenticated user's email address as verified."
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the verify email.'
-        required: true
-        example: tempore
-        type: string
-        custom: []
-      hash:
-        name: hash
-        description: ''
-        required: true
-        example: delectus
-        type: string
-        custom: []
-    cleanUrlParameters:
-      id: tempore
-      hash: delectus
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
     responses:
       -
         status: 200
         content: |-
           {
-              "message": "Email verified successfully.",
-              "redirect_url": "https://frontend.example.com/home?verified=1"
-          }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/email/verification-notification
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Send an email verification notification to the user or redirect if email is already verified.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-              "status": "verification-link-sent"
+              "message": "Billing address deleted successfully"
           }
         headers: []
         description: ''
         custom: []
       -
-        status: 302
+        status: 404
         content: |-
           {
-              "redirect_url": "https://frontend.example.com/home"
-          }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/forgot-password
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: "Send a password reset link to the user's email address."
-      description: 'Handle an incoming password reset link request.'
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: "The user's email address for password reset."
-        required: true
-        example: kellie.hagenes@example.org
-        type: string
-        custom: []
-    cleanBodyParameters:
-      email: kellie.hagenes@example.org
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-              "status": "Password reset link sent successfully."
+              "message": "Billing address not found"
           }
         headers: []
         description: ''
         custom: []
       -
-        status: 422
+        status: 500
         content: |-
           {
-              "error": "Validation failed."
-          }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/reset-password
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Handle a new password request for password reset.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      token:
-        name: token
-        description: 'The token received for password reset.'
-        required: true
-        example: dolorum
-        type: string
-        custom: []
-      email:
-        name: email
-        description: "The user's email address."
-        required: true
-        example: mueller.noemy@example.net
-        type: string
-        custom: []
-      password:
-        name: password
-        description: 'The new password.'
-        required: true
-        example: '/p4%7&aKg`Z_Wn'
-        type: string
-        custom: []
-      password_confirmation:
-        name: password_confirmation
-        description: 'The confirmation of the new password.'
-        required: true
-        example: distinctio
-        type: string
-        custom: []
-    cleanBodyParameters:
-      token: dolorum
-      email: mueller.noemy@example.net
-      password: '/p4%7&aKg`Z_Wn'
-      password_confirmation: distinctio
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-              "status": "Password reset successfully."
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 422
-        content: |-
-          {
-              "error": "Validation failed."
+              "message": "Oops something went wrong"
           }
         headers: []
         description: ''

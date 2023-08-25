@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Tag>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AgeRange>
  */
-class TagFactory extends Factory
+class AgeRangeFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +18,8 @@ class TagFactory extends Factory
     {
         return [
             //
-            'name' => fake()->name
+            'name' => fake()->randomFloat(0,1,5). " - " . fake()->randomFloat(0,6,15),
+            'description' => fake()->paragraph
         ];
     }
 }

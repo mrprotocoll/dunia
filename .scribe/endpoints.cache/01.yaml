@@ -70,11 +70,11 @@ endpoints:
         name: name
         description: 'Must not be greater than 100 characters.'
         required: true
-        example: wflkz
+        example: ehcrgwotxsbbyiplt
         type: string
         custom: []
     cleanBodyParameters:
-      name: wflkz
+      name: ehcrgwotxsbbyiplt
     fileParameters: []
     responses:
       -
@@ -171,11 +171,11 @@ endpoints:
         name: name
         description: 'Must not be greater than 100 characters.'
         required: true
-        example: pxz
+        example: qsupghirhrx
         type: string
         custom: []
     cleanBodyParameters:
-      name: pxz
+      name: qsupghirhrx
     fileParameters: []
     responses:
       -

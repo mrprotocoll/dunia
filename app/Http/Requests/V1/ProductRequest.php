@@ -35,6 +35,7 @@ class ProductRequest extends FormRequest
             'tags' => ['array'],
             'tags.*' => ['exists:tags,id'],
             'author' => ['required', 'exists:authors,id'],
+            'age' => ['required', 'exists:age_ranges,id'],
             'product_file' => ['required', 'file', 'mimes:pdf'],
             'preview' => ['required', 'file', 'mimes:pdf'],
             'weight' => ['required', 'numeric']

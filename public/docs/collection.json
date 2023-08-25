@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Dunia Internal API Documentation",
-        "_postman_id": "7fac50b6-7e1e-4a68-8610-b7bdc7e06541",
+        "_postman_id": "59a01f70-bfde-47ba-815a-a2ff52558e92",
         "description": "This is dunia API documentation, for internal use only",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"uj\",\"email\":\"mekhi77@example.org\",\"password\":\"exercitationem\"}"
+                            "raw": "{\"name\":\"rrcgcvzelgyn\",\"email\":\"bgutmann@example.net\",\"password\":\"quisquam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -52,7 +52,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99e72421-71c8-4465-8de6-279a0ca28f3d\",\"name\":\"Dr. Delbert Trantow\",\"email\":\"duane.hane@example.net\"}}",
+                            "body": "{\"data\":{\"id\":\"99f629e1-0918-4638-8729-0985e263a394\",\"name\":\"Terrill Dooley\",\"email\":\"nhermann@example.org\"}}",
                             "name": ""
                         },
                         {
@@ -85,7 +85,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"hartmann.roma@example.org\",\"password\":\"Ntar:B!pN\"}"
+                            "raw": "{\"email\":\"mbraun@example.org\",\"password\":\"CI~Id.d;b\"}"
                         },
                         "description": "",
                         "auth": {
@@ -167,7 +167,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"wwitszmoeqrqdifloffkvd\",\"email\":\"samir.corkery@example.com\",\"password\":\"cupiditate\"}"
+                            "raw": "{\"name\":\"xkawhoegwijkiqtfz\",\"email\":\"myles88@example.net\",\"password\":\"ad\"}"
                         },
                         "description": "",
                         "auth": {
@@ -178,7 +178,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99e72421-856c-4d47-b4c5-5d5dcbdb6303\",\"name\":\"Ms. Estel Graham IV\",\"email\":\"dach.lavinia@example.net\"}}",
+                            "body": "{\"data\":{\"id\":\"99f629e1-16f1-423e-9188-27f4b6a6d5f8\",\"name\":\"Peter Miller I\",\"email\":\"ilang@example.net\"}}",
                             "name": ""
                         }
                     ]
@@ -205,7 +205,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"vicente.beier@example.net\",\"password\":\"r]6^<nc!&6sm[E_$UTX.\"}"
+                            "raw": "{\"email\":\"corkery.jaden@example.org\",\"password\":\"tvP#!m3)PO\"}"
                         },
                         "description": "",
                         "auth": {
@@ -228,15 +228,15 @@
                     ]
                 },
                 {
-                    "name": "Authenticate and log in a user using Google OAuth.",
+                    "name": "Handle the registration or login of a user via OAuth (Google or Facebook).",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/auth\/google",
+                            "path": "api\/v1\/auth\/oauth",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/auth\/google"
+                            "raw": "{{baseUrl}}\/api\/v1\/auth\/oauth"
                         },
-                        "method": "GET",
+                        "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -249,7 +249,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"est\"}"
+                            "raw": "{\"oauth\":\"et\",\"oauth_id\":\"eos\",\"name\":\"corporis\",\"email\":\"hammes.karli@example.net\"}"
                         },
                         "description": "",
                         "auth": {
@@ -261,18 +261,6 @@
                             "header": [],
                             "code": 200,
                             "body": "{\n    \"token\": \"generated_token\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"John Doe\",\n        \"email\": \"johndoe@example.com\",\n    }\n}",
-                            "name": ""
-                        },
-                        {
-                            "header": [],
-                            "code": 401,
-                            "body": "{\n    \"error\": \"Unauthorized.\"\n}",
-                            "name": ""
-                        },
-                        {
-                            "header": [],
-                            "code": 422,
-                            "body": "{\n    \"error\": \"Validation failed.\"\n}",
                             "name": ""
                         }
                     ]
@@ -310,7 +298,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":\"99e72421-3457-412c-b607-0a092175128f\",\"name\":\"Mariano Powlowski\",\"email\":\"macie.baumbach@example.net\",\"description\":null},{\"id\":\"99e72421-4957-4465-8638-cae4705e672b\",\"name\":\"Adelle Hane\",\"email\":\"bartell.ford@example.com\",\"description\":null}]}",
+                            "body": "{\"data\":[{\"id\":\"99f629e0-e873-4154-aa10-52d086d1bb9b\",\"name\":\"Abigale Turner\",\"email\":\"moore.tessie@example.com\",\"description\":null},{\"id\":\"99f629e0-ea32-4e28-b1e5-0208771b0fda\",\"name\":\"Prof. Yvette Kulas II\",\"email\":\"gwatsica@example.net\",\"description\":null}]}",
                             "name": ""
                         }
                     ]
@@ -337,7 +325,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"nwintheiser@example.net\",\"description\":\"Reiciendis vero rerum aut voluptatem.\"}"
+                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"deron61@example.org\",\"description\":\"Et quia assumenda et iusto quae perferendis assumenda similique.\"}"
                         },
                         "description": ""
                     },
@@ -345,7 +333,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99e72421-4e3b-4cd0-a268-868b7e0f813d\",\"name\":\"Mr. Monty Schuppe IV\",\"email\":\"acremin@example.com\",\"description\":null}}",
+                            "body": "{\"data\":{\"id\":\"99f629e0-ee1b-4457-9b88-93cd7dee7ee6\",\"name\":\"Prof. Davonte Pfannerstill III\",\"email\":\"gunnar.ward@example.net\",\"description\":null}}",
                             "name": ""
                         }
                     ]
@@ -362,7 +350,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sed",
+                                    "value": "eos",
                                     "description": "Author ID"
                                 }
                             ]
@@ -385,7 +373,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99e72421-54e7-4896-8886-0f846f86ad97\",\"name\":\"Hosea Padberg\",\"email\":\"newton.fahey@example.com\",\"description\":null}}",
+                            "body": "{\"data\":{\"id\":\"99f629e0-f11b-4915-a347-07625dc80f4c\",\"name\":\"Zena Carter\",\"email\":\"cronin.pierce@example.org\",\"description\":null}}",
                             "name": ""
                         }
                     ]
@@ -420,7 +408,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"yost.nat@example.org\",\"description\":\"Sunt eum perspiciatis et aut.\"}"
+                            "raw": "{\"name\":\"Isaac Johnson\",\"email\":\"jlarson@example.net\",\"description\":\"Et mollitia magni reprehenderit voluptates.\"}"
                         },
                         "description": ""
                     },
@@ -428,7 +416,202 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":\"99e72421-5815-40f8-86dc-37fd05914c46\",\"name\":\"Katrina Labadie\",\"email\":\"reynolds.dolly@example.net\",\"description\":null}}",
+                            "body": "{\"data\":{\"id\":\"99f629e0-f374-45d0-bbb1-b3264c393d44\",\"name\":\"Mrs. Nikki McGlynn II\",\"email\":\"hickle.juliet@example.com\",\"description\":null}}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Billing Address",
+            "description": "\nEndpoint to manage customers billing address",
+            "item": [
+                {
+                    "name": "Get all customer Billing addresses",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/billingAddresses",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/billingAddresses"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Retrieve the billing addresses associated with the currently authenticated user."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"country\": {...},\n            \"address\": \"123 Main St\",\n            \"city\": {...},\n            \"state\": {...},\n        },\n        ...\n    ]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Oops something went wrong\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create billing address\nStore a new billing address for the currently authenticated user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/billingAddresses",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/billingAddresses"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"country\":19,\"state\":11,\"city\":5,\"address\":\"sed\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": 1,\n        \"country\": {...},\n        \"address\": \"123 Main St\",\n        \"city\": {...},\n        \"state\": {...},\n    },\n    \"message\": \"Billing address created successfully\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Oops something went wrong\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update billing address\nUpdate an existing billing address for the currently authenticated user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/billingAddresses\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/billingAddresses\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "99e5413a-ffc7-4a30-847e-031d4b4ac187",
+                                    "description": "The ID of the billingAddress."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"country\":20,\"state\":4,\"city\":12,\"address\":\"omnis\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": 1,\n        \"country\": {...},\n        \"address\": \"123 Main St\",\n        \"city\": {...},\n        \"state\": {...},\n    },\n    \"message\": \"Billing address updated successfully\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"errors\": {...}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Oops something went wrong\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete a billing address.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/billingAddresses\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/billingAddresses\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "99e5413a-ffc7-4a30-847e-031d4b4ac187",
+                                    "description": "The ID of the billingAddress."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"message\": \"Billing address deleted successfully\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Billing address not found\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Oops something went wrong\"\n}",
                             "name": ""
                         }
                     ]
@@ -493,7 +676,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"optio\"}"
+                            "raw": "{\"name\":\"et\"}"
                         },
                         "description": ""
                     },
@@ -518,7 +701,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "illo",
+                                    "value": "perspiciatis",
                                     "description": "Category ID"
                                 }
                             ]
@@ -576,7 +759,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"totam\"}"
+                            "raw": "{\"name\":\"qui\"}"
                         },
                         "description": ""
                     },
@@ -596,160 +779,6 @@
             "description": "",
             "item": [
                 {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/billingAddresses",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/billingAddresses"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/billingAddresses",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/billingAddresses"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"country\":\"et\",\"state\":\"eos\",\"city\":\"vel\",\"address\":\"quo\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/billingAddresses\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/billingAddresses\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "99e5413a-ffc7-4a30-847e-031d4b4ac187",
-                                    "description": "The ID of the billingAddress."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"country\":\"velit\",\"state\":\"in\",\"city\":\"voluptates\",\"address\":\"sint\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/billingAddresses\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/billingAddresses\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "99e5413a-ffc7-4a30-847e-031d4b4ac187",
-                                    "description": "The ID of the billingAddress."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
                     "name": "Handle the email verification process for the authenticated user.",
                     "request": {
                         "url": {
@@ -761,13 +790,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "tempore",
+                                    "value": "nulla",
                                     "description": "The ID of the verify email."
                                 },
                                 {
                                     "id": "hash",
                                     "key": "hash",
-                                    "value": "delectus",
+                                    "value": "aut",
                                     "description": ""
                                 }
                             ]
@@ -861,7 +890,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"kellie.hagenes@example.org\"}"
+                            "raw": "{\"email\":\"dianna.schiller@example.org\"}"
                         },
                         "description": "Handle an incoming password reset link request.",
                         "auth": {
@@ -905,7 +934,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"dolorum\",\"email\":\"mueller.noemy@example.net\",\"password\":\"\\\/p4%7&aKg`Z_Wn\",\"password_confirmation\":\"distinctio\"}"
+                            "raw": "{\"token\":\"quidem\",\"email\":\"stroman.kaela@example.com\",\"password\":\"*[hx?B\",\"password_confirmation\":\"ut\"}"
                         },
                         "description": "",
                         "auth": {
@@ -934,13 +963,193 @@
             "description": "\nEndpoint to manage customers orders",
             "item": [
                 {
-                    "name": "Store a newly created resource in storage.",
+                    "name": "Retrieve a paginated list of orders for the currently authenticated customer.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/order",
+                            "path": "api\/v1\/admin\/orders",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/order"
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/orders"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user\": {\n                \"id\": 2,\n                \"name\": \"John Doe\",\n                \"email\": \"johndoe@example.com\"\n            },\n            \"cart\": [...],\n        },\n        ...\n    ],\n    \"links\": {\n        \"first\": \"...\",\n        \"last\": \"...\",\n        \"prev\": null,\n        \"next\": \"...\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 3,\n        \"path\": \"...\",\n        \"per_page\": 10,\n        \"to\": 10,\n        \"total\": 30\n    }\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Oops something went wrong\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Retrieve detailed information about a specific order for the currently authenticated user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/orders\/:order_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/orders\/:order_id",
+                            "variable": [
+                                {
+                                    "id": "order_id",
+                                    "key": "order_id",
+                                    "value": "99ee5dad-531c-4ba0-aee9-c0bda1d418ce",
+                                    "description": "The ID of the order."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": 1,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"John Doe\",\n            \"email\": \"johndoe@example.com\"\n        },\n        \"cart\": [...],\n    }\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Order not found\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Oops something went wrong\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Retrieve a paginated list of orders for the currently authenticated customer.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/orders",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/orders"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user\": {\n                \"id\": 2,\n                \"name\": \"John Doe\",\n                \"email\": \"johndoe@example.com\"\n            },\n            \"cart\": [...],\n        },\n        ...\n    ],\n    \"links\": {\n        \"first\": \"...\",\n        \"last\": \"...\",\n        \"prev\": null,\n        \"next\": \"...\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 3,\n        \"path\": \"...\",\n        \"per_page\": 10,\n        \"to\": 10,\n        \"total\": 30\n    }\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Oops something went wrong\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Retrieve detailed information about a specific order for the currently authenticated user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/orders\/:order_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/orders\/:order_id",
+                            "variable": [
+                                {
+                                    "id": "order_id",
+                                    "key": "order_id",
+                                    "value": "99ee5dad-531c-4ba0-aee9-c0bda1d418ce",
+                                    "description": "The ID of the order."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": 1,\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"John Doe\",\n            \"email\": \"johndoe@example.com\"\n        },\n        \"cart\": [...],\n    }\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Order not found\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Oops something went wrong\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Process the checkout for placing an order.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/checkout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/checkout"
                         },
                         "method": "POST",
                         "header": [
@@ -953,13 +1162,20 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"success_url\":\"http:\\\/\\\/hoppe.com\\\/id-ullam-velit-consectetur.html\",\"cancel_url\":\"https:\\\/\\\/www.schamberger.com\\\/et-laboriosam-doloremque-modi-ut\",\"cart\":[\"iste\"],\"shipping\":{\"price\":10509010.1043875,\"billing_address_id\":\"sit\"}}"
+                        },
+                        "description": ""
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"url\": \"https:\/\/checkout.stripe.com\/session\/...\",\n    \"message\": \"Checkout initiated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -968,7 +1184,7 @@
             "description": "\nEndpoints to manage products",
             "item": [
                 {
-                    "name": "Store a newly created resource in storage.",
+                    "name": "Store a new product with related information and files.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -992,60 +1208,64 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "blanditiis",
+                                    "value": "fugit",
                                     "type": "text",
                                     "description": "The name of the product."
                                 },
                                 {
                                     "key": "price",
-                                    "value": 9544.63008,
+                                    "value": 788.7968,
                                     "type": "text",
                                     "description": "The price of the product."
                                 },
                                 {
+                                    "key": "print_price",
+                                    "value": 0.984698,
+                                    "type": "text",
+                                    "description": "The printing price of the product."
+                                },
+                                {
                                     "key": "description",
-                                    "value": "Neque quidem earum ut.",
+                                    "value": "Reiciendis qui quia ipsa aut velit dolorem.",
                                     "type": "text",
                                     "description": "The description of the product."
                                 },
                                 {
                                     "key": "categories[0]",
-                                    "value": "et",
+                                    "value": "accusantium",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "tags[0]",
-                                    "value": "porro",
+                                    "value": "hic",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "author",
-                                    "value": 12,
+                                    "value": 1,
                                     "type": "text",
-                                    "description": "The ID of the author of the product."
-                                },
-                                {
-                                    "key": "product_file",
-                                    "value": "eum",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "preview",
-                                    "value": "ipsum",
-                                    "type": "text",
-                                    "description": ""
+                                    "description": "The ID of the product's author."
                                 },
                                 {
                                     "key": "weight",
-                                    "value": "eos",
+                                    "value": 24012,
                                     "type": "text",
-                                    "description": ""
+                                    "description": "The weight of the product."
                                 },
                                 {
                                     "key": "images[]",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "product_file",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "preview",
                                     "src": [],
                                     "type": "file"
                                 },
@@ -1056,19 +1276,22 @@
                                 }
                             ]
                         },
-                        "description": ""
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
                     },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"name\":null,\"weight\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[],\"preview\":\"http:\\\/\\\/dunia.healthyishng.com\\\/storage\"}}",
+                            "body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Product A\",\n        \"author_id\": 2,\n        \"price\": 19.99,\n        \"description\": \"Description of Product A\",\n        \"weight\": 0.5,\n        \"print_price\": 5.99,\n        \"preview\": \"book_previews\/product_a_preview.jpg\",\n        \"product_file\": \"books\/product_a_file.pdf\",\n        \"categories\": [...],\n        \"tags\": [...],\n        \"images\": [...]\n    }\n}",
                             "name": ""
                         },
                         {
                             "header": [],
-                            "code": 200,
-                            "body": "{\n     \"data\": {\n         \"id\": 1,\n         \"name\": \"Sample Product\",\n         \"author_id\": 1,\n         \"price\": 19.99,\n         \"description\": \"A description of the sample product.\",\n         \"categories\": [\n             {\n                 \"id\": 1,\n                 \"name\": \"Category A\"\n             },\n             {\n                 \"id\": 2,\n                 \"name\": \"Category B\"\n             }\n         ],\n         \"tags\": [\n             {\n                 \"id\": 1,\n                 \"name\": \"Tag X\"\n             },\n             {\n                 \"id\": 2,\n                 \"name\": \"Tag Y\"\n             }\n         ]\n     }\n }",
+                            "code": 500,
+                            "body": "{\n    \"error\": \"Error occurred. Try again\"\n}",
                             "name": ""
                         }
                     ]
@@ -1106,48 +1329,52 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "ut",
+                                    "value": "culpa",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "price",
-                                    "value": "quos",
+                                    "value": "velit",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "print_price",
+                                    "value": 119735,
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "description",
-                                    "value": "ad",
+                                    "value": "vitae",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "author",
-                                    "value": "fugiat",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "product_file",
-                                    "value": "ad",
-                                    "type": "text",
-                                    "description": ""
-                                },
-                                {
-                                    "key": "preview",
-                                    "value": "tempore",
+                                    "value": "voluptatum",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "weight",
-                                    "value": "error",
+                                    "value": 0.40105821,
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "images[]",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "product_file",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "preview",
                                     "src": [],
                                     "type": "file"
                                 },
@@ -1164,7 +1391,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"name\":null,\"weight\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[],\"preview\":\"http:\\\/\\\/dunia.healthyishng.com\\\/storage\"}}",
+                            "body": "{\"data\":{\"id\":null,\"name\":null,\"weight\":null,\"price\":\"0.00\",\"printPrice\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[],\"preview\":\"http:\\\/\\\/dunia.healthyishng.com\\\/storage\"}}",
                             "name": ""
                         }
                     ]
@@ -1265,18 +1492,18 @@
                                 },
                                 {
                                     "key": "author",
-                                    "value": "id",
+                                    "value": "laborum",
                                     "description": "Search for products by author's name.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "category",
-                                    "value": "recusandae",
+                                    "value": "ut",
                                     "description": "Search for products by category name.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/products?name=aspernatur&author=id&category=recusandae"
+                            "raw": "{{baseUrl}}\/api\/v1\/products?name=aspernatur&author=laborum&category=ut"
                         },
                         "method": "GET",
                         "header": [
@@ -1291,7 +1518,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"atque\",\"author\":\"et\",\"category\":\"voluptas\"}"
+                            "raw": "{\"name\":\"quos\",\"author\":\"quas\",\"category\":\"harum\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1319,7 +1546,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "nulla",
+                                    "value": "voluptas",
                                     "description": "Product ID"
                                 }
                             ]
@@ -1345,7 +1572,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"name\":null,\"weight\":null,\"price\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[],\"preview\":\"http:\\\/\\\/dunia.healthyishng.com\\\/storage\"}}",
+                            "body": "{\"data\":{\"id\":null,\"name\":null,\"weight\":null,\"price\":\"0.00\",\"printPrice\":\"0.00\",\"description\":null,\"author\":null,\"categories\":[],\"tags\":[],\"images\":[],\"reviews\":[],\"preview\":\"http:\\\/\\\/dunia.healthyishng.com\\\/storage\"}}",
                             "name": ""
                         }
                     ]
@@ -1386,7 +1613,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"comment\":\"qui\",\"rating\":5}"
+                            "raw": "{\"comment\":\"ut\",\"rating\":8}"
                         },
                         "description": ""
                     },
@@ -1462,7 +1689,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"wflkz\"}"
+                            "raw": "{\"name\":\"ehcrgwotxsbbyiplt\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1551,7 +1778,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"pxz\"}"
+                            "raw": "{\"name\":\"qsupghirhrx\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1627,7 +1854,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"current_password\":\"optio\",\"new_password\":\"quas\",\"new_password_confirmation\":\"quaerat\"}"
+                            "raw": "{\"current_password\":\"autem\",\"new_password\":\"cumque\",\"new_password_confirmation\":\"et\"}"
                         },
                         "description": ""
                     },

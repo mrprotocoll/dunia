@@ -16,12 +16,11 @@ endpoints:
         Endpoints to manage products
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
+      title: 'Store a new product with related information and files.'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
@@ -33,7 +32,7 @@ endpoints:
         name: name
         description: 'The name of the product.'
         required: true
-        example: blanditiis
+        example: fugit
         type: string
         custom: []
       images:
@@ -48,130 +47,125 @@ endpoints:
         name: price
         description: 'The price of the product.'
         required: true
-        example: 9544.63008
+        example: 788.7968
+        type: number
+        custom: []
+      print_price:
+        name: print_price
+        description: 'The printing price of the product.'
+        required: true
+        example: 0.984698
         type: number
         custom: []
       description:
         name: description
         description: 'The description of the product.'
         required: true
-        example: 'Neque quidem earum ut.'
+        example: 'Reiciendis qui quia ipsa aut velit dolorem.'
         type: string
         custom: []
       categories:
         name: categories
-        description: 'An array of category IDs associated with the product.'
+        description: 'The array of category IDs associated with the product.'
         required: true
         example:
-          - et
+          - accusantium
         type: 'string[]'
         custom: []
       tags:
         name: tags
-        description: 'An array of tag IDs associated with the product.'
+        description: 'The array of tag IDs associated with the product.'
         required: true
         example:
-          - porro
+          - hic
         type: 'string[]'
         custom: []
       author:
         name: author
-        description: 'The ID of the author of the product.'
+        description: "The ID of the product's author."
         required: true
-        example: 12
+        example: 1
         type: integer
         custom: []
       product_file:
         name: product_file
-        description: ''
-        required: true
-        example: eum
-        type: string
+        description: 'The main product file.'
+        required: false
+        example: null
+        type: file
         custom: []
       preview:
         name: preview
-        description: ''
-        required: true
-        example: ipsum
-        type: string
+        description: 'The preview file of the product.'
+        required: false
+        example: null
+        type: file
         custom: []
       weight:
         name: weight
-        description: ''
+        description: 'The weight of the product.'
         required: true
-        example: eos
-        type: string
+        example: 24012.0
+        type: number
         custom: []
       'images[]':
         name: 'images[]'
-        description: 'An array of image files for the product.'
+        description: 'An array of additional images for the product (if applicable).'
         required: false
         example: null
         type: file
         custom: []
     cleanBodyParameters:
-      name: blanditiis
-      price: 9544.63008
-      description: 'Neque quidem earum ut.'
+      name: fugit
+      price: 788.7968
+      print_price: 0.984698
+      description: 'Reiciendis qui quia ipsa aut velit dolorem.'
       categories:
-        - et
+        - accusantium
       tags:
-        - porro
-      author: 12
-      product_file: eum
-      preview: ipsum
-      weight: eos
+        - hic
+      author: 1
+      weight: 24012.0
     fileParameters:
       images:
         - null
+      product_file: null
+      preview: null
       'images[]': null
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"name":null,"weight":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[],"preview":"http:\/\/dunia.healthyishng.com\/storage"}}'
+        content: |-
+          {
+              "data": {
+                  "id": 1,
+                  "name": "Product A",
+                  "author_id": 2,
+                  "price": 19.99,
+                  "description": "Description of Product A",
+                  "weight": 0.5,
+                  "print_price": 5.99,
+                  "preview": "book_previews/product_a_preview.jpg",
+                  "product_file": "books/product_a_file.pdf",
+                  "categories": [...],
+                  "tags": [...],
+                  "images": [...]
+              }
+          }
         headers: []
         description: ''
         custom: []
       -
-        status: 200
+        status: 500
         content: |-
           {
-               "data": {
-                   "id": 1,
-                   "name": "Sample Product",
-                   "author_id": 1,
-                   "price": 19.99,
-                   "description": "A description of the sample product.",
-                   "categories": [
-                       {
-                           "id": 1,
-                           "name": "Category A"
-                       },
-                       {
-                           "id": 2,
-                           "name": "Category B"
-                       }
-                   ],
-                   "tags": [
-                       {
-                           "id": 1,
-                           "name": "Tag X"
-                       },
-                       {
-                           "id": 2,
-                           "name": "Tag Y"
-                       }
-                   ]
-               }
-           }
+              "error": "Error occurred. Try again"
+          }
         headers: []
         description: ''
         custom: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer ecDP48bEV1g6f5v63Zaadkh'
+    auth: []
     controller: null
     method: null
     route: null
@@ -213,7 +207,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: ut
+        example: culpa
         type: string
         custom: []
       images:
@@ -228,14 +222,21 @@ endpoints:
         name: price
         description: ''
         required: true
-        example: quos
+        example: velit
         type: string
+        custom: []
+      print_price:
+        name: print_price
+        description: ''
+        required: true
+        example: 119735.0
+        type: number
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: ad
+        example: vitae
         type: string
         custom: []
       categories:
@@ -256,45 +257,46 @@ endpoints:
         name: author
         description: ''
         required: true
-        example: fugiat
+        example: voluptatum
         type: string
         custom: []
       product_file:
         name: product_file
-        description: ''
+        description: 'Must be a file.'
         required: true
-        example: ad
-        type: string
+        example: null
+        type: file
         custom: []
       preview:
         name: preview
-        description: ''
+        description: 'Must be a file.'
         required: true
-        example: tempore
-        type: string
+        example: null
+        type: file
         custom: []
       weight:
         name: weight
         description: ''
         required: true
-        example: error
-        type: string
+        example: 0.40105821
+        type: number
         custom: []
     cleanBodyParameters:
-      name: ut
-      price: quos
-      description: ad
-      author: fugiat
-      product_file: ad
-      preview: tempore
-      weight: error
+      name: culpa
+      price: velit
+      print_price: 119735.0
+      description: vitae
+      author: voluptatum
+      weight: 0.40105821
     fileParameters:
       images:
         - null
+      product_file: null
+      preview: null
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"name":null,"weight":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[],"preview":"http:\/\/dunia.healthyishng.com\/storage"}}'
+        content: '{"data":{"id":null,"name":null,"weight":null,"price":"0.00","printPrice":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[],"preview":"http:\/\/dunia.healthyishng.com\/storage"}}'
         headers: []
         description: ''
         custom: []
@@ -302,7 +304,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kdevDcE8Zahg166Vb43Pf5a'
+      - 'Bearer eE3b856PhDZfacda4gV61kv'
     controller: null
     method: null
     route: null
@@ -356,7 +358,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 14c6kE65veabV3fPgaD8hZd'
+      - 'Bearer 5fah3Zd64PgcDEV68kavb1e'
     controller: null
     method: null
     route: null
@@ -408,7 +410,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6kc41g3dvE8aaZVe5DhfPb6'
+      - 'Bearer Pbk5hc8e6Z13EdavgV46aDf'
     controller: null
     method: null
     route: null
@@ -445,46 +447,46 @@ endpoints:
         name: author
         description: "Search for products by author's name."
         required: false
-        example: id
+        example: laborum
         type: string
         custom: []
       category:
         name: category
         description: 'Search for products by category name.'
         required: false
-        example: recusandae
+        example: ut
         type: string
         custom: []
     cleanQueryParameters:
       name: aspernatur
-      author: id
-      category: recusandae
+      author: laborum
+      category: ut
     bodyParameters:
       name:
         name: name
         description: ''
         required: false
-        example: atque
+        example: quos
         type: string
         custom: []
       author:
         name: author
         description: ''
         required: false
-        example: et
+        example: quas
         type: string
         custom: []
       category:
         name: category
         description: ''
         required: false
-        example: voluptas
+        example: harum
         type: string
         custom: []
     cleanBodyParameters:
-      name: atque
-      author: et
-      category: voluptas
+      name: quos
+      author: quas
+      category: harum
     fileParameters: []
     responses:
       -
@@ -571,11 +573,11 @@ endpoints:
         name: id
         description: 'Product ID'
         required: true
-        example: nulla
+        example: voluptas
         type: string
         custom: []
     cleanUrlParameters:
-      id: nulla
+      id: voluptas
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -584,7 +586,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"name":null,"weight":null,"price":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[],"preview":"http:\/\/dunia.healthyishng.com\/storage"}}'
+        content: '{"data":{"id":null,"name":null,"weight":null,"price":"0.00","printPrice":"0.00","description":null,"author":null,"categories":[],"tags":[],"images":[],"reviews":[],"preview":"http:\/\/dunia.healthyishng.com\/storage"}}'
         headers: []
         description: ''
         custom: []

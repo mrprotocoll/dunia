@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -45,8 +46,6 @@ class Product extends Model
      */
     public function addImages($request): void {
         foreach ($request->images as $image) {
-//            print_r($image->getClientOriginalName());
-//            print_r(Str::slug($image->getClientOriginalName(), '_'));
             $imageName = "book_images/". FileHelper::formatName($image->getClientOriginalName());
 
             // Store the image in the 'public' disk (storage/app/public)
@@ -59,5 +58,9 @@ class Product extends Model
 
     public function reviews(): HasMany {
         return $this->hasMany(Review::class);
+    }
+
+    public function age_range(): BelongsTo {
+        return $this->belongsTo(AgeRange::class);
     }
 }
