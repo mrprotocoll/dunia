@@ -17,8 +17,11 @@ class ProductSeeder extends Seeder
     {
         //
         Product::factory()
-            ->hasTags(3)
+            ->hasAttached(Tag::factory(fake()->randomNumber()))
             ->hasAttached(Category::factory(2))
+            ->hasImages(2, [
+                'image' => fake()->imageUrl
+            ])
             ->create();
     }
 }
