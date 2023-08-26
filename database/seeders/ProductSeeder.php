@@ -15,9 +15,9 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $tag = Tag::factory()->create();
         Product::factory()
-            ->hasAttached(Tag::factory(fake()->randomNumber()))
+            ->hasAttached($tag)
             ->hasAttached(Category::factory(2))
             ->hasImages(2, [
                 'image' => fake()->imageUrl
