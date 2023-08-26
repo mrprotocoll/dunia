@@ -25,7 +25,8 @@ class ReviewRequest extends FormRequest
     {
         return [
             'comment' => ['required'],
-            'rating' => ['required','float', new ValidRating()],
+            'summary' => ['required'],
+            'rating' => ['required', Rule::in([1,2,3,4,5])],
         ];
     }
 }

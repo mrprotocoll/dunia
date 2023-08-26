@@ -50,6 +50,7 @@ class ReviewController extends Controller
         $review->user_id = $user->id;
         $review->product_id = $product->id;
         $review->comment = $request['comment'];
+        $review->summary = $request['summary'];
         $review->rating = $request['rating'];
         $review->save();
 
