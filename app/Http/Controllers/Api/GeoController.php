@@ -28,4 +28,12 @@ class GeoController extends Controller
         $cities = City::all();
         return response()->json($cities);
     }
+
+    public function countryStates(Country $country): JsonResponse {
+        return response()->json($country->states());
+    }
+
+    public function stateCities(State $state): JsonResponse {
+        return response()->json($state->cities());
+    }
 }

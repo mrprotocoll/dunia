@@ -35,9 +35,11 @@ Route::apiResource('products', ProductController::class)
 Route::get('products/{category}', [ProductController::class, 'categories']);
 Route::post('products/filter', [ProductController::class, 'filter']);
 
-// country
+// GeoLocation
 Route::get('countries', [GeoController::class, 'countries']);
 Route::get('states', [GeoController::class, 'states']);
 Route::get('cities', [GeoController::class, 'cities']);
+Route::get('states/{country}', [GeoController::class, 'countryStates']);
+Route::get('cities/{state}', [GeoController::class, 'stateCities']);
 
 
