@@ -15,6 +15,10 @@ class State extends Model
         'id', 'country_id', 'name', 'status'
     ];
 
+    protected $hidden = [
+        'deleted_at', 'updated_at', 'created_at', 'status'
+    ];
+
     public function cities(): HasMany
     {
         return $this->hasMany(City::class);
