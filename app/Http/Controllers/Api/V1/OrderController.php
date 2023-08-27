@@ -259,7 +259,7 @@ class OrderController extends Controller
         }
 
         function fulfill_order($session) {
-            $order = Order::where('session_id', $session->id);
+            $order = Order::where('session_id', $session->id)->get();
             $status = $order->shipping_price < 1 ? StatusEnum::SUCCESS : StatusEnum::AWAITING_SHIPMENT;
             $order->status = $status;
             // TODO: Add product to user products

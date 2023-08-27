@@ -6,7 +6,7 @@ enum StatusEnum
 {
     const PENDING = 'PENDING';
     const APPROVED = 'APPROVED';
-    const REJECTED = 'REJECTED';
+    const FAILED = 'FAILED';
 
     const AWAITING_SHIPMENT = 'PAID, AWAITING SHIPMENT';
     const SUCCESS = 'SUCCESS';
