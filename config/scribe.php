@@ -19,7 +19,7 @@ return [
     /*
      * The base URL displayed in the docs. If this is empty, Scribe will use the value of config('app.url').
      */
-    'base_url' => 'http://dunia.healthyishng.com',
+    'base_url' => 'http://164.92.125.188',
 
     /*
      * Tell Scribe what routes to generate documentation for.
