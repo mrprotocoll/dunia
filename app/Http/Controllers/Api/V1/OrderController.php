@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Helpers\StatusEnum;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\OrderRequest;
 use App\Http\Resources\V1\OrderResource;
+use App\Mail\OrderReceived;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Stripe\Event;
 use Stripe\Stripe;
 use Stripe\StripeClient;
@@ -255,14 +258,21 @@ class OrderController extends Controller
         }
 
         function fulfill_order($session) {
+            $order = Order::where('session_id', $session->id);
+            $status = $order->shipping_price < 1 ? StatusEnum::SUCCESS : StatusEnum::AWAITING_SHIPMENT;
+            $order->status = $status;
+            // TODO: Add product to user products
+            $products = $order->products;
+            foreach ($products as $product) {
+                $product->attach($order->user);
+            }
 
-            Order::update(
-                ['session_id' => $session->id],
-                [
-                    'status' => "SUCCESS"
-                ]
-            );
-            // TODO: Send email to customer
+            if($order->save()) {
+                // TODO: Send email to customer
+                Mail::to($order->user)->send(new OrderReceived());
+
+                // TODO: Send email to admin of a new order
+            }
 
         }
 

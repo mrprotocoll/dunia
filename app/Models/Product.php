@@ -39,6 +39,18 @@ class Product extends Model
         return $this->belongsToMany(Order::class)->withPivot('quantity', 'total_price')->withTimestamps();
     }
 
+    public function reviews(): HasMany {
+        return $this->hasMany(Review::class);
+    }
+
+    public function age_range(): BelongsTo {
+        return $this->belongsTo(AgeRange::class);
+    }
+
+    public function users(): BelongsToMany {
+        return $this->belongsToMany(User::class)->withTimestamps();
+    }
+
     /**
      * Method to Add multiple images to product
      * @param $request
@@ -56,11 +68,4 @@ class Product extends Model
         }
     }
 
-    public function reviews(): HasMany {
-        return $this->hasMany(Review::class);
-    }
-
-    public function age_range(): BelongsTo {
-        return $this->belongsTo(AgeRange::class);
-    }
 }
