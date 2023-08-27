@@ -262,16 +262,16 @@ class OrderController extends Controller
             $status = $order->shipping_price < 1 ? StatusEnum::SUCCESS : StatusEnum::AWAITING_SHIPMENT;
             $order->status = $status;
             // TODO: Add product to user products
-            $products = $order->products;
-            foreach ($products as $product) {
+            foreach ($order->products as $product) {
                 $product->attach($order->user);
             }
 
             if($order->save()) {
                 // TODO: Send email to customer
-                Mail::to($order->user)->send(new OrderReceived());
+                Mail::to($order->user)->send(new OrderReceived($order));
 
                 // TODO: Send email to admin of a new order
+
             }
 
         }

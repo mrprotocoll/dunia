@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Order;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -16,7 +17,7 @@ class OrderReceived extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(protected Order $order)
     {
         //
     }
@@ -37,7 +38,12 @@ class OrderReceived extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.order_received',
+            markdown: 'emails.orders.received',
+            with: [
+                'price' => $this->order->total_price,
+                'name' => $this->order->user['name'],
+                'products' => $this->order->products
+            ]
         );
     }
 

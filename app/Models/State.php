@@ -12,11 +12,7 @@ class State extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'id', 'country_id', 'name'
-    ];
-
-    protected $hidden = [
-        'deleted_at', 'updated_at', 'created_at', 'status'
+        'id', 'country_id', 'name', 'status'
     ];
 
     public function cities(): HasMany
