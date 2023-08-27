@@ -7,6 +7,7 @@ use App\Models\City;
 use App\Models\Country;
 use App\Models\State;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Log;
 
 /**
  * @group Countries states cities
@@ -58,7 +59,8 @@ class GeoController extends Controller
      * @return JsonResponse
      */
     public function states(Country $country): JsonResponse {
-        return response()->json($country->states());
+        $states = $country->states;
+        return response()->json($states);
     }
 
     /**
@@ -82,6 +84,7 @@ class GeoController extends Controller
      * @return JsonResponse
      */
     public function cities(State $state): JsonResponse {
-        return response()->json($state->cities());
+        $cities = $state->cities;
+        return response()->json($cities);
     }
 }

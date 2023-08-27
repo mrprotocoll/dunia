@@ -30,14 +30,14 @@ Route::post('/reset-password', [NewPasswordController::class, 'store'])
     ->name('password.store');
 
 //products
-Route::apiResource('products', ProductController::class)
+Route::apiResource('/products', ProductController::class)
     ->only(['index', 'show']);
-Route::get('products/{category}', [ProductController::class, 'categories']);
-Route::post('products/filter', [ProductController::class, 'filter']);
+Route::get('/products/{category}', [ProductController::class, 'categories']);
+Route::post('/products/filter', [ProductController::class, 'filter']);
 
 // GeoLocation
-Route::get('countries', [GeoController::class, 'countries']);
-Route::get('states/{country}', [GeoController::class, 'states']);
-Route::get('cities/{state}', [GeoController::class, 'cities']);
+Route::get('/countries', [GeoController::class, 'countries']);
+Route::get('/states/{country}', [GeoController::class, 'states']);
+Route::get('/cities/{state}', [GeoController::class, 'cities']);
 
 
