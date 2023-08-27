@@ -6,6 +6,7 @@ use App\Helpers\StatusEnum;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\OrderRequest;
 use App\Http\Resources\V1\OrderResource;
+use App\Mail\AdminMails;
 use App\Mail\OrderReceived;
 use App\Models\Order;
 use App\Models\Product;
@@ -271,7 +272,7 @@ class OrderController extends Controller
                 Mail::to($order->user)->send(new OrderReceived($order));
 
                 // TODO: Send email to admin of a new order
-
+                Mail::send(new AdminMails('newOrder', 'New Order on Dunia'));
             }
 
         }

@@ -1,9 +1,9 @@
 <x-mail::message>
 # Introduction
 
-The body of your message.
+Order received
 
-<x-mail::button :url="''">
+<x-mail::button :url="''" color="success">
 Button Text
 </x-mail::button>
 
