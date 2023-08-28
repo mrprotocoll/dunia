@@ -2,7 +2,6 @@
 
 namespace App\Mail;
 
-use App\Models\Order;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -10,14 +9,14 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class OrderReceived extends Mailable implements ShouldQueue
+class AdminMails extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(protected Order $order)
+    public function __construct(public $event, public $subject = "New Mail")
     {
         //
     }
@@ -28,8 +27,17 @@ class OrderReceived extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Order Received',
+            to: env('ADMIN_EMAIL'),
+            subject: $this->subject
         );
+    }
+
+    public function contentBody(): string
+    {
+        return match ($this->event) {
+            'newOrder' => "You have a new order from operation",
+            default => "No mail event",
+        };
     }
 
     /**
@@ -38,11 +46,9 @@ class OrderReceived extends Mailable implements ShouldQueue
     public function content(): Content
     {
         return new Content(
-            markdown: 'emails.orders.received',
+            view: 'emails.default',
             with: [
-                'price' => $this->order->total_price,
-                'name' => $this->order->user['name'],
-                'products' => $this->order->products
+                'content' => $this->contentBody()
             ]
         );
     }

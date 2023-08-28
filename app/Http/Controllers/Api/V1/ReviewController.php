@@ -25,6 +25,7 @@ class ReviewController extends Controller
      * @param ReviewRequest $request The review creation request.
      *
      * @bodyParam comment string required The comment for the review.
+     * @bodyParam summary string required The summary for the review.
      * @bodyParam rating integer required The rating for the review (0-5).
      *
      * @response {
@@ -36,6 +37,7 @@ class ReviewController extends Controller
      *              "email": "admin@gmail.com"
      *          },
      *          "comment": "lorem ipsum",
+     *          "summary": "Good product"
      *          "rating": "4",
      *          "createdAt": "2023-08-11T18:28:05.000000Z"
      *      }

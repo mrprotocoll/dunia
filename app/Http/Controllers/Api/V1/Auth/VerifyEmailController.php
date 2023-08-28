@@ -13,6 +13,7 @@ class VerifyEmailController extends Controller
 {
 
     /**
+     * @authenticated
      * Handle the email verification process for the authenticated user.
      * Mark the authenticated user's email address as verified.
      *

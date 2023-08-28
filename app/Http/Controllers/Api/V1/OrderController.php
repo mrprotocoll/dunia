@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Helpers\StatusEnum;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\OrderRequest;
 use App\Http\Resources\V1\OrderResource;
+use App\Mail\AdminMails;
+use App\Mail\OrderReceived;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Stripe\Event;
 use Stripe\Stripe;
 use Stripe\StripeClient;
@@ -35,8 +39,8 @@ class OrderController extends Controller
             $order = $user->orders()->create([
                 'total_price' => $request['total'],
                 'shipping_price' => $shipping['price'] ?? 0,
-                'billing_address_id' => $shipping['billing_address_id'],
-                'session_id' => $request['session_id']
+                'billing_address_id' => $shipping['billing_address_id'] ?? "",
+                'session_id' => $request['session_id'] ?? 'NULL'
             ]);
 
             foreach($request['cart'] as $productData){
@@ -200,7 +204,7 @@ class OrderController extends Controller
             ];
         }
 
-        if(count($request['shipping']) > 1) {
+        if($request['shipping']) {
             $line_items[] = [
                 'price_data' => [
                     'currency' => 'usd',
@@ -255,14 +259,19 @@ class OrderController extends Controller
         }
 
         function fulfill_order($session) {
+            $order = Order::where('session_id', $session->id)->get();
+            $status = $order->shipping_price < 1 ? StatusEnum::SUCCESS : StatusEnum::AWAITING_SHIPMENT;
+            $order->status = $status;
+            // TODO: Add product to user products
+            $order->user->products()->attach($order->products);
 
-            Order::update(
-                ['session_id' => $session->id],
-                [
-                    'status' => "SUCCESS"
-                ]
-            );
-            // TODO: Send email to customer
+            if($order->save()) {
+                // TODO: Send email to customer
+                Mail::to($order->user)->send(new OrderReceived($order));
+
+                // TODO: Send email to admin of a new order
+                Mail::send(new AdminMails('newOrder', 'New Order on Dunia'));
+            }
 
         }
 
