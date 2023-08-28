@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class AdminMails extends Mailable
+class AdminMails extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
@@ -34,14 +34,10 @@ class AdminMails extends Mailable
 
     public function contentBody(): string
     {
-        switch ($this->event) {
-            case 'newOrder':
-                return "";
-                break;
-            default:
-                return "No mail event";
-                break;
-        }
+        return match ($this->event) {
+            'newOrder' => "You have a new order from operation",
+            default => "No mail event",
+        };
     }
 
     /**

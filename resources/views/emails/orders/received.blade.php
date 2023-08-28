@@ -4,7 +4,7 @@
 Order received
 
 <x-mail::button :url="''" color="success">
-Button Text
+Button Text {{ $price }}
 </x-mail::button>
 
 Thanks,<br>

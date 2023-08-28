@@ -16,7 +16,8 @@ class Order extends Model
     protected $fillable = [
         'total_price',
         'shipping_price',
-        'billing_address_id'
+        'billing_address_id',
+        'session_id'
     ];
     public function products(): BelongsToMany {
         return $this->belongsToMany(Product::class)->withPivot('quantity', 'total_price')->withTimestamps();

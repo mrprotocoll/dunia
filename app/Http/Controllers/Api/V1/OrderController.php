@@ -39,8 +39,8 @@ class OrderController extends Controller
             $order = $user->orders()->create([
                 'total_price' => $request['total'],
                 'shipping_price' => $shipping['price'] ?? 0,
-                'billing_address_id' => $shipping['billing_address_id'],
-                'session_id' => $request['session_id']
+                'billing_address_id' => $shipping['billing_address_id'] ?? "",
+                'session_id' => $request['session_id'] ?? 'NULL'
             ]);
 
             foreach($request['cart'] as $productData){
@@ -204,7 +204,7 @@ class OrderController extends Controller
             ];
         }
 
-        if(count($request['shipping']) > 1) {
+        if($request['shipping']) {
             $line_items[] = [
                 'price_data' => [
                     'currency' => 'usd',
@@ -263,9 +263,7 @@ class OrderController extends Controller
             $status = $order->shipping_price < 1 ? StatusEnum::SUCCESS : StatusEnum::AWAITING_SHIPMENT;
             $order->status = $status;
             // TODO: Add product to user products
-            foreach ($order->products as $product) {
-                $product->attach($order->user);
-            }
+            $order->user->products()->attach($order->products);
 
             if($order->save()) {
                 // TODO: Send email to customer

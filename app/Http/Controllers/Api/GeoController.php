@@ -40,21 +40,6 @@ class GeoController extends Controller
     public function countries(): JsonResponse
     {
         $countries = Country::all();
-        $order = Order::find('99ee5ee4-e6e0-4202-b79f-18b2fdaf4068');
-        $status = $order->shipping_price < 1 ? StatusEnum::SUCCESS : StatusEnum::AWAITING_SHIPMENT;
-        $order->status = $status;
-        // TODO: Add product to user products
-        foreach ($order->products as $product) {
-            $product->attach($order->user);
-        }
-
-        if($order->save()) {
-            // TODO: Send email to customer
-            Mail::to($order->user)->send(new OrderReceived($order));
-
-            // TODO: Send email to admin of a new order
-            Mail::send(new AdminMails('newOrder', 'New Order on Dunia'));
-        }
         return response()->json($countries);
     }
 
