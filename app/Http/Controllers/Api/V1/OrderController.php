@@ -262,17 +262,17 @@ class OrderController extends Controller
             $order = Order::where('session_id', $session->id)->get();
             $status = $order->shipping_price < 1 ? StatusEnum::SUCCESS : StatusEnum::AWAITING_SHIPMENT;
             $order->status = $status;
-            // TODO: Add product to user products
+
+            // Add product to user products
             $order->user->products()->attach($order->products);
 
             if($order->save()) {
-                // TODO: Send email to customer
+                // Send email to customer
                 Mail::to($order->user)->send(new OrderReceived($order));
 
-                // TODO: Send email to admin of a new order
+                // Send email to admin of a new order
                 Mail::send(new AdminMails('newOrder', 'New Order on Dunia'));
             }
-
         }
 
         function email_customer_about_failed_payment($session) {

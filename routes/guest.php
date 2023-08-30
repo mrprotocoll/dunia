@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\GeoController;
+use App\Http\Controllers\Api\V1\Admin\AgeRangeController;
 use App\Http\Controllers\Api\V1\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Api\V1\Auth\GoogleAuthController;
 use App\Http\Controllers\Api\V1\Auth\NewPasswordController;
@@ -40,4 +41,6 @@ Route::get('/countries', [GeoController::class, 'countries']);
 Route::get('/states/{country}', [GeoController::class, 'states']);
 Route::get('/cities/{state}', [GeoController::class, 'cities']);
 
+// age ranges
+Route::get('/ages', [AgeRangeController::class, 'index']);
 
