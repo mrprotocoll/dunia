@@ -19,7 +19,6 @@ class AgeRangeController extends Controller
      *
      * Retrieve a list of all age ranges.
      *
-     * @authenticated
      *
      * @response {
      *     "data": [
