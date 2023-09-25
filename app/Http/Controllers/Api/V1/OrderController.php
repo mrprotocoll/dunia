@@ -217,6 +217,7 @@ class OrderController extends Controller
             ];
         }
 
+        // STRIPE CHECKOUT
         $checkout_session = $stripe->checkout->sessions->create([
             'line_items' => $line_items,
             'mode' => 'payment',
@@ -224,6 +225,7 @@ class OrderController extends Controller
             'cancel_url' => $request->cancel_url,
         ]);
 
+        // GET CHECKOUT PAYMENT PAGE URL
         if($checkout_session->url) {
             $request['session_id'] = $checkout_session->id;
             // add a new order
@@ -276,7 +278,7 @@ class OrderController extends Controller
         }
 
         function email_customer_about_failed_payment($session) {
-            // TODO fill me in
+            // TODO: send email to customer of failed transaction
         }
 
         switch ($event->type) {
@@ -301,7 +303,6 @@ class OrderController extends Controller
 
             case 'checkout.session.async_payment_failed':
                 $session = $event->data->object;
-                // TODO: send email to customer of failed transaction
                 // Send an email to the customer asking them to retry their order
                 email_customer_about_failed_payment($session);
                 break;

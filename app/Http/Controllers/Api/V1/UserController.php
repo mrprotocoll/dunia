@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\ProductResource;
 use App\Http\Resources\V1\UserResource;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
@@ -75,5 +78,13 @@ class UserController extends Controller
 
         return response()->json(['message' => 'Password changed successfully'], 200);
 
+    }
+
+    // get authenticated user products
+    public function products(): ResourceCollection
+    {
+        $user = User::current();
+        $products = $user->products()->with(['categories', 'author']);
+        return ProductResource::collection($products);
     }
 }

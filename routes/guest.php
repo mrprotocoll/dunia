@@ -44,3 +44,6 @@ Route::get('/cities/{state}', [GeoController::class, 'cities']);
 // age ranges
 Route::get('/ages', [AgeRangeController::class, 'index']);
 
+//chat
+Route::get('/chat', [App\Http\Controllers\Api\V1\ChatGPTController::class, 'askChatGpt']);
+

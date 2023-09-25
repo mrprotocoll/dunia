@@ -47,6 +47,7 @@ class Product extends Model
         return $this->belongsTo(AgeRange::class);
     }
 
+    // products purchased by user
     public function users(): BelongsToMany {
         return $this->belongsToMany(User::class)->withTimestamps();
     }

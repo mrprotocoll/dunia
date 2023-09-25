@@ -63,6 +63,7 @@ class User extends Authenticatable
         return $this->hasMany(BillingAddress::class);
     }
 
+    // user purchased products
     public function products(): BelongsToMany {
         return $this->belongsToMany(Product::class)->withTimestamps();
     }
