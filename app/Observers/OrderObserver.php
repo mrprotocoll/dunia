@@ -13,8 +13,8 @@ class OrderObserver
     }
 
     public function created(Order $order) {
-        // send ORDER RECEIVED email to client
+        // TODO:: ORDER RECEIVED email to client
 
-        // send NEW ORDER email to admin
+        //TODO:: send NEW ORDER email to admin
     }
 }
