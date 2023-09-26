@@ -80,7 +80,15 @@ class UserController extends Controller
 
     }
 
-    // get authenticated user products
+    /**
+     * Retrieve a list of products purchased by the authenticated user.
+     *
+     * @group Products
+     *
+     * @authenticated
+     *
+     * @response \App\Http\Resources\ProductResource[]
+     */
     public function products(): ResourceCollection
     {
         $user = User::current();
